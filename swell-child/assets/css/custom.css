@@ -1,135 +1,185 @@
 /* =============================================
-   サクセスキャリアエアライン - カスタムCSS
-   SWELL Child Theme
+   サクセスキャリアエアライン - Custom CSS
+   SWELL Child Theme - Figma Design Implementation
    ============================================= */
 
 /* =============================================
-   1. カラー変数・基本設定
+   1. CSS Variables & Base Settings
    ============================================= */
 :root {
-    --sca-primary: #f2b5c3;
-    --sca-primary-dark: #e8a0b4;
-    --sca-primary-light: #fff4f7;
-    --sca-primary-pale: #fde8ee;
-    --sca-accent: #e87fa0;
-    --sca-accent-light: #f7c5d5;
-    --sca-gold: #c9a96e;
-    --sca-navy: #2c3e6b;
-    --sca-text: #444444;
-    --sca-text-light: #888888;
-    --sca-white: #ffffff;
-    --sca-bg-cream: #fef9f5;
-    --sca-bg-pink: #fff4f7;
-    --sca-bg-pink-deep: #fde8ee;
-    --sca-bg-blue: #f0f4fa;
-    --sca-gradient-pink: linear-gradient(135deg, #fdd4dc 0%, #fde8ee 50%, #fff4f7 100%);
-    --sca-gradient-pink-btn: linear-gradient(135deg, #f2b5c3 0%, #e87fa0 100%);
-    --sca-gradient-sky: linear-gradient(180deg, #c9e8ff 0%, #e8f4ff 40%, #ffffff 100%);
-    --sca-gradient-gold: linear-gradient(135deg, #f5e6c8 0%, #e8d5a8 100%);
-    --sca-cloud-pink-1: #f7c5d5;
-    --sca-cloud-pink-2: #fdd4dc;
-    --sca-cloud-pink-3: #fde8ee;
-    --sca-shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.05);
-    --sca-shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.08);
-    --sca-radius: 12px;
-    --sca-radius-lg: 20px;
-    --sca-radius-sm: 6px;
+    /* Primary Colors (from Figma) */
+    --sca-pink-bg: #FFDFDF;
+    --sca-pink-mid: #F5C1CC;
+    --sca-pink-deep: #F2A5B5;
+    --sca-pink-dark: #E08A9D;
+    --sca-pink-accent: #E87FA0;
+    --sca-pink-button: #F2A5B5;
+    --sca-pink-light: #FFF5F7;
+
+    /* Text Colors */
+    --sca-text: #343434;
+    --sca-text-light: #666666;
+    --sca-text-muted: #999999;
+
+    /* Accent Colors */
+    --sca-gold: #C9A96E;
+    --sca-gold-light: #D4B97E;
+    --sca-navy: #2C3E6B;
+    --sca-sky: #c9e8ff;
+
+    /* Neutral */
+    --sca-white: #FFFFFF;
+    --sca-gray-light: #F5F5F5;
+    --sca-gray-border: #E5E5E5;
+    --sca-gray-text: #888888;
+
+    /* Spacing */
+    --sca-section-padding: 80px 0;
+    --sca-section-padding-sp: 48px 0;
+    --sca-container: 1100px;
+
+    /* Border Radius */
+    --sca-radius-sm: 4px;
+    --sca-radius: 8px;
+    --sca-radius-lg: 16px;
+    --sca-radius-xl: 24px;
+    --sca-radius-round: 9999px;
+
+    /* Shadows */
+    --sca-shadow-soft: 0 2px 12px rgba(0, 0, 0, 0.06);
+    --sca-shadow-card: 0 4px 20px rgba(0, 0, 0, 0.08);
+    --sca-shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.12);
+
+    /* Typography */
+    --sca-font-serif: 'Cormorant Garamond', 'Noto Serif JP', serif;
+    --sca-font-sans: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, sans-serif;
+
+    /* Transitions */
+    --sca-transition: 0.3s ease;
+}
+
+/* Base body overrides */
+body {
+    color: var(--sca-text);
+    font-family: var(--sca-font-sans);
+    letter-spacing: 0.03em;
 }
 
 /* =============================================
-   1b. 告知バー（ヘッダー上部ピンク帯）
+   1b. Announcement Bar (Header Top Pink Band)
    ============================================= */
 .sca-announcement-bar {
-    background: var(--sca-primary);
-    color: var(--sca-white);
+    background: var(--sca-pink-bg);
+    color: var(--sca-text);
     text-align: center;
-    padding: 6px 16px;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    line-height: 1.5;
+    padding: 14px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
     position: relative;
     z-index: 100;
+    line-height: 1.6;
 }
 
 .sca-announcement-bar a {
-    color: var(--sca-white);
-    text-decoration: underline;
-    text-underline-offset: 3px;
-}
-
-.sca-announcement-bar a:hover {
-    opacity: 0.8;
-}
-
-@media (max-width: 599px) {
-    .sca-announcement-bar {
-        font-size: 11px;
-        padding: 5px 12px;
-    }
-}
-
-/* =============================================
-   1c. ヘッダーCTAボタン（講座予約・個別相談）
-   ============================================= */
-.sca-header-cta {
-    display: flex;
-    gap: 8px;
-    align-items: center;
-}
-
-.sca-header-cta__btn {
     display: inline-flex;
     align-items: center;
-    padding: 8px 20px;
-    border-radius: 50px;
-    font-size: 13px;
-    font-weight: 700;
+    gap: 8px;
+    color: var(--sca-text);
     text-decoration: none;
-    letter-spacing: 0.05em;
-    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+/* The CTA button inside announcement bar */
+.sca-announcement-bar a::after {
+    content: '';
+}
+
+.sca-announcement-bar .sca-announcement-btn,
+.sca-announcement-bar a[href] {
+    color: var(--sca-text);
+    text-decoration: none;
+}
+
+/* Announcement bar inline CTA button style (from Figma) */
+.sca-announcement-cta {
+    display: inline-block;
+    border: 1.5px solid var(--sca-text);
+    padding: 6px 24px;
+    border-radius: var(--sca-radius-sm);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    transition: var(--sca-transition);
     white-space: nowrap;
 }
 
-.sca-header-cta__btn--primary {
-    background: var(--sca-gradient-pink-btn);
+.sca-announcement-cta:hover {
+    background: var(--sca-text);
     color: var(--sca-white);
-    box-shadow: 0 2px 8px rgba(232, 127, 160, 0.3);
-}
-
-.sca-header-cta__btn--primary:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(232, 127, 160, 0.4);
-    color: var(--sca-white);
-}
-
-.sca-header-cta__btn--secondary {
-    background: var(--sca-white);
-    color: var(--sca-accent);
-    border: 2px solid var(--sca-accent);
-}
-
-.sca-header-cta__btn--secondary:hover {
-    background: var(--sca-accent);
-    color: var(--sca-white);
-}
-
-@media (max-width: 959px) {
-    .sca-header-cta {
-        display: none;
-    }
 }
 
 /* =============================================
-   2. パララックス背景スクロール
+   1c. Header CTA Buttons
    ============================================= */
-.sca-parallax-section {
+
+/* SWELL header button overrides */
+.l-header .c-headerBtns .c-headerBtns__btn,
+.l-header .sca-header-btn {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    padding: 8px 24px;
+    border-radius: var(--sca-radius-sm);
+    transition: var(--sca-transition);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 120px;
+}
+
+/* Outline button (講座予約) */
+.l-header .c-headerBtns .c-headerBtns__btn:first-child,
+.sca-header-btn--outline {
+    background: transparent;
+    color: var(--sca-pink-accent);
+    border: 2px solid var(--sca-pink-accent);
+}
+
+.l-header .c-headerBtns .c-headerBtns__btn:first-child:hover,
+.sca-header-btn--outline:hover {
+    background: var(--sca-pink-accent);
+    color: var(--sca-white);
+}
+
+/* Solid button (お問合せ) */
+.l-header .c-headerBtns .c-headerBtns__btn:last-child,
+.sca-header-btn--solid {
+    background: var(--sca-pink-accent);
+    color: var(--sca-white);
+    border: 2px solid var(--sca-pink-accent);
+}
+
+.l-header .c-headerBtns .c-headerBtns__btn:last-child:hover,
+.sca-header-btn--solid:hover {
+    background: var(--sca-pink-dark);
+    border-color: var(--sca-pink-dark);
+}
+
+/* =============================================
+   2. Parallax Background Sections
+   ============================================= */
+[data-sca-parallax] {
     position: relative;
     overflow: hidden;
 }
 
-.sca-parallax-section::before {
-    content: '';
+.sca-parallax-bg {
     position: absolute;
     top: -20%;
     left: 0;
@@ -137,40 +187,6 @@
     height: 140%;
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
-    will-change: transform;
-    z-index: -1;
-}
-
-/* SWELLのフルワイドブロックにパララックス適用 */
-.swell-block-fullWide.has-bg-img {
-    background-attachment: fixed !important;
-    background-size: cover !important;
-    background-position: center center !important;
-}
-
-/* スマホではパララックスを無効化（パフォーマンス対策） */
-@media (max-width: 768px) {
-    .swell-block-fullWide.has-bg-img {
-        background-attachment: scroll !important;
-    }
-}
-
-/* JSベースのパララックス対象 */
-[data-sca-parallax] {
-    overflow: hidden;
-    position: relative;
-}
-
-[data-sca-parallax] > .sca-parallax-bg {
-    position: absolute;
-    top: -30%;
-    left: 0;
-    width: 100%;
-    height: 160%;
-    background-size: cover;
-    background-position: center;
-    will-change: transform;
     z-index: 0;
 }
 
@@ -179,42 +195,33 @@
     z-index: 1;
 }
 
+/* SWELL fullwide parallax support */
+.swell-block-fullWide.has-bg-img {
+    background-attachment: fixed;
+}
+
+@supports (-webkit-overflow-scrolling: touch) {
+    .swell-block-fullWide.has-bg-img {
+        background-attachment: scroll;
+    }
+}
+
 /* =============================================
-   3. 内定速報ティッカー
+   3. Ticker (内定速報)
    ============================================= */
 .sca-ticker-wrap {
+    background: var(--sca-white);
+    border-top: 1px solid var(--sca-gray-border);
+    border-bottom: 1px solid var(--sca-gray-border);
     display: flex;
     align-items: center;
-    background: var(--sca-primary);
     overflow: hidden;
-    white-space: nowrap;
-    padding: 0;
     position: relative;
-    z-index: 10;
+    height: 44px;
 }
 
 .sca-ticker-label {
-    flex-shrink: 0;
-    background: var(--sca-accent);
-    color: var(--sca-white);
-    font-weight: 700;
-    font-size: 13px;
-    padding: 10px 20px;
-    letter-spacing: 0.1em;
-    position: relative;
-    z-index: 2;
-}
-
-.sca-ticker-label::after {
-    content: '';
-    position: absolute;
-    right: -12px;
-    top: 0;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 19px 12px 19px 0;
-    border-color: transparent transparent transparent var(--sca-accent);
+    display: none; /* Hidden in Figma design - ticker uses inline format */
 }
 
 .sca-ticker-track {
@@ -224,25 +231,31 @@
 }
 
 .sca-ticker-content {
-    display: inline-flex;
+    display: flex;
+    white-space: nowrap;
     animation: sca-ticker-scroll var(--ticker-speed, 30s) linear infinite;
 }
 
 .sca-ticker-item {
     display: inline-flex;
     align-items: center;
-    color: var(--sca-white);
-    font-size: 14px;
+    padding: 0 8px;
+    font-size: 13px;
     font-weight: 500;
-    padding: 12px 32px;
+    color: var(--sca-text);
+    letter-spacing: 0.03em;
     white-space: nowrap;
-    letter-spacing: 0.05em;
 }
 
 .sca-ticker-item::before {
-    content: '✈';
+    content: '｜';
     margin-right: 8px;
-    font-size: 16px;
+    color: var(--sca-text);
+    font-weight: 300;
+}
+
+.sca-ticker-item:first-child::before {
+    content: none;
 }
 
 @keyframes sca-ticker-scroll {
@@ -254,154 +267,245 @@
     }
 }
 
-/* ティッカーホバー時は一時停止 */
-.sca-ticker-wrap:hover .sca-ticker-content {
-    animation-play-state: paused;
-}
-
 /* =============================================
-   4. メインビジュアル（MV）強化
+   4. Main Visual (Hero/FV) Enhancement
    ============================================= */
 .p-mainVisual {
     position: relative;
 }
 
-/* MVオーバーレイグラデーション */
-.sca-mv-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 40%;
-    background: linear-gradient(to top, rgba(255,255,255,0.9) 0%, transparent 100%);
-    z-index: 2;
-    pointer-events: none;
+.p-mainVisual__inner {
+    position: relative;
 }
 
-/* MVスライドのテキスト装飾 */
-.p-mainVisual__slide .p-mainVisual__text {
-    text-shadow: 0 2px 20px rgba(0,0,0,0.15);
+/* Hero text styling */
+.p-mainVisual .p-mainVisual__text {
+    font-family: var(--sca-font-serif);
+    color: var(--sca-text);
+    text-shadow: none;
+}
+
+.p-mainVisual .p-mainVisual__text h2,
+.p-mainVisual .p-mainVisual__text .p-mainVisual__title {
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: 0.08em;
+    color: var(--sca-text);
+}
+
+.p-mainVisual .p-mainVisual__text h2 strong,
+.p-mainVisual .p-mainVisual__text .p-mainVisual__title strong {
+    font-weight: 700;
+    font-size: 1.1em;
+}
+
+.p-mainVisual .p-mainVisual__desc,
+.p-mainVisual .p-mainVisual__text p {
+    font-size: clamp(14px, 1.6vw, 16px);
+    line-height: 2;
+    color: var(--sca-text);
+    letter-spacing: 0.05em;
+    margin-top: 16px;
 }
 
 /* =============================================
-   5. セクション見出しデザイン
+   5. Section Headings (Figma Style)
    ============================================= */
-/* セクション英語ラベル */
-.sca-section-label {
-    display: block;
-    text-align: center;
-    font-family: 'Cormorant Garamond', 'Times New Roman', serif;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--sca-gold);
-    margin-bottom: 4px;
-}
-
-/* セクション見出し共通 */
 .sca-section-heading {
     text-align: center;
-    font-size: 28px;
-    font-weight: 700;
-    color: var(--sca-text);
     margin-bottom: 40px;
-    position: relative;
-    letter-spacing: 0.08em;
+    padding: 0 20px;
 }
 
+.sca-section-heading__en {
+    display: block;
+    font-family: var(--sca-font-serif);
+    font-size: clamp(12px, 1.4vw, 14px);
+    font-weight: 400;
+    font-style: italic;
+    color: var(--sca-pink-accent);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.sca-section-heading__ja {
+    display: block;
+    font-family: var(--sca-font-serif);
+    font-size: clamp(24px, 3vw, 32px);
+    font-weight: 700;
+    color: var(--sca-text);
+    letter-spacing: 0.08em;
+    line-height: 1.5;
+}
+
+/* Decorative line under heading */
 .sca-section-heading::after {
     content: '';
     display: block;
-    width: 40px;
-    height: 2px;
-    background: var(--sca-gold);
+    width: 60px;
+    height: 1px;
+    background: var(--sca-pink-mid);
     margin: 16px auto 0;
 }
 
-/* SWELLのセクション見出しスタイル改善 */
-.is-style-section_ttl {
-    font-family: 'Noto Serif JP', serif;
-    letter-spacing: 0.15em;
+/* Alternative: heading with airplane icon */
+.sca-section-heading--airplane .sca-section-heading__en::after {
+    content: ' ✈';
+    font-style: normal;
 }
 
 /* =============================================
-   6. 内定実績セクション
+   6. Results Section (内定実績)
    ============================================= */
+.sca-results-section {
+    text-align: center;
+    padding: var(--sca-section-padding);
+    background: var(--sca-white);
+}
+
+.sca-results-subtitle {
+    font-size: 14px;
+    color: var(--sca-text-light);
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+}
+
+/* Large hero number */
+.sca-results-hero {
+    text-align: center;
+    margin: 24px 0 32px;
+}
+
+.sca-results-hero .sca-counter {
+    font-family: var(--sca-font-serif);
+    font-size: clamp(60px, 10vw, 96px);
+    font-weight: 700;
+    color: var(--sca-pink-accent);
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+}
+
+.sca-results-hero .sca-counter .sca-counter-number {
+    font-family: var(--sca-font-serif);
+}
+
+.sca-results-hero .sca-counter-suffix {
+    font-size: 0.4em;
+    font-weight: 400;
+    color: var(--sca-text);
+    letter-spacing: 0.05em;
+}
+
+/* Sub-stats grid */
 .sca-results-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 24px;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 40px 20px;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 16px;
+    max-width: 700px;
+    margin: 0 auto 32px;
+    padding: 0 20px;
 }
 
 .sca-result-card {
     text-align: center;
-    padding: 32px 16px;
-    background: var(--sca-white);
-    border-radius: var(--sca-radius);
-    box-shadow: var(--sca-shadow-soft);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.sca-result-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--sca-shadow-medium);
-}
-
-.sca-result-card__number {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 48px;
-    font-weight: 700;
-    color: var(--sca-primary-dark);
-    line-height: 1.1;
-}
-
-.sca-result-card__unit {
-    font-size: 18px;
-    color: var(--sca-text);
-    margin-left: 4px;
+    padding: 16px 8px;
 }
 
 .sca-result-card__label {
-    font-size: 14px;
-    color: #666;
-    margin-top: 8px;
-    letter-spacing: 0.05em;
+    font-size: 13px;
+    color: var(--sca-text-light);
+    letter-spacing: 0.03em;
+    margin-bottom: 4px;
 }
 
-/* カウントアップアニメーション */
-.sca-counter {
-    display: inline-block;
-}
-
-.sca-counter-number {
-    font-family: 'Cormorant Garamond', serif;
+.sca-result-card__number {
+    font-family: var(--sca-font-serif);
     font-weight: 700;
+    color: var(--sca-text);
+    letter-spacing: 0.02em;
+}
+
+.sca-result-card__number .sca-counter {
+    font-size: clamp(28px, 4vw, 36px);
+}
+
+/* Circular badges (39期生, 6年) */
+.sca-results-badges {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin: 24px 0;
+}
+
+.sca-results-badge {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: var(--sca-pink-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+}
+
+.sca-results-badge__number {
+    font-family: var(--sca-font-serif);
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--sca-pink-accent);
+    line-height: 1;
+}
+
+.sca-results-badge__label {
+    font-size: 10px;
+    color: var(--sca-text-light);
+    margin-top: 2px;
+}
+
+/* Results photo grid */
+.sca-results-photos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    max-width: 600px;
+    margin: 24px auto;
+    padding: 0 20px;
+}
+
+.sca-results-photos img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border-radius: var(--sca-radius-sm);
 }
 
 /* =============================================
-   7. 講座紹介カードデザイン
+   7. Course Cards (講座紹介)
    ============================================= */
+.sca-courses-section {
+    padding: var(--sca-section-padding);
+}
+
 .sca-course-card {
     background: var(--sca-white);
-    border-radius: var(--sca-radius-lg);
+    border-radius: var(--sca-radius);
     overflow: hidden;
     box-shadow: var(--sca-shadow-soft);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: 100%;
+    transition: transform var(--sca-transition), box-shadow var(--sca-transition);
+    margin-bottom: 24px;
 }
 
 .sca-course-card:hover {
-    transform: translateY(-6px);
-    box-shadow: var(--sca-shadow-medium);
+    transform: translateY(-4px);
+    box-shadow: var(--sca-shadow-hover);
 }
 
 .sca-course-card__img {
     width: 100%;
-    height: 200px;
+    aspect-ratio: 16/9;
     object-fit: cover;
 }
 
@@ -412,636 +516,667 @@
 .sca-course-card__title {
     font-size: 18px;
     font-weight: 700;
-    margin-bottom: 12px;
     color: var(--sca-text);
+    margin-bottom: 8px;
+    letter-spacing: 0.05em;
 }
 
 .sca-course-card__desc {
     font-size: 14px;
     line-height: 1.8;
-    color: #666;
+    color: var(--sca-text-light);
 }
 
-.sca-course-card__link {
+/* Course type label */
+.sca-course-card__tag {
     display: inline-block;
-    margin-top: 16px;
-    padding: 8px 24px;
-    background: var(--sca-primary);
-    color: var(--sca-white);
-    border-radius: 30px;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 600;
-    text-decoration: none;
-    transition: background 0.3s ease, transform 0.2s ease;
-}
-
-.sca-course-card__link:hover {
-    background: var(--sca-primary-dark);
-    color: var(--sca-white);
-    transform: scale(1.05);
+    color: var(--sca-pink-accent);
+    border: 1px solid var(--sca-pink-accent);
+    border-radius: var(--sca-radius-round);
+    padding: 2px 12px;
+    margin-bottom: 12px;
 }
 
 /* =============================================
-   8. 雲デザインセクションデバイダー
+   8. Cloud Section Dividers
    ============================================= */
 .sca-cloud-divider {
-    position: relative;
     width: 100%;
-    overflow: hidden;
     line-height: 0;
-    margin: 0;
-    padding: 0;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
 }
 
 .sca-cloud-divider svg {
-    display: block;
     width: 100%;
     height: 80px;
+    display: block;
 }
 
 .sca-cloud-divider--top {
-    margin-bottom: -1px;
+    margin-bottom: -2px;
 }
 
 .sca-cloud-divider--bottom {
-    margin-top: -1px;
+    margin-top: -2px;
     transform: scaleY(-1);
 }
 
-@media (max-width: 768px) {
-    .sca-cloud-divider svg {
-        height: 50px;
-    }
-}
-
-/* 天空グラデーション背景 (講座プランセクション用) */
-.sca-sky-section {
-    background: var(--sca-gradient-sky);
-    position: relative;
-    padding: 80px 0;
-}
-
 /* =============================================
-   9. お知らせセクション
+   9. News/Notice Section (お知らせ)
    ============================================= */
+.sca-news-section {
+    padding: var(--sca-section-padding);
+    background: var(--sca-white);
+}
+
 .sca-news-list {
-    max-width: 800px;
-    margin: 0 auto;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-width: var(--sca-container);
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .sca-news-item {
     display: flex;
     align-items: flex-start;
-    gap: 20px;
-    padding: 20px 0;
-    border-bottom: 1px solid #eee;
-    transition: background 0.2s ease;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--sca-gray-border);
 }
 
-.sca-news-item:hover {
-    background: var(--sca-bg-cream);
-    padding-left: 12px;
-    margin-left: -12px;
-    border-radius: 8px;
+.sca-news-item:last-child {
+    border-bottom: none;
 }
 
 .sca-news-date {
-    flex-shrink: 0;
     font-size: 13px;
-    color: #999;
-    font-family: 'Cormorant Garamond', serif;
+    color: var(--sca-text-muted);
     letter-spacing: 0.05em;
-    padding-top: 2px;
+    white-space: nowrap;
+    min-width: 100px;
 }
 
-.sca-news-text {
-    font-size: 15px;
-    line-height: 1.7;
+.sca-news-title {
+    font-size: 14px;
     color: var(--sca-text);
+    line-height: 1.7;
 }
 
-.sca-news-text a {
+.sca-news-title a {
     color: var(--sca-text);
     text-decoration: none;
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.2s ease;
+    transition: color var(--sca-transition);
 }
 
-.sca-news-text a:hover {
-    border-bottom-color: var(--sca-primary);
+.sca-news-title a:hover {
+    color: var(--sca-pink-accent);
+}
+
+/* SWELL post list overrides */
+.p-postList__item .p-postList__title {
+    font-size: 15px;
+    color: var(--sca-text);
+    letter-spacing: 0.03em;
 }
 
 /* =============================================
-   10. 内定者の声セクション
+   10. Voice Cards (内定者の声)
    ============================================= */
+.sca-voice-section {
+    padding: var(--sca-section-padding);
+    background: var(--sca-pink-light);
+}
+
 .sca-voice-card {
     background: var(--sca-white);
-    border-radius: var(--sca-radius-lg);
-    padding: 32px;
+    border-radius: var(--sca-radius);
+    padding: 32px 24px;
     box-shadow: var(--sca-shadow-soft);
     position: relative;
     margin-bottom: 24px;
 }
 
 .sca-voice-card::before {
-    content: '"';
+    content: '\201C';
     position: absolute;
     top: 12px;
-    left: 20px;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 64px;
-    color: var(--sca-primary);
-    opacity: 0.3;
+    left: 16px;
+    font-family: var(--sca-font-serif);
+    font-size: 48px;
+    color: var(--sca-pink-mid);
     line-height: 1;
+    opacity: 0.6;
+}
+
+.sca-voice-card__airline {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--sca-pink-accent);
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
 }
 
 .sca-voice-card__text {
     font-size: 14px;
     line-height: 1.9;
-    color: #555;
-    position: relative;
-    z-index: 1;
+    color: var(--sca-text);
+    margin-bottom: 16px;
 }
 
 .sca-voice-card__name {
     font-size: 13px;
-    color: #999;
-    margin-top: 16px;
+    color: var(--sca-text-light);
     text-align: right;
 }
 
 /* =============================================
-   11. CTA（お問い合わせ）ボタン
+   11. CTA Buttons (General)
    ============================================= */
-.sca-cta-button {
+.sca-cta-button,
+a.sca-cta-button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
-    padding: 16px 48px;
-    background: var(--sca-gradient-pink-btn);
+    background: var(--sca-pink-button);
     color: var(--sca-white);
-    font-size: 16px;
-    font-weight: 700;
-    border-radius: 50px;
-    text-decoration: none;
-    box-shadow: 0 4px 15px rgba(232, 127, 160, 0.3);
-    transition: all 0.3s ease;
+    font-size: 15px;
+    font-weight: 600;
     letter-spacing: 0.08em;
+    padding: 14px 40px;
+    border-radius: var(--sca-radius-round);
+    text-decoration: none;
+    transition: all var(--sca-transition);
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(232, 127, 160, 0.3);
 }
 
-.sca-cta-button:hover {
+.sca-cta-button:hover,
+a.sca-cta-button:hover {
+    background: var(--sca-pink-dark);
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(232, 127, 160, 0.4);
+    box-shadow: 0 4px 16px rgba(232, 127, 160, 0.4);
     color: var(--sca-white);
 }
 
 .sca-cta-button::after {
-    content: '\2708';
-    font-size: 18px;
-    transition: transform 0.3s ease;
+    content: '\2192';
+    font-size: 16px;
 }
 
-.sca-cta-button:hover::after {
-    transform: translateX(4px);
+/* SWELL button overrides */
+.swell-block-button .swell-block-button__link {
+    border-radius: var(--sca-radius-round) !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.05em !important;
 }
 
 /* =============================================
-   11b. 固定フッターCTAバー（3ボタン）
+   11b. Footer CTA Bar (PC 3-Button + SP Fixed)
    ============================================= */
-/* PC版: フッター上3ボタンCTA */
+
+/* PC Footer 3-button CTA */
 .sca-footer-cta {
     display: flex;
     justify-content: center;
-    gap: 0;
-    max-width: 100%;
+    gap: 16px;
+    padding: 32px 20px;
+    background: var(--sca-white);
 }
 
 .sca-footer-cta__btn {
-    flex: 1;
-    text-align: center;
-    padding: 18px 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 160px;
+    padding: 14px 32px;
     font-size: 14px;
-    font-weight: 700;
-    text-decoration: none;
+    font-weight: 600;
     letter-spacing: 0.08em;
-    transition: all 0.3s ease;
+    border-radius: var(--sca-radius-sm);
+    text-decoration: none;
+    transition: all var(--sca-transition);
+    border: 2px solid var(--sca-pink-button);
+    background: var(--sca-pink-button);
     color: var(--sca-white);
 }
 
 .sca-footer-cta__btn:hover {
+    background: var(--sca-pink-dark);
+    border-color: var(--sca-pink-dark);
     color: var(--sca-white);
-    opacity: 0.9;
+    transform: translateY(-2px);
 }
 
-.sca-footer-cta__btn--1 {
-    background: var(--sca-accent);
-}
-
-.sca-footer-cta__btn--2 {
-    background: var(--sca-primary-dark);
-}
-
-.sca-footer-cta__btn--3 {
-    background: var(--sca-primary);
-}
-
-/* SP版: 固定ボトムバー 3ボタン */
+/* SP Fixed Bottom CTA */
 .sca-fixed-cta {
-    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    z-index: 9999;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
 }
 
-@media (max-width: 768px) {
-    .sca-fixed-cta {
-        display: flex;
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        z-index: 999;
-        box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
-        gap: 0;
-    }
+.sca-fixed-cta__btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 8px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    text-align: center;
+    transition: var(--sca-transition);
+}
 
-    .sca-fixed-cta__btn {
-        flex: 1;
-        text-align: center;
-        padding: 14px 8px;
-        font-size: 12px;
-        font-weight: 700;
-        text-decoration: none;
-        letter-spacing: 0.05em;
-        color: var(--sca-white);
-    }
+.sca-fixed-cta__btn--1 {
+    background: var(--sca-pink-button);
+    color: var(--sca-white);
+}
 
-    .sca-fixed-cta__btn:hover {
-        color: var(--sca-white);
-    }
+.sca-fixed-cta__btn--2 {
+    background: var(--sca-pink-accent);
+    color: var(--sca-white);
+}
 
-    .sca-fixed-cta__btn--1 {
-        background: var(--sca-accent);
-    }
+.sca-fixed-cta__btn--3 {
+    background: var(--sca-pink-dark);
+    color: var(--sca-white);
+}
 
-    .sca-fixed-cta__btn--2 {
-        background: var(--sca-primary-dark);
-    }
-
-    .sca-fixed-cta__btn--3 {
-        background: var(--sca-primary);
-    }
-
-    /* 固定CTAバー分のbody下余白 */
-    body {
-        padding-bottom: 56px;
-    }
+.sca-fixed-cta__btn:active {
+    opacity: 0.85;
 }
 
 /* =============================================
-   12. スクロールフェードインアニメーション
+   12. Scroll Fade-in Animations
    ============================================= */
-.sca-fade-in {
+.sca-fade-in,
+.sca-fade-in-left,
+.sca-fade-in-right {
     opacity: 0;
-    transform: translateY(30px);
     transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-.sca-fade-in.is-visible {
-    opacity: 1;
-    transform: translateY(0);
+.sca-fade-in {
+    transform: translateY(30px);
 }
 
 .sca-fade-in-left {
-    opacity: 0;
     transform: translateX(-30px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.sca-fade-in-left.is-visible {
-    opacity: 1;
-    transform: translateX(0);
 }
 
 .sca-fade-in-right {
-    opacity: 0;
     transform: translateX(30px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
+.sca-fade-in.is-visible,
+.sca-fade-in-left.is-visible,
 .sca-fade-in-right.is-visible {
     opacity: 1;
-    transform: translateX(0);
+    transform: translate(0, 0);
 }
 
-/* 遅延クラス */
+/* Delay variants */
 .sca-delay-1 { transition-delay: 0.1s; }
 .sca-delay-2 { transition-delay: 0.2s; }
 .sca-delay-3 { transition-delay: 0.3s; }
 .sca-delay-4 { transition-delay: 0.4s; }
 
 /* =============================================
-   13. SWELLテーマ上書き（全体的なビジュアル向上）
+   13. SWELL Theme Overrides & Footer Cloud Area
    ============================================= */
 
-/* ヘッダー */
+/* ----- Header Overrides ----- */
 .l-header {
-    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.04);
+    background: var(--sca-white) !important;
+    box-shadow: none;
+    border-bottom: 1px solid var(--sca-gray-border);
+    transition: box-shadow var(--sca-transition);
 }
 
-.l-header__inner {
-    max-width: 1200px;
+.l-header.is-scrolled {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
 }
 
-/* グローバルナビ */
-.c-gnav > li > a {
+/* Header logo */
+.c-headLogo__link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.c-headLogo__link img {
+    border-radius: 50%;
+}
+
+/* Navigation links */
+.l-header .c-gnav > li > a,
+.c-gnav .c-gnav__link {
+    color: var(--sca-text) !important;
     font-size: 14px;
-    letter-spacing: 0.08em;
-    font-weight: 600;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    transition: color var(--sca-transition);
 }
 
-/* フッター - ワイヤーフレーム準拠: 雲ピンク + プロフィール */
-.l-footer {
-    background: transparent !important;
-    padding-top: 0 !important;
+.l-header .c-gnav > li > a:hover,
+.c-gnav .c-gnav__link:hover {
+    color: var(--sca-pink-accent) !important;
 }
 
-/* フッターピンク雲エリア */
+/* ----- Footer Cloud Area ----- */
 .sca-footer-cloud-area {
     position: relative;
-    background: linear-gradient(180deg, transparent 0%, var(--sca-cloud-pink-3) 15%, var(--sca-cloud-pink-2) 50%, var(--sca-cloud-pink-1) 100%);
-    padding-top: 80px;
-    margin-top: -40px;
+    overflow: hidden;
+    padding: 80px 20px 40px;
+    text-align: center;
+    /* Pink gradient cloud background */
+    background: linear-gradient(180deg,
+        transparent 0%,
+        var(--sca-pink-bg) 20%,
+        var(--sca-pink-mid) 60%,
+        var(--sca-pink-deep) 100%
+    );
 }
 
+/* Cloud wave SVG at top */
 .sca-footer-cloud-area::before {
     content: '';
     position: absolute;
-    top: -60px;
+    top: -2px;
     left: 0;
-    width: 100%;
-    height: 100px;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath fill='%23fde8ee' d='M0,60 C200,80 400,90 600,75 C800,60 900,40 1100,55 C1200,62 1350,70 1440,65 L1440,100 L0,100 Z'/%3E%3Cpath fill='%23fdd4dc' opacity='0.6' d='M0,75 C150,85 350,95 550,80 C750,65 850,50 1050,65 C1250,80 1350,75 1440,70 L1440,100 L0,100 Z'/%3E%3Cpath fill='%23f7c5d5' opacity='0.4' d='M0,85 C300,95 500,90 700,80 C900,70 1100,60 1300,75 C1400,80 1440,78 1440,78 L1440,100 L0,100 Z'/%3E%3C/svg%3E") no-repeat bottom;
+    right: 0;
+    height: 80px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120' preserveAspectRatio='none'%3E%3Cpath fill='%23FFFFFF' d='M0,64 C120,90 240,100 360,85 C480,70 540,45 660,50 C780,55 840,80 960,75 C1080,70 1200,50 1320,60 C1380,65 1410,70 1440,72 L1440,0 L0,0 Z'/%3E%3Cpath fill='%23FFFFFF' opacity='0.5' d='M0,80 C160,95 320,105 480,90 C640,75 720,55 880,65 C1040,75 1120,90 1280,82 C1360,78 1400,75 1440,80 L1440,0 L0,0 Z'/%3E%3C/svg%3E");
     background-size: 100% 100%;
+    background-repeat: no-repeat;
     z-index: 1;
 }
 
-/* フッタープロフィール */
-.sca-footer-profile {
-    text-align: center;
-    padding: 40px 20px 32px;
-    max-width: 400px;
-    margin: 0 auto;
+/* Footer inner 2-column layout (logo + nav) */
+.sca-footer-inner {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 48px;
+    max-width: 600px;
+    margin: 0 auto 24px;
+    padding: 0 20px;
+}
+
+.sca-footer-logo-col {
+    flex-shrink: 0;
 }
 
 .sca-footer-profile__img {
-    width: 120px;
-    height: 120px;
+    width: 140px;
+    height: 140px;
     border-radius: 50%;
     object-fit: cover;
-    border: 4px solid var(--sca-white);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    margin-bottom: 16px;
+    border: none;
 }
 
-.sca-footer-profile__name {
-    font-size: 15px;
-    font-weight: 700;
-    color: var(--sca-text);
-    margin-bottom: 4px;
+.sca-footer-nav-col {
+    flex: 1;
+    padding-top: 8px;
 }
 
-.sca-footer-profile__title {
-    font-size: 12px;
-    color: var(--sca-text-light);
-    margin-bottom: 16px;
-}
-
-.sca-footer-profile__links {
+.sca-footer-nav {
     display: flex;
-    gap: 8px;
-    justify-content: center;
-    margin-bottom: 16px;
+    flex-direction: column;
+    gap: 0;
 }
 
-.sca-footer-profile__links dt {
-    font-size: 12px;
-    color: var(--sca-text-light);
-    width: 100%;
-    margin-bottom: 4px;
-}
-
-.sca-footer-profile__links dd {
+.sca-footer-nav a {
+    display: block;
+    padding: 8px 0;
     font-size: 13px;
-    margin: 0;
-}
-
-.sca-footer-profile__links a {
-    color: var(--sca-accent);
+    color: var(--sca-text);
     text-decoration: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    letter-spacing: 0.03em;
+    transition: color var(--sca-transition);
 }
 
-.sca-footer-profile__links a:hover {
-    text-decoration: underline;
+.sca-footer-nav a:last-child {
+    border-bottom: none;
 }
 
-/* フッターSNSアイコン */
+.sca-footer-nav a:hover {
+    color: var(--sca-pink-dark);
+}
+
+/* Footer copyright */
+.sca-footer-copyright {
+    text-align: center;
+    font-size: 11px;
+    color: var(--sca-text-muted);
+    padding: 16px 20px;
+    background: var(--sca-white);
+    letter-spacing: 0.05em;
+}
+
+/* Footer SNS icons */
 .sca-footer-sns {
     display: flex;
-    gap: 16px;
     justify-content: center;
-    padding: 16px 0;
+    gap: 16px;
+    margin-top: 16px;
 }
 
 .sca-footer-sns a {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: var(--sca-accent);
-    color: var(--sca-white);
+    width: 36px;
+    height: 36px;
+    color: var(--sca-text);
     text-decoration: none;
-    font-size: 18px;
-    transition: transform 0.3s ease, background 0.3s ease;
+    transition: color var(--sca-transition), transform var(--sca-transition);
 }
 
 .sca-footer-sns a:hover {
+    color: var(--sca-pink-dark);
     transform: translateY(-2px);
-    background: var(--sca-primary-dark);
 }
 
-.sca-footer-sns a img,
 .sca-footer-sns a svg {
     width: 20px;
     height: 20px;
 }
 
-/* SWELLボタンのスタイル改善 */
-.swell-block-button .swell-block-button__link {
-    border-radius: 50px;
-    letter-spacing: 0.08em;
-    font-weight: 600;
-    transition: all 0.3s ease;
+/* SWELL footer overrides */
+.l-footer {
+    background: var(--sca-white) !important;
+    border-top: none !important;
 }
 
-.swell-block-button .swell-block-button__link:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+.l-footer .c-widget__title {
+    color: var(--sca-text);
 }
 
-/* SWELLの吹き出しブロック改善 */
-.c-balloon__body {
-    border-radius: 16px !important;
-}
-
-/* フルワイドセクションの改善 */
-.swell-block-fullWide {
-    position: relative;
-}
-
-/* =============================================
-   14. 投稿ページ・固定ページテンプレート
-   ============================================= */
-
-/* 投稿ページヘッダー */
-.post-type-post .l-mainContent__inner > .post_head {
-    background: var(--sca-gradient-pink);
-    padding: 48px 32px;
-    border-radius: 0 0 var(--sca-radius-lg) var(--sca-radius-lg);
-    margin-bottom: 40px;
-}
-
-/* 投稿ページタイトル */
-.post-type-post .c-postTitle {
-    font-size: 26px;
-    font-weight: 700;
-    line-height: 1.6;
+/* Footer nav links */
+.l-footer .p-footer__nav a {
+    color: var(--sca-text);
+    font-size: 13px;
     letter-spacing: 0.03em;
 }
 
-/* 投稿コンテンツの見出し */
-.post_content h2 {
-    border-left: 4px solid var(--sca-primary);
-    padding-left: 16px;
-    margin: 48px 0 24px;
+.l-footer .p-footer__nav a:hover {
+    color: var(--sca-pink-accent);
+}
+
+/* Footer copyright */
+.l-footer .p-footer__copyright {
+    font-size: 11px;
+    color: var(--sca-text-muted);
+    letter-spacing: 0.05em;
+}
+
+/* =============================================
+   14. Post/Page Templates (Blog & Fixed Pages)
+   ============================================= */
+
+/* Post heading styles */
+.post_content h2,
+.entry-content h2 {
     font-size: 22px;
+    font-weight: 700;
+    color: var(--sca-text);
+    padding: 12px 0 12px 16px;
+    margin: 48px 0 24px;
+    border-left: 4px solid var(--sca-pink-button);
+    border-bottom: none;
     letter-spacing: 0.05em;
+    line-height: 1.5;
 }
 
-.post_content h3 {
-    font-size: 19px;
-    margin: 36px 0 16px;
+.post_content h3,
+.entry-content h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--sca-text);
     padding-bottom: 8px;
-    border-bottom: 2px solid var(--sca-bg-pink);
-}
-
-/* 関連記事カード */
-.p-relatedPosts .p-postList__item {
-    border-radius: var(--sca-radius);
-    overflow: hidden;
-    box-shadow: var(--sca-shadow-soft);
-    transition: transform 0.3s ease;
-}
-
-.p-relatedPosts .p-postList__item:hover {
-    transform: translateY(-4px);
-}
-
-/* パンくずリスト */
-.c-breadcrumb {
-    font-size: 12px;
+    margin: 36px 0 16px;
+    border-bottom: 2px solid var(--sca-pink-bg);
     letter-spacing: 0.05em;
+    line-height: 1.5;
 }
 
-/* 固定ページの装飾 */
-.page .post_content {
+.post_content h4,
+.entry-content h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--sca-text);
+    margin: 28px 0 12px;
+    letter-spacing: 0.03em;
+}
+
+/* Post body text */
+.post_content p,
+.entry-content p {
     font-size: 15px;
     line-height: 2;
+    color: var(--sca-text);
+    margin-bottom: 24px;
     letter-spacing: 0.03em;
 }
 
-/* =============================================
-   15. お問い合わせページ（ワイヤーフレーム準拠）
-   ============================================= */
-
-/* お問合せヒーロー */
-.sca-contact-hero {
-    background: var(--sca-bg-pink);
-    text-align: center;
-    padding: 60px 20px 40px;
-    position: relative;
-    overflow: hidden;
+/* Post images */
+.post_content img,
+.entry-content img {
+    border-radius: var(--sca-radius-sm);
 }
 
-.sca-contact-hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('') center / cover no-repeat;
-    opacity: 0.15;
+/* =============================================
+   15. Contact Page (お問合せ)
+   ============================================= */
+
+/* Contact hero */
+.sca-contact-hero {
+    background: var(--sca-pink-bg);
+    text-align: center;
+    padding: 80px 20px 60px;
+    position: relative;
 }
 
 .sca-contact-hero h1 {
+    font-family: var(--sca-font-serif);
     font-size: 28px;
     font-weight: 700;
     color: var(--sca-text);
-    position: relative;
-    z-index: 1;
     letter-spacing: 0.1em;
 }
 
-/* CONTACT セクションラベル + 見出し */
+/* CONTACT section heading */
 .sca-contact-heading {
     text-align: center;
-    margin: 48px 0 32px;
+    padding: 60px 20px 24px;
 }
 
 .sca-contact-heading__en {
-    display: block;
-    font-family: 'Cormorant Garamond', serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-family: var(--sca-font-serif);
     font-size: 14px;
-    font-weight: 600;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--sca-primary-dark);
-    margin-bottom: 4px;
+    font-style: italic;
+    color: var(--sca-pink-accent);
+    letter-spacing: 0.15em;
+    margin-bottom: 12px;
 }
 
 .sca-contact-heading__en::after {
-    content: '';
-    display: block;
-    width: 24px;
-    height: 1px;
-    background: var(--sca-primary-dark);
-    margin: 8px auto;
+    content: '✈';
+    font-style: normal;
+    font-size: 12px;
 }
 
 .sca-contact-heading__ja {
-    font-size: 20px;
+    display: block;
+    font-family: var(--sca-font-serif);
+    font-size: 24px;
     font-weight: 700;
     color: var(--sca-text);
     letter-spacing: 0.08em;
+    line-height: 1.6;
 }
 
-/* 講師プロフィールカード（お問合せ用） */
-.sca-contact-instructor {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+/* Decorative dotted line */
+.sca-contact-heading__ja::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 1px;
+    background: repeating-linear-gradient(90deg,
+        var(--sca-pink-mid) 0px,
+        var(--sca-pink-mid) 4px,
+        transparent 4px,
+        transparent 8px
+    );
+    margin: 16px auto 0;
+}
+
+/* Contact description */
+.sca-contact-desc {
+    text-align: center;
     max-width: 600px;
     margin: 0 auto 40px;
-    padding: 24px;
-    background: var(--sca-white);
-    border-radius: var(--sca-radius-lg);
-    box-shadow: var(--sca-shadow-soft);
+    padding: 0 20px;
+    font-size: 14px;
+    line-height: 2;
+    color: var(--sca-text);
+    letter-spacing: 0.03em;
+}
+
+/* Instructor card on contact page */
+.sca-contact-instructor {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    max-width: 550px;
+    margin: 0 auto 48px;
+    padding: 0 20px;
 }
 
 .sca-contact-instructor__img {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     object-fit: cover;
     flex-shrink: 0;
@@ -1056,37 +1191,42 @@
     font-weight: 700;
     color: var(--sca-text);
     margin-bottom: 4px;
+    letter-spacing: 0.05em;
 }
 
 .sca-contact-instructor__title {
     font-size: 12px;
     color: var(--sca-text-light);
     margin-bottom: 8px;
+    letter-spacing: 0.03em;
 }
 
 .sca-contact-instructor__meta {
-    font-size: 12px;
-    color: var(--sca-text-light);
+    font-size: 13px;
     line-height: 1.8;
+    color: var(--sca-text);
 }
 
 .sca-contact-instructor__meta a {
-    color: var(--sca-accent);
+    color: var(--sca-pink-accent);
     text-decoration: none;
 }
 
-@media (max-width: 599px) {
-    .sca-contact-instructor {
-        flex-direction: column;
-        text-align: center;
-        gap: 12px;
-        padding: 20px;
-    }
+.sca-contact-instructor__meta a:hover {
+    text-decoration: underline;
 }
 
-/* お問合せフォーム */
+.sca-contact-instructor__meta small {
+    font-size: 12px;
+    color: var(--sca-text-light);
+    display: block;
+    margin-top: 4px;
+    line-height: 1.7;
+}
+
+/* Contact form */
 .sca-contact-section {
-    max-width: 700px;
+    max-width: 550px;
     margin: 0 auto;
     padding: 0 20px 60px;
 }
@@ -1097,411 +1237,521 @@
 
 .sca-contact-form-group label {
     display: block;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 600;
-    letter-spacing: 0.05em;
     color: var(--sca-text);
     margin-bottom: 8px;
+    letter-spacing: 0.03em;
 }
 
 .sca-contact-form-group label .required {
-    color: var(--sca-accent);
-    font-size: 11px;
+    font-size: 12px;
+    color: var(--sca-pink-accent);
+    font-weight: 400;
     margin-left: 4px;
 }
 
+/* Form inputs */
 .sca-contact-section input[type="text"],
 .sca-contact-section input[type="email"],
 .sca-contact-section input[type="tel"],
 .sca-contact-section textarea,
-.sca-contact-section select {
+.wpcf7 input[type="text"],
+.wpcf7 input[type="email"],
+.wpcf7 input[type="tel"],
+.wpcf7 textarea {
     width: 100%;
-    padding: 14px 16px;
-    border: 1px solid var(--sca-accent-light);
-    border-radius: var(--sca-radius-sm);
-    font-size: 15px;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    background: var(--sca-white);
+    padding: 12px 16px;
+    font-size: 14px;
     color: var(--sca-text);
-}
-
-.sca-contact-section input::placeholder,
-.sca-contact-section textarea::placeholder {
-    color: #ccc;
-    font-size: 13px;
+    background: var(--sca-white);
+    border: 1px solid var(--sca-gray-border);
+    border-radius: var(--sca-radius-sm);
+    outline: none;
+    transition: border-color var(--sca-transition);
+    font-family: inherit;
+    letter-spacing: 0.03em;
 }
 
 .sca-contact-section input:focus,
 .sca-contact-section textarea:focus,
-.sca-contact-section select:focus {
-    border-color: var(--sca-accent);
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(232, 127, 160, 0.15);
+.wpcf7 input:focus,
+.wpcf7 textarea:focus {
+    border-color: var(--sca-pink-accent);
 }
 
-.sca-contact-section textarea {
-    min-height: 160px;
+.sca-contact-section textarea,
+.wpcf7 textarea {
+    min-height: 150px;
     resize: vertical;
 }
 
-/* 送信ボタン */
-.sca-contact-submit,
-.sca-contact-section .wpcf7-submit {
+/* Submit button */
+.sca-contact-section input[type="submit"],
+.wpcf7 input[type="submit"],
+.wpcf7-submit {
     display: block;
-    width: 100%;
-    max-width: 320px;
+    width: 240px;
     margin: 32px auto 0;
-    padding: 16px 40px;
-    background: var(--sca-gradient-pink-btn);
+    padding: 14px 40px;
+    background: var(--sca-pink-button);
     color: var(--sca-white);
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
     border: none;
-    border-radius: 50px;
-    font-size: 16px;
-    font-weight: 700;
+    border-radius: var(--sca-radius-round);
     cursor: pointer;
-    letter-spacing: 0.1em;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(232, 127, 160, 0.3);
+    transition: all var(--sca-transition);
+    box-shadow: 0 2px 8px rgba(232, 127, 160, 0.3);
 }
 
-.sca-contact-submit:hover,
-.sca-contact-section .wpcf7-submit:hover {
+.sca-contact-section input[type="submit"]:hover,
+.wpcf7 input[type="submit"]:hover,
+.wpcf7-submit:hover {
+    background: var(--sca-pink-dark);
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(232, 127, 160, 0.4);
+    box-shadow: 0 4px 16px rgba(232, 127, 160, 0.4);
 }
 
-/* お問合せ注記テキスト */
+/* Contact note */
 .sca-contact-note {
-    max-width: 700px;
-    margin: 32px auto;
-    padding: 24px;
+    max-width: 550px;
+    margin: 0 auto;
+    padding: 0 20px 60px;
     font-size: 13px;
-    line-height: 1.9;
+    line-height: 2;
     color: var(--sca-text-light);
-    background: var(--sca-bg-pink);
-    border-radius: var(--sca-radius);
+    text-align: center;
 }
 
 .sca-contact-note a {
-    color: var(--sca-accent);
+    color: var(--sca-pink-accent);
     text-decoration: underline;
-    text-underline-offset: 3px;
 }
 
 /* =============================================
-   16. メディア掲載セクション
+   16. Media Section (メディア掲載)
    ============================================= */
-.sca-media-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    justify-content: center;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.sca-media-item {
+.sca-media-section {
+    padding: var(--sca-section-padding);
     background: var(--sca-white);
-    padding: 16px 24px;
-    border-radius: var(--sca-radius);
-    box-shadow: var(--sca-shadow-soft);
-    font-size: 14px;
-    line-height: 1.6;
+}
+
+.sca-media-logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 32px;
+    max-width: var(--sca-container);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.sca-media-logos img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+    filter: grayscale(40%);
+    opacity: 0.8;
+    transition: all var(--sca-transition);
+}
+
+.sca-media-logos img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
 }
 
 /* =============================================
-   17. Google Fonts読み込み補助
+   17. Google Fonts Helpers
    ============================================= */
-/* Cormorant Garamond はfunctions.phpで読み込み、またはGoogleFontsプラグイン利用 */
-/* Noto Serif JPも同様 */
+.sca-font-serif {
+    font-family: var(--sca-font-serif);
+}
+
+.sca-font-en {
+    font-family: var(--sca-font-serif);
+    font-style: italic;
+    letter-spacing: 0.1em;
+}
 
 /* =============================================
-   18. レスポンシブ調整
+   18. Responsive Design
    ============================================= */
+
+/* Tablet */
 @media (max-width: 959px) {
-    .sca-section-heading {
-        font-size: 24px;
+    :root {
+        --sca-section-padding: 56px 0;
     }
 
-    .sca-results-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
-        padding: 24px 16px;
-    }
-
-    .sca-result-card {
-        padding: 24px 12px;
-    }
-
-    .sca-result-card__number {
-        font-size: 36px;
-    }
-
-    .sca-voice-card {
-        padding: 24px 20px;
-    }
-}
-
-@media (max-width: 599px) {
-    .sca-ticker-label {
-        font-size: 12px;
+    .sca-announcement-bar {
         padding: 10px 16px;
-    }
-
-    .sca-ticker-item {
-        font-size: 12px;
-        padding: 10px 20px;
-    }
-
-    .sca-section-heading {
-        font-size: 20px;
-    }
-
-    .sca-results-grid {
-        grid-template-columns: repeat(2, 1fr);
+        font-size: 13px;
         gap: 12px;
     }
 
-    .sca-result-card__number {
-        font-size: 32px;
+    .sca-results-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .sca-cta-button {
-        padding: 14px 32px;
+    .sca-footer-cta {
+        gap: 12px;
+        padding: 24px 16px;
+    }
+
+    .sca-footer-cta__btn {
+        min-width: 130px;
+        padding: 12px 20px;
+        font-size: 13px;
+    }
+
+    .sca-contact-hero h1 {
+        font-size: 24px;
+    }
+
+    .sca-footer-inner {
+        gap: 32px;
+    }
+
+    .sca-footer-profile__img {
+        width: 110px;
+        height: 110px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 599px) {
+    :root {
+        --sca-section-padding: 40px 0;
+    }
+
+    /* Announcement bar */
+    .sca-announcement-bar {
+        padding: 10px 12px;
+        font-size: 11px;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    .sca-announcement-cta {
+        padding: 4px 16px;
+        font-size: 11px;
+    }
+
+    /* Header */
+    .l-header .c-headerBtns .c-headerBtns__btn {
+        font-size: 11px;
+        padding: 6px 12px;
+        min-width: auto;
+    }
+
+    /* Ticker */
+    .sca-ticker-wrap {
+        height: 36px;
+    }
+
+    .sca-ticker-item {
+        font-size: 11px;
+        padding: 0 6px;
+    }
+
+    /* Section headings */
+    .sca-section-heading {
+        margin-bottom: 28px;
+    }
+
+    .sca-section-heading__ja {
+        font-size: 22px;
+    }
+
+    /* Results */
+    .sca-results-hero .sca-counter {
+        font-size: 56px;
+    }
+
+    .sca-results-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .sca-result-card__number .sca-counter {
+        font-size: 24px;
+    }
+
+    .sca-results-badges {
+        gap: 16px;
+    }
+
+    .sca-results-badge {
+        width: 64px;
+        height: 64px;
+    }
+
+    .sca-results-badge__number {
+        font-size: 20px;
+    }
+
+    /* Voice cards */
+    .sca-voice-card {
+        padding: 24px 20px;
+    }
+
+    /* CTA buttons */
+    .sca-cta-button,
+    a.sca-cta-button {
+        padding: 12px 32px;
         font-size: 14px;
     }
 
-    .sca-contact-section .wpcf7-form {
-        padding: 32px 20px;
+    /* Footer CTA (hidden on SP - fixed CTA replaces it) */
+    .sca-footer-cta {
+        display: none;
     }
 
-    .sca-course-card__body {
-        padding: 16px;
+    /* Footer layout stacks on mobile */
+    .sca-footer-inner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 24px;
+    }
+
+    .sca-footer-profile__img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .sca-footer-nav a {
+        text-align: center;
+    }
+
+    /* Contact page */
+    .sca-contact-hero {
+        padding: 48px 16px 36px;
+    }
+
+    .sca-contact-hero h1 {
+        font-size: 22px;
+    }
+
+    .sca-contact-instructor {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .sca-contact-instructor__img {
+        width: 80px;
+        height: 80px;
+    }
+
+    /* Post headings */
+    .post_content h2,
+    .entry-content h2 {
+        font-size: 18px;
+        margin: 36px 0 16px;
+    }
+
+    .post_content h3,
+    .entry-content h3 {
+        font-size: 16px;
+        margin: 28px 0 12px;
     }
 }
 
 /* =============================================
-   19. プリントスタイル
+   19. Print Styles
    ============================================= */
 @media print {
+    .sca-announcement-bar,
     .sca-ticker-wrap,
-    .sca-fixed-cta {
+    .sca-fixed-cta,
+    .sca-footer-cta {
         display: none !important;
     }
 
-    .sca-parallax-section::before {
+    .sca-footer-cloud-area {
+        background: none !important;
+        padding: 20px 0;
+    }
+
+    .sca-footer-cloud-area::before {
         display: none;
     }
 }
 
 /* =============================================
-   20. UTAGE予約ボタン
+   20. UTAGE Booking Button
    ============================================= */
-.sca-utage-btn {
+.sca-utage-btn,
+a.sca-utage-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
-    padding: 14px 36px;
-    background: var(--sca-gold);
+    background: linear-gradient(135deg, var(--sca-gold) 0%, var(--sca-gold-light) 100%);
     color: var(--sca-white);
     font-size: 15px;
     font-weight: 700;
-    border-radius: 50px;
-    text-decoration: none;
-    transition: all 0.3s ease;
     letter-spacing: 0.08em;
+    padding: 16px 48px;
+    border-radius: var(--sca-radius-round);
+    text-decoration: none;
+    transition: all var(--sca-transition);
+    box-shadow: 0 2px 8px rgba(201, 169, 110, 0.3);
+    border: none;
 }
 
-.sca-utage-btn:hover {
-    background: #b89558;
-    color: var(--sca-white);
+.sca-utage-btn:hover,
+a.sca-utage-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(201, 169, 110, 0.4);
-}
-
-.sca-utage-btn::before {
-    content: '📅';
-    font-size: 16px;
+    box-shadow: 0 4px 16px rgba(201, 169, 110, 0.4);
+    color: var(--sca-white);
 }
 
 /* =============================================
-   21. ブログ一覧ページ（ワイヤーフレーム準拠）
+   21. Blog List Page (ブログ一覧/お役立ちコラム)
    ============================================= */
 
-/* ブログヒーロー */
+/* Blog hero */
 .sca-blog-hero {
-    background: var(--sca-bg-pink);
+    background: var(--sca-pink-bg);
     text-align: center;
-    padding: 56px 20px 40px;
+    padding: 80px 20px 60px;
     position: relative;
-    overflow: hidden;
-}
-
-.sca-blog-hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('') center / cover no-repeat;
-    opacity: 0.12;
 }
 
 .sca-blog-hero h1 {
+    font-family: var(--sca-font-serif);
     font-size: 28px;
     font-weight: 700;
     color: var(--sca-text);
-    position: relative;
-    z-index: 1;
     letter-spacing: 0.1em;
 }
 
-/* カテゴリタグ（ピンク角丸バッジ） */
-.sca-cat-tag {
+/* Category tags */
+.sca-cat-tag,
+.c-postTag__link {
     display: inline-block;
-    padding: 4px 14px;
-    background: var(--sca-primary-pale);
-    color: var(--sca-accent);
     font-size: 11px;
-    font-weight: 700;
-    border-radius: 20px;
-    letter-spacing: 0.05em;
+    font-weight: 600;
+    color: var(--sca-pink-accent);
+    background: var(--sca-pink-light);
+    border-radius: var(--sca-radius-sm);
+    padding: 2px 10px;
     text-decoration: none;
-    transition: background 0.2s ease;
+    letter-spacing: 0.03em;
+    transition: var(--sca-transition);
 }
 
-.sca-cat-tag:hover {
-    background: var(--sca-accent);
-    color: var(--sca-white);
+.sca-cat-tag:hover,
+.c-postTag__link:hover {
+    background: var(--sca-pink-bg);
+    color: var(--sca-pink-dark);
 }
 
-/* SWELLカテゴリタグの上書き */
-.c-postMeta .cat-label,
-.p-postList__cat {
-    background: var(--sca-primary-pale) !important;
-    color: var(--sca-accent) !important;
-    border-radius: 20px !important;
-    font-size: 11px !important;
-    font-weight: 700 !important;
-    padding: 3px 12px !important;
-}
-
-/* ブログ記事カード */
-.p-postList.-type-list .p-postList__item,
-.p-postList.-type-card .p-postList__item {
-    border-radius: var(--sca-radius);
+/* Blog cards */
+.p-postList__item {
+    border-radius: var(--sca-radius) !important;
     overflow: hidden;
-    box-shadow: var(--sca-shadow-soft);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background: var(--sca-white);
+    transition: transform var(--sca-transition), box-shadow var(--sca-transition);
 }
 
-.p-postList.-type-list .p-postList__item:hover,
-.p-postList.-type-card .p-postList__item:hover {
+.p-postList__item:hover {
     transform: translateY(-3px);
-    box-shadow: var(--sca-shadow-medium);
+    box-shadow: var(--sca-shadow-hover);
 }
 
-/* 記事サムネイル角丸 */
+/* Blog card thumbnail */
 .p-postList__thumb {
-    border-radius: var(--sca-radius) var(--sca-radius) 0 0;
-    overflow: hidden;
+    border-radius: var(--sca-radius) var(--sca-radius) 0 0 !important;
 }
 
-/* 記事タイトルスタイル */
-.p-postList__title {
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 1.6;
-    color: var(--sca-text);
-    letter-spacing: 0.02em;
+/* Blog card body */
+.p-postList__body {
+    padding: 16px 20px !important;
 }
 
-/* 記事抜粋テキスト */
-.p-postList__excerpt {
-    font-size: 13px;
+/* Blog card meta */
+.p-postList__meta {
+    font-size: 12px;
+    color: var(--sca-text-muted);
+}
+
+/* Author info on blog cards */
+.p-postList__author {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
     color: var(--sca-text-light);
-    line-height: 1.7;
 }
 
-/* サイドバーカテゴリリスト */
-.widget_categories ul li a,
-.wp-block-categories-list li a {
-    display: block;
-    padding: 8px 12px;
-    font-size: 13px;
-    color: var(--sca-text);
-    text-decoration: none;
-    border-bottom: 1px solid #f0f0f0;
-    transition: background 0.2s ease, padding-left 0.2s ease;
+.p-postList__author img {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
 }
 
-.widget_categories ul li a:hover,
-.wp-block-categories-list li a:hover {
-    background: var(--sca-bg-pink);
-    padding-left: 16px;
+/* Sidebar */
+.l-sidebar {
+    font-size: 14px;
 }
 
-/* サイドバー新着記事 */
-.p-postList.-type-thumb .p-postList__item {
-    padding: 8px 0;
-    border-bottom: 1px solid #f0f0f0;
-}
-
-.p-postList.-type-thumb .p-postList__title {
-    font-size: 13px;
-    line-height: 1.5;
-}
-
-/* サイドバーウィジェットタイトル */
-.widget_title,
-.wp-block-heading.is-style-section_ttl {
-    font-size: 16px;
+.l-sidebar .c-widget__title {
+    font-size: 15px;
     font-weight: 700;
     color: var(--sca-text);
     padding-bottom: 8px;
+    border-bottom: 2px solid var(--sca-pink-bg);
     margin-bottom: 16px;
-    border-bottom: 2px solid var(--sca-primary);
     letter-spacing: 0.05em;
+}
+
+/* Sidebar category list */
+.l-sidebar .wp-block-categories-list li,
+.l-sidebar .c-widget li {
+    border-bottom: 1px solid var(--sca-gray-border);
+    padding: 8px 0;
+}
+
+.l-sidebar .wp-block-categories-list li a,
+.l-sidebar .c-widget li a {
+    color: var(--sca-text);
+    text-decoration: none;
+    font-size: 13px;
+    transition: color var(--sca-transition);
+}
+
+.l-sidebar .wp-block-categories-list li a:hover,
+.l-sidebar .c-widget li a:hover {
+    color: var(--sca-pink-accent);
 }
 
 /* =============================================
-   22. ブログ詳細ページ（ワイヤーフレーム準拠）
+   22. Blog Detail Page (ブログ詳細)
    ============================================= */
 
-/* 投稿ヘッダーメタ */
-.sca-post-meta {
+/* Author box */
+.sca-author-box,
+.p-authorBox {
     display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 13px;
-    color: var(--sca-text-light);
-    margin-bottom: 16px;
-}
-
-.sca-post-meta__date {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 14px;
-    letter-spacing: 0.05em;
-}
-
-/* 著者プロフィールボックス */
-.sca-author-box {
-    display: flex;
-    gap: 20px;
     align-items: flex-start;
-    padding: 32px;
-    background: var(--sca-bg-pink);
-    border-radius: var(--sca-radius-lg);
-    margin: 48px 0;
+    gap: 16px;
+    padding: 24px;
+    background: var(--sca-pink-light) !important;
+    border-radius: var(--sca-radius-lg) !important;
+    border: none !important;
+    margin: 40px 0;
 }
 
-.sca-author-box__img {
+.sca-author-box__img,
+.p-authorBox__img img {
     width: 72px;
     height: 72px;
-    border-radius: 50%;
+    border-radius: 50% !important;
     object-fit: cover;
     flex-shrink: 0;
 }
@@ -1526,7 +1776,7 @@
 .sca-author-box__bio {
     font-size: 13px;
     line-height: 1.8;
-    color: #666;
+    color: var(--sca-text-light);
 }
 
 .sca-author-box__sns {
@@ -1542,48 +1792,24 @@
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    background: var(--sca-accent);
+    background: var(--sca-pink-accent);
     color: var(--sca-white);
     font-size: 14px;
     text-decoration: none;
-    transition: background 0.3s ease;
+    transition: background var(--sca-transition);
 }
 
 .sca-author-box__sns a:hover {
-    background: var(--sca-primary-dark);
+    background: var(--sca-pink-dark);
 }
 
-/* SWELLの著者ボックス上書き */
-.p-authorBox {
-    background: var(--sca-bg-pink) !important;
-    border-radius: var(--sca-radius-lg) !important;
-    border: none !important;
-}
-
-.p-authorBox__img img {
-    border-radius: 50% !important;
-}
-
-@media (max-width: 599px) {
-    .sca-author-box {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 24px 20px;
-    }
-
-    .sca-author-box__sns {
-        justify-content: center;
-    }
-}
-
-/* SNSシェアボタン */
+/* SNS share buttons */
 .sca-share-buttons {
     display: flex;
     gap: 12px;
     justify-content: center;
     padding: 24px 0;
-    border-top: 1px solid #eee;
+    border-top: 1px solid var(--sca-gray-border);
     margin-top: 40px;
 }
 
@@ -1594,46 +1820,64 @@
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    background: #f0f0f0;
+    background: var(--sca-gray-light);
     color: var(--sca-text);
     font-size: 18px;
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: all var(--sca-transition);
 }
 
 .sca-share-buttons a:hover {
-    background: var(--sca-accent);
+    background: var(--sca-pink-accent);
     color: var(--sca-white);
     transform: translateY(-2px);
 }
 
-/* SWELLのシェアボタン上書き */
+/* SWELL share button overrides */
 .c-shareBtns__btn {
     border-radius: 50% !important;
     width: 44px !important;
     height: 44px !important;
 }
 
-/* =============================================
-   23. 固定ページテンプレ（ワイヤーフレームSPテンプレ準拠）
-   ============================================= */
+@media (max-width: 599px) {
+    .sca-author-box,
+    .p-authorBox {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 24px 20px;
+    }
 
-/* 固定ページヒーロー汎用 */
+    .sca-author-box__sns {
+        justify-content: center;
+    }
+
+    .sca-share-buttons a {
+        width: 38px;
+        height: 38px;
+        font-size: 16px;
+    }
+}
+
+/* =============================================
+   23. Fixed Page Template (固定ページテンプレ)
+   ============================================= */
 .sca-page-hero {
-    background: var(--sca-bg-pink);
+    background: var(--sca-pink-bg);
     text-align: center;
-    padding: 56px 20px 40px;
+    padding: 80px 20px 60px;
     position: relative;
 }
 
 .sca-page-hero h1 {
+    font-family: var(--sca-font-serif);
     font-size: 28px;
     font-weight: 700;
     color: var(--sca-text);
     letter-spacing: 0.1em;
 }
 
-/* 固定ページ本文エリア */
 .sca-page-content {
     max-width: 800px;
     margin: 0 auto;
@@ -1649,7 +1893,7 @@
     font-weight: 700;
     margin: 48px 0 20px;
     padding-left: 16px;
-    border-left: 4px solid var(--sca-primary);
+    border-left: 4px solid var(--sca-pink-button);
     letter-spacing: 0.05em;
 }
 
@@ -1658,7 +1902,7 @@
     font-weight: 700;
     margin: 36px 0 16px;
     padding-bottom: 8px;
-    border-bottom: 2px solid var(--sca-bg-pink-deep);
+    border-bottom: 2px solid var(--sca-pink-bg);
 }
 
 .sca-page-content img {
@@ -1666,74 +1910,11 @@
     box-shadow: var(--sca-shadow-soft);
 }
 
-/* =============================================
-   24. SNSアイコングリッド（TOP用）
-   ============================================= */
-.sca-sns-grid {
-    display: flex;
-    gap: 16px;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 24px 0;
-}
-
-.sca-sns-grid a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 56px;
-    height: 56px;
-    border-radius: var(--sca-radius);
-    background: var(--sca-accent);
-    color: var(--sca-white);
-    font-size: 24px;
-    text-decoration: none;
-    transition: transform 0.3s ease, background 0.3s ease;
-    box-shadow: var(--sca-shadow-soft);
-}
-
-.sca-sns-grid a:hover {
-    transform: translateY(-3px);
-    background: var(--sca-primary-dark);
-}
-
-.sca-sns-grid a img,
-.sca-sns-grid a svg {
-    width: 28px;
-    height: 28px;
-}
-
-@media (max-width: 599px) {
-    .sca-sns-grid a {
-        width: 48px;
-        height: 48px;
-        font-size: 20px;
-    }
-
-    .sca-sns-grid a img,
-    .sca-sns-grid a svg {
-        width: 24px;
-        height: 24px;
-    }
-}
-
-/* =============================================
-   25. 追加レスポンシブ（ワイヤーフレーム準拠）
-   ============================================= */
 @media (max-width: 959px) {
     .sca-blog-hero h1,
     .sca-contact-hero h1,
     .sca-page-hero h1 {
         font-size: 24px;
-    }
-
-    .sca-footer-profile {
-        padding: 32px 16px 24px;
-    }
-
-    .sca-footer-profile__img {
-        width: 100px;
-        height: 100px;
     }
 }
 
@@ -1747,30 +1928,225 @@
     .sca-blog-hero,
     .sca-contact-hero,
     .sca-page-hero {
-        padding: 40px 16px 32px;
+        padding: 48px 16px 36px;
+    }
+}
+
+/* =============================================
+   24. SNS Icon Grid (TOP Page)
+   ============================================= */
+.sca-sns-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 24px 0;
+}
+
+.sca-sns-grid a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: var(--sca-text);
+    color: var(--sca-white);
+    font-size: 22px;
+    text-decoration: none;
+    transition: transform var(--sca-transition), background var(--sca-transition);
+}
+
+.sca-sns-grid a:hover {
+    transform: translateY(-3px);
+    background: var(--sca-pink-accent);
+}
+
+.sca-sns-grid a img,
+.sca-sns-grid a svg {
+    width: 24px;
+    height: 24px;
+}
+
+@media (max-width: 599px) {
+    .sca-sns-grid a {
+        width: 44px;
+        height: 44px;
+        font-size: 18px;
     }
 
-    .sca-footer-profile__img {
-        width: 80px;
-        height: 80px;
+    .sca-sns-grid a img,
+    .sca-sns-grid a svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* =============================================
+   25. Additional Responsive & Utility
+   ============================================= */
+
+/* Ensure body doesn't scroll behind fixed CTA on SP */
+@media (max-width: 768px) {
+    body {
+        padding-bottom: 60px;
+    }
+}
+
+/* Welcome section */
+.sca-welcome-section {
+    padding: var(--sca-section-padding);
+    text-align: center;
+    background: var(--sca-white);
+}
+
+.sca-welcome-section__text {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 20px;
+    font-size: 14px;
+    line-height: 2.2;
+    color: var(--sca-text);
+    letter-spacing: 0.05em;
+}
+
+/* Profile section on TOP */
+.sca-profile-section {
+    padding: var(--sca-section-padding);
+    text-align: center;
+    background: var(--sca-pink-light);
+}
+
+.sca-profile-section__img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 16px;
+    border: 3px solid var(--sca-pink-mid);
+}
+
+.sca-profile-section__name {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--sca-text);
+    margin-bottom: 4px;
+}
+
+.sca-profile-section__title {
+    font-size: 13px;
+    color: var(--sca-text-light);
+    margin-bottom: 16px;
+}
+
+.sca-profile-section__bio {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 14px;
+    line-height: 2;
+    color: var(--sca-text);
+}
+
+/* Instagram embed section */
+.sca-instagram-section {
+    padding: var(--sca-section-padding);
+    background: var(--sca-white);
+}
+
+.sca-instagram-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 8px;
+    max-width: var(--sca-container);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.sca-instagram-grid img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: var(--sca-radius-sm);
+    transition: opacity var(--sca-transition);
+}
+
+.sca-instagram-grid img:hover {
+    opacity: 0.85;
+}
+
+/* One-time lesson section (単発対策) */
+.sca-onetime-section {
+    padding: var(--sca-section-padding);
+    background: var(--sca-pink-light);
+}
+
+/* Enrollment stats section (受講実績) */
+.sca-enrollment-stats {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+    padding: 24px 20px;
+}
+
+.sca-enrollment-stat {
+    text-align: center;
+}
+
+.sca-enrollment-stat__number {
+    font-family: var(--sca-font-serif);
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--sca-pink-accent);
+    line-height: 1.2;
+}
+
+.sca-enrollment-stat__label {
+    font-size: 12px;
+    color: var(--sca-text-light);
+    margin-top: 4px;
+}
+
+/* Pink silhouette figures styling */
+.sca-figures-row {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    padding: 24px 0;
+}
+
+.sca-figures-row img,
+.sca-figures-row svg {
+    height: 80px;
+    width: auto;
+    opacity: 0.6;
+}
+
+/* General SWELL block overrides */
+.swell-block-fullWide {
+    margin-bottom: 0 !important;
+}
+
+.swell-block-fullWide + .swell-block-fullWide {
+    margin-top: 0 !important;
+}
+
+/* Ensure anchor links account for fixed header */
+[id] {
+    scroll-margin-top: 100px;
+}
+
+/* Accessibility: reduce motion */
+@media (prefers-reduced-motion: reduce) {
+    .sca-fade-in,
+    .sca-fade-in-left,
+    .sca-fade-in-right {
+        opacity: 1;
+        transform: none;
+        transition: none;
     }
 
-    .sca-footer-profile__name {
-        font-size: 14px;
-    }
-
-    .sca-footer-cta__btn {
-        font-size: 12px;
-        padding: 14px 8px;
-    }
-
-    .sca-author-box {
-        padding: 20px 16px;
-    }
-
-    .sca-share-buttons a {
-        width: 38px;
-        height: 38px;
-        font-size: 16px;
+    .sca-ticker-content {
+        animation: none;
     }
 }
