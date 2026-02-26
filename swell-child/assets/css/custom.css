@@ -278,35 +278,59 @@ body {
     position: relative;
 }
 
-/* Hero text styling */
-.p-mainVisual .p-mainVisual__text {
-    font-family: var(--sca-font-serif);
-    color: var(--sca-text);
-    text-shadow: none;
+/* Remove the pink filter overlay to show blue sky + airplane */
+.p-mainVisual .c-filterLayer::before {
+    background-color: transparent !important;
+    opacity: 0 !important;
 }
 
+/* Ensure image covers the hero area properly */
+.p-mainVisual .p-mainVisual__img img,
+.p-mainVisual .c-filterLayer__img img {
+    object-fit: cover;
+    object-position: center top;
+    width: 100%;
+    height: 100%;
+}
+
+/* Hero text styling - white text over sky/airplane image (Figma spec) */
+.p-mainVisual .p-mainVisual__text {
+    font-family: 'Yu Mincho', 'Noto Serif JP', var(--sca-font-serif);
+    color: #ffffff;
+    text-shadow: 0px 0px 6px rgba(86, 117, 150, 1.00);
+}
+
+/* Main title: Figma - 48px normal, 60px key phrases, white, Yu Mincho 600 */
 .p-mainVisual .p-mainVisual__text h2,
 .p-mainVisual .p-mainVisual__text .p-mainVisual__title {
-    font-size: clamp(28px, 4vw, 48px);
-    font-weight: 400;
-    line-height: 1.6;
-    letter-spacing: 0.08em;
-    color: var(--sca-text);
+    font-size: clamp(28px, 3.3vw, 48px);
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: 0.1em;
+    color: #ffffff;
+    text-shadow: 0px 0px 6px rgba(86, 117, 150, 1.00);
 }
 
+/* Key phrases (諦めない心, 夢, 現実) - Figma: 60px, 600 weight */
 .p-mainVisual .p-mainVisual__text h2 strong,
 .p-mainVisual .p-mainVisual__text .p-mainVisual__title strong {
-    font-weight: 700;
-    font-size: 1.1em;
+    font-weight: 600;
+    font-size: clamp(36px, 4.2vw, 60px);
+    letter-spacing: 0.1em;
+    line-height: 1.5;
 }
 
+/* Subtitle/description - Figma: #343434, 20px, Yu Mincho 600 */
 .p-mainVisual .p-mainVisual__desc,
 .p-mainVisual .p-mainVisual__text p {
-    font-size: clamp(14px, 1.6vw, 16px);
-    line-height: 2;
-    color: var(--sca-text);
-    letter-spacing: 0.05em;
+    font-size: clamp(14px, 1.4vw, 20px);
+    line-height: 1.5;
+    color: #343434;
+    font-weight: 600;
+    letter-spacing: 0.1em;
     margin-top: 16px;
+    text-shadow: none;
+    font-family: 'Yu Mincho', 'Noto Serif JP', var(--sca-font-serif);
 }
 
 /* =============================================
