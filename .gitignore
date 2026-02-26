@@ -1,0 +1,22 @@
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor/IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary Office files
+~$*
+
+# Claude Code
+.claude/
+
+# WordPress uploads (if any)
+uploads/
+
+# Node modules (if any)
+node_modules/
