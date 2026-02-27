@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新卒コース | サクセスキャリアエアライン</title>
+    <meta name="description" content="サクセスキャリアエアラインの新卒コース。CA・GSを目指す学生のための個別サポートプログラム。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* Template page specific styles */
+        .sca-support-section {
+            padding: 80px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .sca-support-label {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 8px;
+            color: #999;
+            margin-bottom: 16px;
+        }
+        .sca-support-headline {
+            font-family: var(--sca-font-mincho);
+            font-size: 32px;
+            font-weight: 600;
+            color: var(--sca-pink-accent);
+            line-height: 150%;
+            letter-spacing: 6.4px;
+            max-width: 712px;
+            margin: 0 auto 24px;
+        }
+        .sca-support-bullets {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .sca-support-bullets p {
+            font-size: 16px;
+            line-height: 2;
+            color: var(--sca-text);
+        }
+        .sca-support-bullets strong {
+            color: var(--sca-red-accent);
+        }
+
+        /* Story section */
+        .sca-story-section {
+            padding: 60px 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .sca-story-title {
+            font-family: var(--sca-font-mincho);
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--sca-text);
+            margin-bottom: 30px;
+            text-align: center;
+            line-height: 1.6;
+        }
+        .sca-story-text {
+            font-size: 15px;
+            line-height: 2.2;
+            color: #555;
+        }
+        .sca-story-text p {
+            margin-bottom: 20px;
+        }
+        .sca-story-text .highlight {
+            color: var(--sca-red-accent);
+            font-weight: 700;
+        }
+        .sca-story-text .emphasis {
+            font-weight: 700;
+            color: var(--sca-text);
+        }
+
+        /* Policy section */
+        .sca-policy-section {
+            padding: 60px 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .sca-policy-title {
+            font-family: var(--sca-font-mincho);
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--sca-text);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .sca-policy-list {
+            font-size: 15px;
+            line-height: 2.2;
+            color: #555;
+            list-style: none;
+            padding: 0;
+        }
+        .sca-policy-list li {
+            padding: 8px 0 8px 24px;
+            position: relative;
+        }
+        .sca-policy-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--sca-pink-accent);
+            font-weight: 700;
+        }
+
+        /* Choice section */
+        .sca-choice-section {
+            padding: 60px 40px;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .sca-choice-title {
+            font-family: var(--sca-font-mincho);
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--sca-text);
+            margin-bottom: 40px;
+        }
+        .sca-choice-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+        .sca-choice-card {
+            background: var(--sca-white);
+            border: 2px solid var(--sca-pink-primary);
+            border-radius: var(--sca-radius-lg);
+            padding: 40px 24px;
+            text-align: center;
+            transition: var(--sca-transition);
+            cursor: pointer;
+        }
+        .sca-choice-card:hover {
+            box-shadow: var(--sca-shadow-hover);
+            transform: translateY(-2px);
+        }
+        .sca-choice-card h3 {
+            font-family: var(--sca-font-mincho);
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--sca-text);
+            line-height: 1.6;
+        }
+
+        /* CTA banner */
+        .sca-cta-banner {
+            background: var(--sca-pink-accent);
+            padding: 50px 40px;
+            text-align: center;
+        }
+        .sca-cta-banner-text {
+            font-family: var(--sca-font-mincho);
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--sca-white);
+            margin-bottom: 24px;
+            letter-spacing: 2px;
+        }
+        .sca-cta-banner-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 16px 50px;
+            background: var(--sca-white);
+            color: var(--sca-pink-accent);
+            border-radius: 40px;
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+        }
+        .sca-cta-banner-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+
+        /* Application form */
+        .sca-apply-section {
+            padding: 60px 40px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .sca-apply-section h2 {
+            font-family: var(--sca-font-mincho);
+            font-size: 24px;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 16px;
+        }
+        .sca-apply-note {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+        .sca-apply-form .form-group {
+            margin-bottom: 24px;
+        }
+        .sca-apply-form label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--sca-text);
+        }
+        .sca-apply-form label .required {
+            color: var(--sca-red-accent);
+            font-size: 12px;
+        }
+        .sca-apply-form input[type="text"],
+        .sca-apply-form input[type="email"],
+        .sca-apply-form input[type="tel"],
+        .sca-apply-form select,
+        .sca-apply-form textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid var(--sca-gray-border);
+            border-radius: var(--sca-radius);
+            font-size: 15px;
+            font-family: var(--sca-font-sans);
+            background: var(--sca-form-bg);
+            transition: border-color var(--sca-transition);
+        }
+        .sca-apply-form input:focus,
+        .sca-apply-form select:focus,
+        .sca-apply-form textarea:focus {
+            outline: none;
+            border-color: var(--sca-pink-accent);
+        }
+        .sca-apply-form .submit-btn {
+            display: block;
+            width: 100%;
+            max-width: 300px;
+            margin: 32px auto 0;
+            padding: 16px 40px;
+            background: var(--sca-pink-accent);
+            color: var(--sca-white);
+            border: none;
+            border-radius: 40px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: opacity var(--sca-transition);
+        }
+        .sca-apply-form .submit-btn:hover {
+            opacity: 0.8;
+        }
+        .sca-apply-after-note {
+            background: var(--sca-pink-light);
+            border-radius: var(--sca-radius-lg);
+            padding: 30px;
+            margin-top: 40px;
+            font-size: 13px;
+            line-height: 2;
+            color: #555;
+        }
+
+        /* Booking section */
+        .sca-booking-section {
+            padding: 60px 40px;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .sca-booking-section h2 {
+            font-family: var(--sca-font-mincho);
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .sca-booking-section .booking-desc {
+            font-size: 15px;
+            color: #555;
+            margin-bottom: 32px;
+        }
+        .sca-booking-placeholder {
+            background: var(--sca-gray-light);
+            border-radius: var(--sca-radius-lg);
+            padding: 60px 40px;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--sca-text-muted);
+            font-size: 14px;
+            border: 2px dashed var(--sca-gray-border);
+        }
+        .sca-booking-note {
+            margin-top: 24px;
+            font-size: 13px;
+            line-height: 1.8;
+            color: #555;
+            background: var(--sca-pink-light);
+            border-radius: var(--sca-radius);
+            padding: 20px;
+        }
+
+        /* 4-column image grid */
+        .sca-image-grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin: 32px 0;
+        }
+        .sca-image-grid-4 .grid-item {
+            background: var(--sca-gray-light);
+            border-radius: var(--sca-radius-sm);
+            min-height: 224px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--sca-text-muted);
+            font-size: 13px;
+        }
+
+        /* Hashtag tags */
+        .sca-hashtag-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            margin: 24px 0;
+        }
+        .sca-hashtag-tag {
+            font-size: 14px;
+            color: var(--sca-pink-accent);
+            font-weight: 500;
+        }
+
+        /* Responsive */
+        @media (max-width: 767px) {
+            .sca-support-headline {
+                font-size: 22px;
+                letter-spacing: 3px;
+            }
+            .sca-story-section {
+                padding: 40px 20px;
+            }
+            .sca-story-title {
+                font-size: 18px;
+            }
+            .sca-choice-cards {
+                grid-template-columns: 1fr;
+            }
+            .sca-image-grid-4 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .sca-apply-section {
+                padding: 40px 20px;
+            }
+            .sca-booking-section {
+                padding: 40px 20px;
+            }
+            .sca-cta-banner-text {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Announcement Bar -->
+<div class="sca-announcement-bar">
+    <span>今すぐ相談！エアライン受験お悩み相談</span>
+    <a href="contact.html" class="sca-announcement-cta">お申し込みはコチラ</a>
+</div>
+
+<!-- Site Header -->
+<header class="site-header">
+    <div class="site-header__inner">
+        <a href="index.html" class="site-header__logo">
+            <img src="https://sca-airline.com/wp-content/uploads/2026/02/cropped-successcareerairline_logo-2.png" alt="サクセスキャリアエアライン" width="50" height="50">
+            <div class="site-header__logo-text">
+                <span class="site-header__logo-sub">CA・GS合格への最適ルートをあなたに</span>
+                <span class="site-header__logo-name">サクセスキャリアエアライン</span>
+            </div>
+        </a>
+        <button class="hamburger" aria-label="メニュー">
+            <span></span><span></span><span></span>
+        </button>
+        <nav class="site-nav">
+            <ul class="site-nav__links">
+                <li><a href="index.html">TOP</a></li>
+                <li><a href="index.html#profile">講師紹介</a></li>
+                <li><a href="template.html">講座一覧</a></li>
+                <li><a href="index.html#results">内定者実績</a></li>
+                <li><a href="blog.html">お役立ちコラム</a></li>
+            </ul>
+            <div class="site-nav__btns">
+                <a href="template.html" class="header-btn header-btn--outline">講座予約</a>
+                <a href="contact.html" class="header-btn header-btn--solid">お問合せ</a>
+            </div>
+        </nav>
+        <div class="nav-overlay"></div>
+    </div>
+</header>
+
+<!-- Ticker -->
+<div class="sca-ticker-wrap">
+    <div class="sca-ticker-track" style="--ticker-speed: 30s;">
+        <div class="sca-ticker-content">
+            <span class="sca-ticker-item">ANA中部：新卒内定１名内定</span>
+            <span class="sca-ticker-item">ANA中部：新卒内定１名内定</span>
+            <span class="sca-ticker-item">ANA中部：新卒内定１名内定</span>
+            <span class="sca-ticker-item">ANA中部：新卒内定１名内定</span>
+            <span class="sca-ticker-item">などなど・・・皆様おめでとうございます！</span>
+            <span class="sca-ticker-item">ANA中部：新卒内定１名内定</span>
+            <span class="sca-ticker-item">ANA中部：新卒内定１名内定</span>
+            <span class="sca-ticker-item">ANA中部：新卒内定１名内定</span>
+            <span class="sca-ticker-item">ANA中部：新卒内定１名内定</span>
+            <span class="sca-ticker-item">などなど・・・皆様おめでとうございます！</span>
+        </div>
+    </div>
+</div>
+
+<!-- Achievement Text Banner -->
+<div data-layer="｜ANA中部：新卒内定１名内定｜｜ANA中部：新卒内定１名内定｜｜ANA中部：新卒内定１名内定｜｜ANA中部：新卒内定１名内定｜｜などなど・・・皆様おめでとうございます！" class="AnaAnaAnaAna" style="width: 100%; max-width: 1440px; margin: 0 auto; text-align: center; color: #343434; font-size: 16px; font-family: Noto Sans JP; font-weight: 500; line-height: 24px; word-wrap: break-word">｜ANA中部：新卒内定１名内定｜｜ANA中部：新卒内定１名内定｜｜ANA中部：新卒内定１名内定｜｜ANA中部：新卒内定１名内定｜｜などなど・・・皆様おめでとうございます！</div>
+
+<!-- Hero Section (Blue Sky) -->
+<section class="hero" style="min-height: 40vh;">
+    <img src="https://sca-airline.com/wp-content/uploads/2026/02/airplane-sky-mv.jpg" alt="青空" class="hero__bg">
+    <div class="hero__content">
+        <h1 class="hero__title" style="font-size: clamp(24px, 3vw, 40px);">新卒コース</h1>
+    </div>
+    <div class="hero__wave">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" preserveAspectRatio="none">
+            <path fill="#FFFFFF" d="M0,64 C120,90 240,100 360,85 C480,70 540,45 660,50 C780,55 840,80 960,75 C1080,70 1200,50 1320,60 C1380,65 1410,70 1440,72 L1440,120 L0,120 Z"/>
+            <path fill="#FFFFFF" opacity="0.5" d="M0,80 C160,95 320,105 480,90 C640,75 720,55 880,65 C1040,75 1120,90 1280,82 C1360,78 1400,75 1440,80 L1440,120 L0,120 Z"/>
+        </svg>
+    </div>
+</section>
+
+<!-- SUPPORT Section -->
+<section class="sca-support-section sca-fade-in">
+    <p class="sca-support-label">SAMPLE</p>
+    <h2 class="sca-support-headline">完全オリジナルの対策方法で航空業界の内定を目指す！</h2>
+    <div class="sca-support-bullets">
+        <p>新卒コースでは必ず<strong>"CA＆GS内定"</strong>を目指します。</p>
+        <p>あなたの現状を常に把握しながら二人三脚で対策をします！</p>
+        <p>自己分析から最終面接までの完全個別のフルサポートで夢を掴み取りましょう。</p>
+    </div>
+    <div style="width: 80%; max-width: 600px; margin: 8px auto 0; border-bottom: 2px dashed var(--sca-pink-mid);"></div>
+</section>
+
+<!-- Cloud Divider into pink section -->
+<div class="sca-cloud-divider sca-cloud-divider--top">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path fill="#FFDFDF" d="M0,64 C120,90 240,100 360,85 C480,70 540,45 660,50 C780,55 840,80 960,75 C1080,70 1200,50 1320,60 C1380,65 1410,70 1440,72 L1440,120 L0,120 Z"/>
+        <path fill="#FFDFDF" opacity="0.5" d="M0,80 C160,95 320,105 480,90 C640,75 720,55 880,65 C1040,75 1120,90 1280,82 C1360,78 1400,75 1440,80 L1440,120 L0,120 Z"/>
+    </svg>
+</div>
+
+<!-- Story Section 1 -->
+<section style="background: var(--sca-pink-bg); padding: 60px 0;">
+    <div class="sca-story-section sca-fade-in">
+        <h3 class="sca-story-title">就活に正解はない。だけど正しい努力でこそ内定に繋がる。</h3>
+        <div class="sca-story-text">
+            <p>人生一度きりだからこそ、絶対に後悔しない人生にして欲しい。<br>
+            その上で、あなたには<span class="emphasis">あなたに合った対策法で新卒内定を掴んで欲しい。</span></p>
+
+            <p>私の就活はいざ始まると、スクールの先生の色に染まった就活でした。先生が言うことは正しくて、それを１から１００まで全て真似て自信をつけていました。</p>
+
+            <p>でも面接を受ける度に、手にする結果は<span class="highlight">不採用</span>。毎日のように不採用通知が届きました。</p>
+
+            <p>届けば届くほど、<span class="highlight">自己否定が重なっていく</span>。その精神状態でなんとか自分を鼓舞させて受験をするも、結果は不採用。</p>
+
+            <p>就活でもらった結果は全て敗退。</p>
+
+            <p>航空業界５０社以上からの不採用通知は「自分には価値がない」と言われているようなものでした。</p>
+
+            <p>何が正しくて、何が間違っているのかがわからず、生きることさえも苦しくなりました。</p>
+        </div>
+    </div>
+</section>
+
+<!-- Cloud Divider back to white -->
+<div class="sca-cloud-divider sca-cloud-divider--bottom">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path fill="#FFDFDF" d="M0,64 C120,90 240,100 360,85 C480,70 540,45 660,50 C780,55 840,80 960,75 C1080,70 1200,50 1320,60 C1380,65 1410,70 1440,72 L1440,120 L0,120 Z"/>
+    </svg>
+</div>
+
+<!-- Story Section 2 -->
+<section class="sca-story-section sca-fade-in">
+    <h3 class="sca-story-title">就活に正解はない。だけど正しい努力でこそ内定に繋がる。</h3>
+    <div class="sca-story-text">
+        <p>そんな私でも、既卒でCAとGSで３社内定をいただけたのは何故か？</p>
+
+        <p>新卒の時に気づかなかった間違いを見つけ出し、既卒でその「正しいと思っていた間違い」から方法を180度変えたからこそ、内定に繋げることができました。</p>
+
+        <p>就職活動は、一歩間違えたら自己否定の日々になりかねない。でも、自分をしっかりと見出せたなら<span class="emphasis">輝ける１社目に出会える価値ある時間</span>になる。</p>
+
+        <p>私は自分と同じ状況になる就活生を一人でも減らしたいと心から思っています。とくに努力家の方ほど悔しい涙を流していると感じるからこそ。</p>
+
+        <p>私は一人一人に寄り添った対策で内定を一緒に掴みたい。内定した後も「大変なこともあるけど仕事が楽しいです！」と言う言葉が一番聞きたい。</p>
+
+        <p><span class="emphasis">私は誰一人も見捨てず、内定を輩出し続けます。</span></p>
+    </div>
+
+    <!-- Placeholder image -->
+    <div style="background: var(--sca-gray-light); border-radius: var(--sca-radius); min-height: 300px; max-width: 713px; margin: 32px auto; display: flex; align-items: center; justify-content: center; color: var(--sca-text-muted);">講座イメージ画像</div>
+</section>
+
+<!-- Cloud Divider into pink section -->
+<div class="sca-cloud-divider sca-cloud-divider--top">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path fill="#FFDFDF" d="M0,64 C120,90 240,100 360,85 C480,70 540,45 660,50 C780,55 840,80 960,75 C1080,70 1200,50 1320,60 C1380,65 1410,70 1440,72 L1440,120 L0,120 Z"/>
+        <path fill="#FFDFDF" opacity="0.5" d="M0,80 C160,95 320,105 480,90 C640,75 720,55 880,65 C1040,75 1120,90 1280,82 C1360,78 1400,75 1440,80 L1440,120 L0,120 Z"/>
+    </svg>
+</div>
+
+<!-- Policy Section -->
+<section style="background: var(--sca-pink-bg); padding: 60px 0;">
+    <div class="sca-policy-section sca-fade-in">
+        <h3 class="sca-policy-title">新卒コースでは以下のポリシーを大切にしています！</h3>
+        <ul class="sca-policy-list">
+            <li>一人一人に合った対策を考案、常に生徒様のレベルに合わせて最適化します。</li>
+            <li>納得できるまで、腑に落ちるまで、体現できるまで、何度も向き合います。</li>
+            <li>マイナスな部分も人に言えない部分も、全て受け止めてプラスに変えます。</li>
+            <li>コースの進め方は常に相談し、先も見越してより良いタイミングを提示します。</li>
+            <li>生徒様の気持ちを尊重し、ときには叱咤激励で成長を促します。</li>
+            <li>授業を通してメンタルを強化することで就活にめげない心を養います。</li>
+        </ul>
+
+        <!-- 4-column image grid -->
+        <div class="sca-image-grid-4">
+            <div class="grid-item">画像1</div>
+            <div class="grid-item">画像2</div>
+            <div class="grid-item">画像3</div>
+            <div class="grid-item">画像4</div>
+        </div>
+    </div>
+</section>
+
+<!-- Cloud Divider back to white -->
+<div class="sca-cloud-divider sca-cloud-divider--bottom">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path fill="#FFDFDF" d="M0,64 C120,90 240,100 360,85 C480,70 540,45 660,50 C780,55 840,80 960,75 C1080,70 1200,50 1320,60 C1380,65 1410,70 1440,72 L1440,120 L0,120 Z"/>
+    </svg>
+</div>
+
+<!-- Additional Story Section -->
+<section class="sca-story-section sca-fade-in">
+    <h3 class="sca-story-title">就活に正解はない。だけど正しい努力でこそ内定に繋がる。</h3>
+    <div class="sca-story-text">
+        <p>航空業界においても近年、早期選考などが行われ始めていることから、27新では前例にない形で皆様をサポートしたいと考えております。</p>
+    </div>
+
+    <!-- 4-column image grid -->
+    <div class="sca-image-grid-4">
+        <div class="grid-item">画像5</div>
+        <div class="grid-item">画像6</div>
+        <div class="grid-item">画像7</div>
+        <div class="grid-item">画像8</div>
+    </div>
+</section>
+
+<!-- Cloud Divider -->
+<div class="sca-cloud-divider sca-cloud-divider--top">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path fill="#FFDFDF" d="M0,64 C120,90 240,100 360,85 C480,70 540,45 660,50 C780,55 840,80 960,75 C1080,70 1200,50 1320,60 C1380,65 1410,70 1440,72 L1440,120 L0,120 Z"/>
+        <path fill="#FFDFDF" opacity="0.5" d="M0,80 C160,95 320,105 480,90 C640,75 720,55 880,65 C1040,75 1120,90 1280,82 C1360,78 1400,75 1440,80 L1440,120 L0,120 Z"/>
+    </svg>
+</div>
+
+<!-- Choice Section: 今のあなたはどっち？ -->
+<section style="background: var(--sca-pink-bg); padding: 60px 0;">
+    <div class="sca-choice-section sca-fade-in">
+        <h2 class="sca-choice-title">今のあなたはどっち？</h2>
+        <div class="sca-choice-cards">
+            <a href="#apply-form" class="sca-choice-card">
+                <h3>エアライン受験に<br>悩んでいる方</h3>
+            </a>
+            <a href="#apply-form" class="sca-choice-card">
+                <h3>インターン早期選考に<br>向けた対策をしたい！</h3>
+            </a>
+        </div>
+
+        <div class="sca-hashtag-tags" style="margin-top: 32px;">
+            <span class="sca-hashtag-tag">#早く対策を進めたい</span>
+            <span class="sca-hashtag-tag">#受験予定の会社が多いかも</span>
+            <span class="sca-hashtag-tag">#面接対策の回数が多く欲しい</span>
+            <span class="sca-hashtag-tag">#基礎からしっかり学びたい</span>
+        </div>
+    </div>
+</section>
+
+<!-- Cloud Divider back to white -->
+<div class="sca-cloud-divider sca-cloud-divider--bottom">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path fill="#FFDFDF" d="M0,64 C120,90 240,100 360,85 C480,70 540,45 660,50 C780,55 840,80 960,75 C1080,70 1200,50 1320,60 C1380,65 1410,70 1440,72 L1440,120 L0,120 Z"/>
+    </svg>
+</div>
+
+<!-- CTA: まずは気軽に聞いてみませんか？ -->
+<section style="padding: 60px 40px; text-align: center;">
+    <div class="sca-fade-in">
+        <h2 style="font-family: var(--sca-font-mincho); font-size: 28px; font-weight: 600; color: var(--sca-text); margin-bottom: 32px;">まずは気軽に聞いてみませんか？</h2>
+        <a href="#apply-form" class="sca-cta-banner-btn" style="background: var(--sca-pink-accent); color: var(--sca-white);">無料コースガイダンスで相談してみる</a>
+    </div>
+</section>
+
+<!-- CTA Banner -->
+<section class="sca-cta-banner">
+    <p class="sca-cta-banner-text">お申込みはこちらから</p>
+    <a href="#apply-form" class="sca-cta-banner-btn">無料コースガイダンスで相談してみる</a>
+</section>
+
+<!-- Cloud Divider into form section -->
+<div class="sca-cloud-divider sca-cloud-divider--top">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path fill="#FFF5F7" d="M0,64 C120,90 240,100 360,85 C480,70 540,45 660,50 C780,55 840,80 960,75 C1080,70 1200,50 1320,60 C1380,65 1410,70 1440,72 L1440,120 L0,120 Z"/>
+    </svg>
+</div>
+
+<!-- Application Form Section -->
+<section id="apply-form" style="background: var(--sca-pink-light); padding: 60px 0;">
+    <div class="sca-apply-section sca-fade-in">
+        <h2>講座へのお申込み</h2>
+
+        <p class="sca-apply-note" style="font-weight: 600;">コース生以外の方へ</p>
+        <p class="sca-apply-note">複数回参加されたい方は全ての日程をご案内します。お支払いも回数分となりますが、複数回対策をご希望の場合は一番下にあるメッセージに『確実に参加したい日』をご記入ください。</p>
+        <p class="sca-apply-note">同日に開催が複数ある場合、コメント欄に参加希望の時間帯をお知らせください。</p>
+
+        <form class="sca-apply-form" action="https://sca-airline.com/contact/" method="get">
+            <div class="form-group">
+                <label>お名前とご年齢 <span class="required">*</span></label>
+                <input type="text" name="name" required>
+            </div>
+            <div class="form-group">
+                <label>メールアドレス <span class="required">*</span></label>
+                <input type="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label>電話番号 <span class="required">*</span></label>
+                <input type="tel" name="tel" required>
+            </div>
+            <div class="form-group">
+                <label>ご職業/在籍学校名 <span class="required">*</span></label>
+                <input type="text" name="school" required>
+            </div>
+            <div class="form-group">
+                <label>面接対策する会社（1社のみ） <span class="required">*</span></label>
+                <input type="text" name="company" required>
+            </div>
+            <div class="form-group">
+                <label>開催希望日から第一候補をお選びください <span class="required">*</span></label>
+                <select name="date" required>
+                    <option value="">選択してください</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>あなたとの関係性をお選びください <span class="required">*</span></label>
+                <select name="relationship" required>
+                    <option value="">選択してください</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>複数回参加ご希望の方はコチラにメッセージを入れてください。</label>
+                <textarea name="message" rows="6"></textarea>
+            </div>
+            <button type="submit" class="submit-btn">送信する</button>
+        </form>
+
+        <div class="sca-apply-after-note">
+            <p>もしも2日経っても返信がない場合はメールが正常に届いていない可能性がございます。</p>
+            <p>携帯のアドレスを書いてしまってはいませんか？<br>迷惑メールのフォルダにメールが届いていませんか？</p>
+            <p>上記をご確認の上、お手数おかけいたしますが以下の連絡先にご連絡頂ければ幸いです。</p>
+            <p>succes.airline@gmail.com<br>070-8499-4449</p>
+            <p>サクセスキャリアエアライン菊地未夏</p>
+        </div>
+    </div>
+</section>
+
+<!-- Cloud Divider -->
+<div class="sca-cloud-divider sca-cloud-divider--bottom">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path fill="#FFF5F7" d="M0,64 C120,90 240,100 360,85 C480,70 540,45 660,50 C780,55 840,80 960,75 C1080,70 1200,50 1320,60 C1380,65 1410,70 1440,72 L1440,120 L0,120 Z"/>
+    </svg>
+</div>
+
+<!-- Booking / Calendar Section -->
+<section class="sca-booking-section sca-fade-in">
+    <h2>サービス予約</h2>
+    <p class="booking-desc">予約可能日を確認し、お好きな時間帯をご予約ください。</p>
+
+    <div class="sca-booking-placeholder">
+        <!-- Booking calendar widget will be embedded here -->
+        予約カレンダーウィジェット埋め込みエリア<br>
+        （日時を選択してください）
+    </div>
+
+    <div class="sca-booking-note">
+        <p>ご希望の日時がない場合、場合によってはご案内できる日がございます。<br>
+        ご希望の日時が上記にない場合は、直接個別LINEにご連絡ください。</p>
+    </div>
+</section>
+
+<!-- Footer Cloud Area -->
+<div class="sca-footer-cloud-area">
+    <div class="sca-footer-inner">
+        <div class="sca-footer-logo-col">
+            <img src="https://sca-airline.com/wp-content/uploads/2026/02/cropped-successcareerairline_logo-2.png" alt="サクセスキャリアエアライン" class="sca-footer-profile__img" width="140" height="140" loading="lazy">
+        </div>
+        <div class="sca-footer-nav-col">
+            <nav class="sca-footer-nav" aria-label="フッターナビゲーション">
+                <a href="index.html">TOP</a>
+                <a href="index.html#results">CA＆GS内定者実績</a>
+                <a href="template.html">講座一覧</a>
+                <a href="blog.html">お役立ちコラム</a>
+                <a href="#">プライバシーポリシー</a>
+            </nav>
+        </div>
+    </div>
+    <div class="sca-footer-sns">
+        <a href="https://www.instagram.com/success_career_airline/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="https://line.me/" target="_blank" rel="noopener" aria-label="LINE">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@user-qo4vy8wd4y" target="_blank" rel="noopener" aria-label="YouTube">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+        <a href="https://note.com/success_airline" target="_blank" rel="noopener" aria-label="note">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 41.5 41.5" fill="currentColor"><path d="M0 3v35.5c0 1.7 1.3 3 3 3h35.5c1.7 0 3-1.3 3-3V3c0-1.7-1.3-3-3-3H3C1.3 0 0 1.3 0 3zm30.6 14.3c0 .2-.1.3-.2.4l-5.4 3.1c-.3.2-.5 0-.5-.3v-1.5c0-.2-.1-.5-.4-.3l-8.5 4.9c-.3.2-.7.3-1 .3h-.3c-1 0-1.8-.8-1.8-1.8v-9.5c0-.7.4-1.4 1-1.7l9-5.2c.3-.2.5-.1.5.2v1.6c0 .2.2.4.4.3l5.4-3.1c.3-.2.5 0 .5.3v.3l-6 3.4c-.3.2-.5.5-.5.8v8.5c0 .2.1.4.3.3l7.3-4.2c.1-.1.2 0 .2.1v3.1z"/></svg>
+        </a>
+    </div>
+</div>
+<div class="sca-footer-cta">
+    <a href="contact.html" class="sca-footer-cta__btn">お悩み相談</a>
+    <a href="template.html" class="sca-footer-cta__btn">講座予約</a>
+    <a href="contact.html" class="sca-footer-cta__btn">お問合せ</a>
+</div>
+<div class="sca-footer-copyright">&copy; サクセスキャリアエアライン</div>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
