@@ -1,0 +1,290 @@
+<!-- ===== COMMON FOOTER ===== -->
+<!-- Include this file on all pages via: -->
+<!-- <div id="common-footer"></div> -->
+<!-- <script src="/homepage/footer-loader.js"></script> -->
+
+<style>
+  /* ===== FOOTER STYLES ===== */
+  .footer {
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Cloud wave divider */
+  .footer-cloud-wave {
+    width: 100%;
+    height: 220px;
+    position: relative;
+    overflow: hidden;
+  }
+  .footer-cloud-wave svg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+  }
+
+  .footer-content {
+    background: #FFDFDF;
+    padding: 60px 40px 30px;
+  }
+
+  /* Two-column layout: logo left, nav right */
+  .footer-main {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+    align-items: flex-start;
+  }
+
+  /* Logo circle */
+  .footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+  }
+  .footer-logo-circle {
+    width: 200px;
+    height: 200px;
+    position: relative;
+  }
+  .footer-logo-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  /* Nav list on the right */
+  .footer-nav-list {
+    flex: 0 1 400px;
+    margin-left: auto;
+  }
+  .footer-nav-item {
+    display: flex;
+    align-items: center;
+    height: 44px;
+    border-bottom: 0.5px solid #343434;
+  }
+  .footer-nav-item a {
+    font-family: 'Shippori Mincho', 'Yu Mincho', serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #343434;
+    letter-spacing: 1.6px;
+    transition: color 0.3s;
+  }
+  .footer-nav-item a:hover { color: #f49b9b; }
+
+  /* Social icons below nav */
+  .footer-social-icons {
+    display: flex;
+    gap: 16px;
+    margin-top: 24px;
+    padding-top: 8px;
+  }
+  .footer-social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(97, 58, 58, 0.15);
+    transition: opacity 0.3s;
+  }
+  .footer-social-icons a:hover { opacity: 0.8; }
+  .footer-social-icons a img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+  }
+  .footer-social-icons .note-icon {
+    border-radius: 8px;
+  }
+  .footer-social-icons .note-icon img {
+    width: 32px;
+    height: 32px;
+  }
+
+  /* CTA buttons row */
+  .footer-cta-row {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin: 40px 0 30px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .footer-cta-btn {
+    width: 252px;
+    padding: 10px 20px;
+    background: #F8BBBB;
+    color: #343434;
+    border-radius: 30px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 2px;
+    line-height: 30px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    transition: opacity 0.3s;
+  }
+  .footer-cta-btn:hover { opacity: 0.85; }
+
+  /* Copyright */
+  .footer-copyright {
+    text-align: center;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 12px;
+    color: #343434;
+    padding: 20px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* SP footer nav (mobile only) */
+  .sp-footer-nav {
+    display: none;
+  }
+
+  /* ===== FOOTER MOBILE ===== */
+  @media (max-width: 767px) {
+    .footer-cloud-wave {
+      height: 140px;
+    }
+    .footer-main {
+      flex-direction: column;
+      gap: 30px;
+      align-items: center;
+    }
+    .footer-nav-list {
+      margin-left: 0;
+      flex: none;
+      width: 100%;
+    }
+    .footer-cta-row {
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+    .footer-cta-btn {
+      width: 80%;
+      max-width: 300px;
+      font-size: 16px;
+    }
+    .sp-footer-nav {
+      display: block;
+      padding: 0 28px;
+    }
+    .sp-footer-nav .footer-nav-item {
+      display: flex;
+      align-items: center;
+      height: 34px;
+      border-bottom: 0.5px solid #343434;
+      margin-bottom: 20px;
+    }
+    .sp-footer-nav .footer-nav-item a {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 16px;
+      color: #000;
+    }
+  }
+</style>
+
+<footer class="footer">
+  <!-- Cloud wave divider matching Figma wireframe -->
+  <div class="footer-cloud-wave">
+    <svg viewBox="0 0 1440 220" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Back cloud layer (lightest) -->
+      <ellipse cx="120" cy="120" rx="180" ry="70" fill="#fdd" opacity="0.5"/>
+      <ellipse cx="350" cy="100" rx="200" ry="80" fill="#fcc" opacity="0.4"/>
+      <ellipse cx="600" cy="130" rx="170" ry="65" fill="#fdd" opacity="0.5"/>
+      <ellipse cx="850" cy="110" rx="190" ry="75" fill="#fcc" opacity="0.4"/>
+      <ellipse cx="1100" cy="125" rx="180" ry="70" fill="#fdd" opacity="0.5"/>
+      <ellipse cx="1350" cy="105" rx="170" ry="65" fill="#fcc" opacity="0.4"/>
+
+      <!-- Middle cloud layer -->
+      <ellipse cx="80" cy="150" rx="160" ry="60" fill="#f9c4c4" opacity="0.6"/>
+      <ellipse cx="250" cy="135" rx="180" ry="70" fill="#f9b8b8" opacity="0.55"/>
+      <ellipse cx="450" cy="155" rx="150" ry="55" fill="#f9c4c4" opacity="0.6"/>
+      <ellipse cx="650" cy="140" rx="170" ry="65" fill="#f9b8b8" opacity="0.55"/>
+      <ellipse cx="820" cy="160" rx="160" ry="60" fill="#f9c4c4" opacity="0.6"/>
+      <ellipse cx="1000" cy="145" rx="180" ry="70" fill="#f9b8b8" opacity="0.55"/>
+      <ellipse cx="1200" cy="155" rx="150" ry="60" fill="#f9c4c4" opacity="0.6"/>
+      <ellipse cx="1380" cy="140" rx="160" ry="65" fill="#f9b8b8" opacity="0.55"/>
+
+      <!-- Front cloud layer (most visible, darker pink) -->
+      <ellipse cx="60" cy="175" rx="140" ry="55" fill="#f49b9b" opacity="0.7"/>
+      <ellipse cx="200" cy="185" rx="160" ry="50" fill="#f7a8a8" opacity="0.65"/>
+      <ellipse cx="370" cy="170" rx="150" ry="55" fill="#f49b9b" opacity="0.7"/>
+      <ellipse cx="520" cy="185" rx="130" ry="48" fill="#f7a8a8" opacity="0.65"/>
+      <ellipse cx="680" cy="175" rx="160" ry="55" fill="#f49b9b" opacity="0.7"/>
+      <ellipse cx="840" cy="188" rx="140" ry="48" fill="#f7a8a8" opacity="0.65"/>
+      <ellipse cx="1000" cy="172" rx="155" ry="55" fill="#f49b9b" opacity="0.7"/>
+      <ellipse cx="1160" cy="185" rx="135" ry="50" fill="#f7a8a8" opacity="0.65"/>
+      <ellipse cx="1320" cy="175" rx="160" ry="55" fill="#f49b9b" opacity="0.7"/>
+
+      <!-- Nearest cloud layer (most opaque) -->
+      <ellipse cx="100" cy="200" rx="180" ry="45" fill="#f49b9b" opacity="0.8"/>
+      <ellipse cx="300" cy="205" rx="160" ry="40" fill="#f7a8a8" opacity="0.75"/>
+      <ellipse cx="500" cy="198" rx="170" ry="45" fill="#f49b9b" opacity="0.8"/>
+      <ellipse cx="700" cy="208" rx="155" ry="40" fill="#f7a8a8" opacity="0.75"/>
+      <ellipse cx="900" cy="200" rx="180" ry="45" fill="#f49b9b" opacity="0.8"/>
+      <ellipse cx="1100" cy="206" rx="160" ry="42" fill="#f7a8a8" opacity="0.75"/>
+      <ellipse cx="1300" cy="198" rx="175" ry="45" fill="#f49b9b" opacity="0.8"/>
+
+      <!-- Bottom fill to connect clouds to footer content -->
+      <rect x="0" y="195" width="1440" height="30" fill="#FFDFDF"/>
+    </svg>
+  </div>
+
+  <div class="footer-content">
+    <!-- Main: logo left, nav right -->
+    <div class="footer-main">
+      <div class="footer-brand">
+        <div class="footer-logo-circle">
+          <img src="/homepage/images/logo.svg" alt="サクセスキャリアエアライン">
+        </div>
+      </div>
+      <div class="footer-nav-list">
+        <div class="footer-nav-item"><a href="/">TOP</a></div>
+        <div class="footer-nav-item"><a href="#">CA＆GS内定者実績</a></div>
+        <div class="footer-nav-item"><a href="/template/">講座一覧</a></div>
+        <div class="footer-nav-item"><a href="/blog/">お役立ちコラム</a></div>
+        <div class="footer-nav-item"><a href="#">プライバシーポリシー</a></div>
+        <div class="footer-social-icons">
+          <a href="https://www.instagram.com/mika.k_ca" target="_blank" rel="noopener"><img src="/homepage/images/instagram.png" alt="Instagram"></a>
+          <a href="https://line.me/R/ti/p/%40vdu4833q" target="_blank" rel="noopener"><img src="/homepage/images/line.png" alt="LINE"></a>
+          <a href="https://www.youtube.com/channel/UCElq9B_-WGRK9HMyUuCH_kQ/" target="_blank" rel="noopener"><img src="/homepage/images/youtube.png" alt="YouTube"></a>
+          <a href="https://note.com/success_airline/" target="_blank" rel="noopener" class="note-icon"><img src="/homepage/images/note-icon.svg" alt="note"></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- SP Footer Nav (mobile only) -->
+    <div class="sp-footer-nav">
+      <div class="footer-nav-item"><a href="/">TOP</a></div>
+      <div class="footer-nav-item"><a href="#">CA＆GS内定者実績</a></div>
+      <div class="footer-nav-item"><a href="/template/">講座一覧</a></div>
+      <div class="footer-nav-item"><a href="/blog/">お役立ちコラム</a></div>
+      <div class="footer-nav-item"><a href="#">プライバシーポリシー</a></div>
+    </div>
+
+    <!-- CTA buttons -->
+    <div class="footer-cta-row">
+      <a href="/contact/" class="footer-cta-btn">お悩み相談</a>
+      <a href="/template/" class="footer-cta-btn">講座予約</a>
+      <a href="/contact/" class="footer-cta-btn">お問合せ</a>
+    </div>
+
+    <p class="footer-copyright">&copy;2024 サクセスキャリアエアライン All Rights Reserved.</p>
+  </div>
+</footer>
