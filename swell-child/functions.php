@@ -238,18 +238,10 @@ function sca_footer_cloud_section() {
             </div>
         </div>
         <div class="sca-footer-sns">
-            <a href="https://www.instagram.com/success_career_airline/" target="_blank" rel="noopener" aria-label="Instagram">
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-            </a>
-            <a href="https://lin.ee/successairline" target="_blank" rel="noopener" aria-label="LINE">
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.271.173-.508.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-            </a>
-            <a href="https://www.youtube.com/@user-qo4vy8wd4y" target="_blank" rel="noopener" aria-label="YouTube">
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-            </a>
-            <a href="https://note.com/success_airline" target="_blank" rel="noopener" aria-label="note">
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 31 31" fill="currentColor"><path d="M0 0.190643C5.86438 0.190643 13.8957 -0.107808 19.6618 0.0421323C27.3984 0.240624 30.3057 3.6207 30.4039 11.9702C30.5022 16.6912 30.4039 30.21 30.4039 30.21H22.0338C22.0338 18.3819 22.0836 16.4298 22.0338 12.7028C21.9355 9.42265 21.0016 7.859 18.4887 7.56054C15.8277 7.26209 8.37016 7.51057 8.37016 7.51057V30.21H0V0.190643Z"/></svg>
-            </a>
+            <a href="https://www.instagram.com/mika.k_ca" target="_blank" rel="noopener"><img src="https://sca-airline.com/wp-content/themes/success-airline-figma/assets/images/instagram.png" alt="Instagram"></a>
+            <a href="https://lin.ee/successairline" target="_blank" rel="noopener"><img src="https://sca-airline.com/wp-content/themes/success-airline-figma/assets/images/line.png" alt="LINE"></a>
+            <a href="https://www.youtube.com/@user-qo4vy8wd4y" target="_blank" rel="noopener"><img src="https://sca-airline.com/wp-content/themes/success-airline-figma/assets/images/youtube.png" alt="YouTube"></a>
+            <a href="https://note.com/success_airline" target="_blank" rel="noopener"><img src="https://sca-airline.com/wp-content/themes/success-airline-figma/assets/images/note-icon.svg" alt="note"></a>
         </div>
     </div>
     <!-- フッター3ボタンCTA -->
@@ -305,18 +297,10 @@ function sca_instructor_card_shortcode($atts) {
 add_shortcode('sca_sns_grid', 'sca_sns_grid_shortcode');
 function sca_sns_grid_shortcode($atts) {
     $output = '<div class="sca-sns-grid">';
-    $output .= '<a href="https://www.instagram.com/success_career_airline/" target="_blank" rel="noopener" aria-label="Instagram">';
-    $output .= '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>';
-    $output .= '</a>';
-    $output .= '<a href="https://lin.ee/successairline" target="_blank" rel="noopener" aria-label="LINE">';
-    $output .= '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.271.173-.508.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>';
-    $output .= '</a>';
-    $output .= '<a href="https://www.youtube.com/@user-qo4vy8wd4y" target="_blank" rel="noopener" aria-label="YouTube">';
-    $output .= '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>';
-    $output .= '</a>';
-    $output .= '<a href="https://note.com/success_airline" target="_blank" rel="noopener" aria-label="note">';
-    $output .= '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 31 31" fill="currentColor"><path d="M0 0.190643C5.86438 0.190643 13.8957 -0.107808 19.6618 0.0421323C27.3984 0.240624 30.3057 3.6207 30.4039 11.9702C30.5022 16.6912 30.4039 30.21 30.4039 30.21H22.0338C22.0338 18.3819 22.0836 16.4298 22.0338 12.7028C21.9355 9.42265 21.0016 7.859 18.4887 7.56054C15.8277 7.26209 8.37016 7.51057 8.37016 7.51057V30.21H0V0.190643Z"/></svg>';
-    $output .= '</a>';
+    $output .= '<a href="https://www.instagram.com/mika.k_ca" target="_blank" rel="noopener"><img src="https://sca-airline.com/wp-content/themes/success-airline-figma/assets/images/instagram.png" alt="Instagram"></a>';
+    $output .= '<a href="https://lin.ee/successairline" target="_blank" rel="noopener"><img src="https://sca-airline.com/wp-content/themes/success-airline-figma/assets/images/line.png" alt="LINE"></a>';
+    $output .= '<a href="https://www.youtube.com/@user-qo4vy8wd4y" target="_blank" rel="noopener"><img src="https://sca-airline.com/wp-content/themes/success-airline-figma/assets/images/youtube.png" alt="YouTube"></a>';
+    $output .= '<a href="https://note.com/success_airline" target="_blank" rel="noopener"><img src="https://sca-airline.com/wp-content/themes/success-airline-figma/assets/images/note-icon.svg" alt="note"></a>';
     $output .= '</div>';
     return $output;
 }

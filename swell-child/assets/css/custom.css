@@ -997,30 +997,28 @@ a.sca-cta-button:hover {
 /* Footer SNS icons */
 .sca-footer-sns {
     display: flex;
-    justify-content: center;
-    gap: 16px;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 12px;
     margin-top: 16px;
 }
 
 .sca-footer-sns a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    color: var(--sca-text);
+    display: block;
+    line-height: 0;
     text-decoration: none;
-    transition: color var(--sca-transition), transform var(--sca-transition);
+    transition: transform var(--sca-transition);
 }
 
 .sca-footer-sns a:hover {
-    color: var(--sca-pink-dark);
     transform: translateY(-2px);
 }
 
-.sca-footer-sns a svg {
-    width: 20px;
-    height: 20px;
+.sca-footer-sns a img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    display: block;
 }
 
 /* SWELL footer overrides */
@@ -1961,48 +1959,35 @@ a.sca-utage-btn:hover {
    ============================================= */
 .sca-sns-grid {
     display: flex;
-    gap: 20px;
+    gap: 24px;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     padding: 24px 0;
 }
 
 .sca-sns-grid a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-    background: var(--sca-text);
-    color: var(--sca-white);
-    font-size: 22px;
+    display: block;
+    line-height: 0;
     text-decoration: none;
-    transition: transform var(--sca-transition), background var(--sca-transition);
+    transition: transform var(--sca-transition);
 }
 
 .sca-sns-grid a:hover {
     transform: translateY(-3px);
-    background: var(--sca-pink-accent);
 }
 
-.sca-sns-grid a img,
-.sca-sns-grid a svg {
-    width: 24px;
-    height: 24px;
+.sca-sns-grid a img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    display: block;
 }
 
 @media (max-width: 599px) {
-    .sca-sns-grid a {
-        width: 44px;
-        height: 44px;
-        font-size: 18px;
-    }
-
-    .sca-sns-grid a img,
-    .sca-sns-grid a svg {
-        width: 20px;
-        height: 20px;
+    .sca-sns-grid a img {
+        width: 60px;
+        height: 60px;
     }
 }
 
