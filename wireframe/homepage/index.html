@@ -1110,49 +1110,77 @@
       background: #fff;
       border-radius: 30px;
       overflow: hidden;
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 0px 4px rgba(0, 0, 0, 0.25);
+      box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+      position: relative;
+    }
+    .voice-card-cloud {
+      width: 100%;
+      display: block;
     }
     .voice-card-header {
-      padding: 16px 20px;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       gap: 12px;
+      padding: 0 20px;
+      margin-top: -8px;
+      position: relative;
     }
     .voice-card-airline-badge {
-      background: #b51230;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 55px;
+      min-height: 75px;
+      background: #e06a6a;
       color: #fff;
-      padding: 6px 12px;
-      border-radius: 4px;
-      font-size: 13px;
+      font-family: 'Noto Sans JP', sans-serif;
       font-weight: 700;
+      font-size: 16px;
+      letter-spacing: 1.6px;
+      text-align: center;
+      flex-shrink: 0;
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+      line-height: 1.2;
+      padding: 4px 2px 14px;
     }
     .voice-card-quote {
-      font-size: 13px;
-      color: #f49b9b;
-      font-weight: 500;
-      line-height: 1.4;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 16px;
+      color: #e06a6a;
+      font-weight: 700;
+      line-height: 1.5;
+      padding-top: 4px;
     }
     .voice-card-name {
-      padding: 0 20px;
-      font-family: 'Shippori Mincho', serif;
-      font-size: 16px;
-      font-weight: 600;
+      text-align: center;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
       color: #f49b9b;
+      padding: 12px 20px 0;
+      line-height: 1.5;
     }
     .voice-card-name-deco {
       display: flex;
       align-items: center;
+      justify-content: center;
       gap: 0;
-      padding: 0 20px;
-      margin: 4px 0;
+      padding: 0 28px;
+      margin: 6px 0;
     }
-    .voice-card-name-deco .dashed-line { width: 100px; border-top-width: 1.5px; }
-    .voice-card-name-deco .airplane-icon { width: 16px; }
+    .voice-card-name-deco .dashed-line {
+      flex: 1;
+      border-top: 1.5px dashed #f49b9b;
+    }
+    .voice-card-name-deco .airplane-icon { width: 20px; margin-left: 4px; }
+    .voice-card-name-deco .airplane-icon svg { fill: #f49b9b; }
     .voice-card-text {
-      padding: 12px 20px 20px;
-      font-size: 13px;
-      line-height: 1.8;
-      color: #555;
+      padding: 16px 20px 24px;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 16px;
+      font-weight: 350;
+      line-height: 1.5;
+      color: #000;
     }
     .voice-cta-btn {
       margin: 40px auto 0;
@@ -1432,7 +1460,11 @@
       .voice-bubble:nth-of-type(3) { width: 150px; margin-right: -10px; }
       .voice-bubble:nth-of-type(4) { width: 130px; }
       .voice-bubble span { font-size: 13px; letter-spacing: 0; }
-      .voice-card { flex: 0 0 260px; }
+      .voice-card { flex: 0 0 280px; }
+      .voice-card-airline-badge { width: 48px; min-height: 65px; font-size: 14px; }
+      .voice-card-quote { font-size: 14px; }
+      .voice-card-name { font-size: 18px; }
+      .voice-card-text { font-size: 14px; }
 
       .study-cards { grid-template-columns: 1fr; }
       .youtube-thumbs { grid-template-columns: 1fr; }
@@ -1914,6 +1946,7 @@
 
     <div class="voice-cards-scroll">
       <div class="voice-card">
+        <img class="voice-card-cloud" src="images/bluecloud.svg" alt="">
         <div class="voice-card-header">
           <span class="voice-card-airline-badge">ANA</span>
           <span class="voice-card-quote">マンツーマンならではの温かさと安心感を感じました。</span>
@@ -1923,8 +1956,9 @@
         <p class="voice-card-text">SCAの講座を受けて、大手のスクールにはない暖かい雰囲気と、短時間であっても自分をじっくり見て頂け、本当に良かったと思います。</p>
       </div>
       <div class="voice-card">
+        <img class="voice-card-cloud" src="images/bluecloud.svg" alt="">
         <div class="voice-card-header">
-          <span class="voice-card-airline-badge">ANA WINGS</span>
+          <span class="voice-card-airline-badge">ANA<br>WINGS</span>
           <span class="voice-card-quote">エアライン面接に置いて本当に大切なことを学べた！</span>
         </div>
         <div class="voice-card-name">ANAWINGS合格！Aさま</div>
@@ -1932,6 +1966,7 @@
         <p class="voice-card-text">SCAの講座を受講するまでは、「エアラインの面接はすごく特別なもので、面接では（面接官が納得するような）良い答えを言わなければいけない」そう思っていました。</p>
       </div>
       <div class="voice-card">
+        <img class="voice-card-cloud" src="images/bluecloud.svg" alt="">
         <div class="voice-card-header">
           <span class="voice-card-airline-badge">JAL</span>
           <span class="voice-card-quote">講座を通して詰めの甘さに気が付けました！</span>
@@ -1941,6 +1976,7 @@
         <p class="voice-card-text">面接では、自分の経験や体験をお話しするだけではなく、そこから何を学び、どのように感じたかまでお話しなければ意味がないということを改めて感じました。</p>
       </div>
       <div class="voice-card">
+        <img class="voice-card-cloud" src="images/bluecloud.svg" alt="">
         <div class="voice-card-header">
           <span class="voice-card-airline-badge">J-AIR</span>
           <span class="voice-card-quote">日々の行動が合格に繋がっている、との言葉を聞き、動き出すことが出来ました。</span>
@@ -1950,6 +1986,7 @@
         <p class="voice-card-text">大手JAL/ANAに落ちてしまい、完全にやる気を失っていた時に、どうにかやる気を出してもう一度就活をしたいと思っていたところ先生のツイッターを見掛け申し込みました。</p>
       </div>
       <div class="voice-card">
+        <img class="voice-card-cloud" src="images/bluecloud.svg" alt="">
         <div class="voice-card-header">
           <span class="voice-card-airline-badge" style="background:#1F3E9B;">AJX</span>
           <span class="voice-card-quote">後悔なく本番を迎えられ内定を掴めました！</span>
@@ -1959,6 +1996,7 @@
         <p class="voice-card-text">この度、エアージャパンから内定のご連絡をいただく事ができて本当に嬉しいです！ずっと叶えたかったCAの夢をやっと形にすることができました！先生のレッスンで初めてここまで自分について深く考えることができたからこそ、内定を頂けたと思いますし、また面接練習でも、先生のアドバイスのおかげで後悔なく本番を迎えることができました！</p>
       </div>
       <div class="voice-card">
+        <img class="voice-card-cloud" src="images/bluecloud.svg" alt="">
         <div class="voice-card-header">
           <span class="voice-card-airline-badge" style="background:#DA3690;">IBEX</span>
           <span class="voice-card-quote">講座を通して自分自身を認めてあげれるようになった！</span>
