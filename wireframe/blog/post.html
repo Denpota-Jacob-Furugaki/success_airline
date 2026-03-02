@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>既卒ANA最終面接で敗退を受け取った自分は来年CAになれるのか | サクセスキャリアエアライン</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Shippori+Mincho:wght@400;500;600;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { font-size: 16px; -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+    body { font-family: 'Noto Sans JP', sans-serif; color: #343434; background: #fff; overflow-x: hidden; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* ===== ANNOUNCEMENT BAR ===== */
+    .announcement-bar { background: #f49b9b; height: 50px; display: flex; align-items: center; justify-content: center; gap: 20px; z-index: 101; position: relative; }
+    .announcement-bar .ann-text { font-size: 16px; font-weight: 700; color: #fff; letter-spacing: 1.6px; }
+    .announcement-bar .ann-btn { display: inline-flex; align-items: center; padding: 6px 24px; border: 2px solid #fff; border-radius: 30px; color: #fff; font-size: 14px; font-weight: 700; transition: background 0.3s, color 0.3s; }
+    .announcement-bar .ann-btn:hover { background: #fff; color: #f49b9b; }
+
+    /* ===== PC HEADER ===== */
+    .pc-header { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.95); backdrop-filter: blur(4px); box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+    .pc-header-inner { max-width: 1440px; margin: 0 auto; padding: 16px 40px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .pc-header-logo { display: flex; align-items: center; gap: 16px; flex-shrink: 0; text-decoration: none; }
+    .pc-header-logo img { height: 60px; width: auto; }
+    .pc-header-logo .logo-text { display: flex; flex-direction: column; }
+    .pc-header-logo .logo-subtitle { font-size: 12px; color: #343434; letter-spacing: 1px; }
+    .pc-header-logo .logo-brand { font-family: 'Shippori Mincho', serif; font-size: 22px; font-weight: 600; color: #f49b9b; letter-spacing: 2px; }
+    .pc-nav { display: flex; align-items: center; gap: 28px; }
+    .pc-nav a { font-size: 16px; font-weight: 400; color: #343434; letter-spacing: 1.6px; transition: color 0.3s; white-space: nowrap; }
+    .pc-nav a:hover { color: #f49b9b; }
+    .pc-header-cta { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+    .pc-header-cta .header-cta-btn { display: inline-flex; align-items: center; justify-content: center; padding: 10px 28px; border-radius: 30px; font-size: 14px; font-weight: 700; letter-spacing: 1px; transition: opacity 0.3s; white-space: nowrap; box-shadow: 0 2px 4px rgba(0,0,0,0.08); text-decoration: none; }
+    .pc-header-cta .header-cta-btn:hover { opacity: 0.8; }
+    .pc-header-cta .btn-reserve { background: #F8BBBB; color: #fff; }
+    .pc-header-cta .btn-contact { background: #F8BBBB; color: #fff; }
+
+    /* ===== SP HEADER ===== */
+    .sp-header { display: none; position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.5); backdrop-filter: blur(4px); }
+    .sp-header-inner { display: flex; align-items: center; justify-content: space-between; padding: 27px 28px 0; height: 84px; }
+    .sp-header-logo img { height: 59px; width: auto; }
+    .hamburger-btn { background: none; border: none; cursor: pointer; padding: 0; width: 27px; height: 19px; }
+    .hamburger-btn span { display: block; width: 100%; height: 2px; background: #343434; margin-bottom: 6px; }
+    .hamburger-btn span:last-child { margin-bottom: 0; }
+
+    /* ===== TICKER ===== */
+    .ticker-bar { background: #ffdfdf; height: 32px; overflow: hidden; display: flex; align-items: center; }
+    .ticker-track { display: flex; animation: ticker 20s linear infinite; }
+    .ticker-item { white-space: nowrap; font-size: 14px; color: #b51230; font-weight: 500; padding: 0 24px; }
+    @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+    /* ===== CATEGORY FILTER BAR ===== */
+    .category-bar {
+      max-width: 1200px; margin: 0 auto; padding: 20px 40px 16px;
+      display: flex; gap: 16px; flex-wrap: wrap; align-items: center;
+      border-bottom: 1px solid #eee;
+    }
+    .cat-link {
+      font-size: 14px; color: #666; font-weight: 500;
+      transition: color 0.3s; letter-spacing: 0.5px;
+    }
+    .cat-link:hover, .cat-link.active { color: #f49b9b; }
+
+    /* ===== ARTICLE LAYOUT ===== */
+    .article-layout {
+      max-width: 1200px; margin: 0 auto; padding: 40px 40px 60px;
+      display: flex; gap: 50px;
+    }
+    .article-main { flex: 1; min-width: 0; }
+    .article-sidebar { width: 300px; flex-shrink: 0; }
+
+    /* ===== ARTICLE HEADER ===== */
+    .article-author {
+      display: flex; align-items: center; gap: 12px; margin-bottom: 24px;
+    }
+    .article-author .author-avatar {
+      width: 68px; height: 68px; border-radius: 50%; object-fit: cover;
+    }
+    .article-author .three-dot-menu {
+      margin-left: auto; font-size: 20px; color: #343434; cursor: pointer;
+      line-height: 1; letter-spacing: 2px;
+    }
+    .article-author .author-info { display: flex; flex-direction: column; }
+    .article-author .author-name { font-size: 14px; font-weight: 500; color: #343434; }
+    .article-author .post-meta { font-size: 12px; color: #999; }
+
+    .article-title {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 28px; font-weight: 600; color: #343434;
+      line-height: 1.5; margin-bottom: 12px; letter-spacing: 1px;
+    }
+    .article-update { font-size: 13px; color: #999; margin-bottom: 24px; }
+
+    .article-hero-image {
+      width: 100%; border-radius: 8px; overflow: hidden; margin-bottom: 40px;
+    }
+    .article-hero-image img { width: 100%; height: auto; }
+
+    /* ===== ARTICLE BODY ===== */
+    .article-body { font-size: 16px; line-height: 2; color: #343434; }
+    .article-body p { margin-bottom: 24px; }
+    .article-body h2 {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 22px; font-weight: 600; color: #343434;
+      margin: 48px 0 20px; padding-bottom: 12px;
+      border-bottom: 2px solid #f49b9b;
+    }
+    .article-body h3 {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 18px; font-weight: 600; color: #343434;
+      margin: 32px 0 16px;
+    }
+    .article-body .highlight {
+      color: #b51230; font-weight: 700;
+    }
+    .article-body .blue-highlight {
+      color: #003d7a; font-weight: 700;
+    }
+    .article-body blockquote {
+      border-left: 4px solid #f49b9b;
+      padding: 16px 20px; margin: 24px 0;
+      background: #fdf5f5; border-radius: 0 8px 8px 0;
+      font-size: 15px; color: #666;
+    }
+    .article-body .quote-text {
+      color: #b51230; font-size: 15px; line-height: 1.8;
+    }
+    .article-body ul {
+      margin: 16px 0 24px 20px;
+    }
+    .article-body ul li {
+      margin-bottom: 8px; line-height: 1.8;
+    }
+    .article-body .article-img {
+      margin: 32px 0; border-radius: 8px; overflow: hidden;
+    }
+    .article-body .article-img img { width: 100%; }
+
+    /* ===== ARTICLE TAGS ===== */
+    .article-tags {
+      display: flex; gap: 8px; flex-wrap: wrap;
+      margin: 40px 0 30px; padding-top: 20px;
+      border-top: 1px solid #eee;
+    }
+    .article-tags .tag {
+      display: inline-block; padding: 4px 14px;
+      border: 1px solid #ddd; border-radius: 20px;
+      font-size: 12px; color: #666; transition: all 0.3s;
+    }
+    .article-tags .tag:hover { border-color: #f49b9b; color: #f49b9b; }
+
+    /* ===== ARTICLE FOOTER ===== */
+    .article-footer {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 20px 0; border-top: 1px solid #eee; border-bottom: 1px solid #eee;
+      margin-bottom: 40px;
+    }
+    .article-footer .footer-left { display: flex; align-items: center; gap: 16px; }
+    .article-footer .views { font-size: 14px; color: #999; }
+    .article-footer .share-btns { display: flex; align-items: center; gap: 16px; }
+    .article-footer .share-btn {
+      display: flex; align-items: center; justify-content: center;
+      transition: opacity 0.3s;
+    }
+    .article-footer .share-btn img, .article-footer .share-btn svg { width: 22px; height: 22px; }
+    .article-footer .share-btn:hover { opacity: 0.6; }
+    .article-footer .heart-btn {
+      display: flex; align-items: center; justify-content: center; cursor: pointer;
+    }
+    .article-footer .heart-btn svg { width: 24px; height: 24px; fill: #f49b9b; }
+
+    /* ===== SIDEBAR ===== */
+    .sidebar-section { margin-bottom: 40px; }
+    .sidebar-title-row {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 16px; padding-bottom: 8px;
+      border-bottom: 2px solid #f49b9b;
+    }
+    .sidebar-title {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 16px; font-weight: 600; color: #343434;
+    }
+    .sidebar-show-all {
+      font-size: 13px; color: #999; transition: color 0.3s;
+    }
+    .sidebar-show-all:hover { color: #f49b9b; }
+    .sidebar-post {
+      display: flex; gap: 12px; padding: 12px 0;
+      border-bottom: 1px solid #f0f0f0; transition: opacity 0.3s;
+    }
+    .sidebar-post:hover { opacity: 0.7; }
+    .sidebar-post-image {
+      width: 100px; height: 70px; border-radius: 6px;
+      overflow: hidden; flex-shrink: 0;
+    }
+    .sidebar-post-image img { width: 100%; height: 100%; object-fit: cover; }
+    .sidebar-post-info { flex: 1; min-width: 0; }
+    .sidebar-post-title {
+      font-size: 13px; font-weight: 500; color: #343434;
+      line-height: 1.5; margin-bottom: 4px;
+      display: -webkit-box; -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical; overflow: hidden;
+    }
+    .sidebar-post-date { font-size: 11px; color: #999; }
+
+    /* ===== RELATED POSTS ===== */
+    .related-section {
+      max-width: 1200px; margin: 0 auto; padding: 0 40px 60px;
+    }
+    .related-title {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 22px; font-weight: 600; color: #343434;
+      margin-bottom: 24px; text-align: center;
+    }
+    .related-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;
+    }
+    .related-card {
+      background: #fff; border-radius: 10px; overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .related-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+    .related-card-image { position: relative; width: 100%; padding-bottom: 60%; overflow: hidden; }
+    .related-card-image img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
+    .related-card-body { padding: 16px; }
+    .related-card-title {
+      font-family: 'Shippori Mincho', serif; font-size: 15px;
+      font-weight: 600; color: #343434; line-height: 1.5; margin-bottom: 8px;
+      display: -webkit-box; -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical; overflow: hidden;
+    }
+    .related-card-meta {
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .related-card-date { font-size: 12px; color: #999; }
+    .related-card-views { font-size: 12px; color: #999; }
+
+    /* ===== AUTHOR PROFILE SECTION ===== */
+    .author-profile-section {
+      max-width: 1200px; margin: 0 auto; padding: 40px 40px 20px; text-align: center;
+    }
+    .author-profile-inner { max-width: 600px; margin: 0 auto; }
+    .author-profile-avatar {
+      width: 120px; height: 120px; border-radius: 50%; overflow: hidden;
+      margin: 0 auto 16px; background: #f0f0f0;
+    }
+    .author-profile-avatar img { width: 100%; height: 100%; object-fit: cover; }
+    .author-profile-desc {
+      font-size: 14px; color: #666; line-height: 1.8; margin-bottom: 20px;
+    }
+    .author-profile-btns { display: flex; justify-content: center; gap: 12px; }
+    .author-profile-btn {
+      display: inline-block; padding: 10px 28px; border-radius: 30px;
+      font-size: 14px; font-weight: 700; letter-spacing: 1px; transition: opacity 0.3s;
+    }
+    .author-profile-btn.btn-primary { background: #f49b9b; color: #fff; }
+    .author-profile-btn.btn-outline { background: #fff; color: #f49b9b; border: 2px solid #f49b9b; }
+    .author-profile-btn:hover { opacity: 0.8; }
+
+    /* ===== BOTTOM NAV SECTION ===== */
+    .bottom-nav-section {
+      max-width: 1200px; margin: 0 auto; padding: 20px 40px 40px;
+    }
+    .bottom-nav-inner { display: flex; gap: 40px; }
+    .bottom-nav-block { flex: 1; }
+    .bottom-nav-title {
+      font-family: 'Shippori Mincho', serif; font-size: 16px; font-weight: 600;
+      color: #343434; margin-bottom: 12px; padding-bottom: 8px;
+      border-bottom: 2px solid #f49b9b;
+    }
+    .bottom-nav-list { list-style: none; }
+    .bottom-nav-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; }
+    .bottom-nav-list li a { font-size: 14px; color: #666; transition: color 0.3s; }
+    .bottom-nav-list li a:hover { color: #f49b9b; }
+
+    /* ===== CTA BANNER ===== */
+    .cta-banner { background: #f49b9b; padding: 60px 40px; text-align: center; }
+    .cta-banner .cta-text { font-family: 'Shippori Mincho', serif; font-size: 22px; font-weight: 600; color: #fff; margin-bottom: 20px; letter-spacing: 2px; }
+    .cta-banner .cta-btn { display: inline-block; padding: 16px 50px; background: #fff; color: #f49b9b; border-radius: 40px; font-size: 16px; font-weight: 700; letter-spacing: 1px; transition: opacity 0.3s; }
+
+    /* ===== FOOTER ===== */
+    /* Footer styles loaded from common footer.html */
+
+    /* ===== MOBILE MENU ===== */
+    .mobile-menu-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(255,255,255,0.97); z-index: 200; flex-direction: column; align-items: center; justify-content: center; }
+    .mobile-menu-overlay.active { display: flex; }
+    .mobile-menu-close { position: absolute; top: 30px; right: 28px; background: none; border: none; font-size: 32px; cursor: pointer; color: #343434; }
+    .mobile-menu-overlay nav { display: flex; flex-direction: column; gap: 24px; text-align: center; }
+    .mobile-menu-overlay nav a { font-family: 'Shippori Mincho', serif; font-size: 18px; color: #343434; letter-spacing: 2px; }
+
+    /* ===== BREADCRUMB ===== */
+    .breadcrumb {
+      max-width: 1200px; margin: 0 auto; padding: 16px 40px;
+      font-size: 13px; color: #999;
+    }
+    .breadcrumb a { color: #999; transition: color 0.3s; }
+    .breadcrumb a:hover { color: #f49b9b; }
+    .breadcrumb .sep { margin: 0 8px; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 767px) {
+      .announcement-bar { display: none; }
+      .pc-header { display: none; }
+      .sp-header { display: block; }
+
+      .breadcrumb { padding: 100px 20px 12px; font-size: 12px; }
+
+      .category-bar { display: none; }
+
+      .article-layout {
+        flex-direction: column; padding: 20px 20px 40px; gap: 40px;
+      }
+      .article-sidebar { width: 100%; }
+
+      .article-title { font-size: 22px; }
+      .article-body { font-size: 15px; line-height: 1.9; }
+      .article-body h2 { font-size: 19px; margin: 36px 0 16px; }
+      .article-body h3 { font-size: 16px; }
+
+      .author-profile-section { padding: 30px 20px 10px; }
+      .author-profile-avatar { width: 100px; height: 100px; }
+      .author-profile-desc { font-size: 13px; }
+      .bottom-nav-section { padding: 10px 20px 30px; }
+      .bottom-nav-inner { flex-direction: column; gap: 24px; }
+
+      .related-section { padding: 0 20px 40px; }
+      .related-title { font-size: 18px; }
+      .related-grid { grid-template-columns: 1fr; gap: 20px; }
+
+      .cta-banner { padding: 40px 20px; }
+      .cta-banner .cta-text { font-size: 18px; }
+      /* Footer mobile styles loaded from common footer.html */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ANNOUNCEMENT BAR -->
+  <div class="announcement-bar">
+    <span class="ann-text">今すぐ相談！エアライン受験お悩み相談</span>
+    <a href="/contact/" class="ann-btn">お申し込みはコチラ</a>
+  </div>
+
+  <!-- PC HEADER -->
+  <header class="pc-header">
+    <div class="pc-header-inner">
+      <a href="/" class="pc-header-logo">
+        <img src="/images/logo.png" alt="サクセスキャリアエアライン">
+        <div class="logo-text">
+          <span class="logo-subtitle">CA・GS合格への最適ルートをあなたに</span>
+          <span class="logo-brand">サクセスキャリアエアライン</span>
+        </div>
+      </a>
+      <nav class="pc-nav">
+        <a href="/">TOP</a>
+        <a href="#">講師紹介</a>
+        <a href="/template/">講座一覧</a>
+        <a href="#">内定者実績</a>
+        <a href="/blog/">お役立ちコラム</a>
+      </nav>
+      <div class="pc-header-cta">
+        <a href="/template/" class="header-cta-btn btn-reserve">講座予約</a>
+        <a href="/contact/" class="header-cta-btn btn-contact">お問合せ</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- SP HEADER -->
+  <header class="sp-header">
+    <div class="sp-header-inner">
+      <a href="/home/" class="sp-header-logo"><img src="/images/header-logo.png" alt="サクセスキャリアエアライン"></a>
+      <button class="hamburger-btn" aria-label="メニュー" onclick="document.querySelector('.mobile-menu-overlay').classList.add('active')">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu-overlay">
+    <button class="mobile-menu-close" onclick="this.parentElement.classList.remove('active')">&times;</button>
+    <nav>
+      <a href="/home/">TOP</a>
+      <a href="#">SCAについて</a>
+      <a href="/template/">講座紹介</a>
+      <a href="#">カウンセリング</a>
+      <a href="#">内定者実績</a>
+      <a href="/blog/">過去問＆ブログ</a>
+      <a href="/contact/">お問合せ</a>
+    </nav>
+  </div>
+
+  <!-- TICKER -->
+  <div class="ticker-bar">
+    <div class="ticker-track">
+      <span class="ticker-item">【内定速報】日本エアコミューター：１名内定</span>
+      <span class="ticker-item">スプリングジャパン：２名内定</span>
+      <span class="ticker-item">JAL：３２名内定</span>
+      <span class="ticker-item">エアージャパン：７名内定</span>
+      <span class="ticker-item">ANAウイングス：新卒６名内定</span>
+      <span class="ticker-item">【内定速報】日本エアコミューター：１名内定</span>
+      <span class="ticker-item">スプリングジャパン：２名内定</span>
+      <span class="ticker-item">JAL：３２名内定</span>
+      <span class="ticker-item">エアージャパン：７名内定</span>
+      <span class="ticker-item">ANAウイングス：新卒６名内定</span>
+    </div>
+  </div>
+
+  <!-- CATEGORY BAR -->
+  <div class="category-bar">
+    <a href="/blog/" class="cat-link">BLOG</a>
+    <a href="/blog/?cat=airline" class="cat-link">#エアライン準備教材</a>
+    <a href="/blog/?cat=past" class="cat-link">過去問集</a>
+    <a href="/blog/?cat=ana" class="cat-link active">ANA</a>
+    <a href="/blog/?cat=reject" class="cat-link">不採用通知</a>
+  </div>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <a href="/home/">TOP</a><span class="sep">&gt;</span>
+    <a href="/blog/">お役立ちコラム</a><span class="sep">&gt;</span>
+    <span>既卒ANA最終面接で敗退を受け取った自分は来年CAになれるのか</span>
+  </div>
+
+  <!-- ARTICLE LAYOUT -->
+  <div class="article-layout">
+
+    <!-- MAIN CONTENT -->
+    <article class="article-main">
+
+      <!-- Author Info -->
+      <div class="article-author">
+        <img src="/blog/images/author-avatar.jpg" alt="菊地未夏" class="author-avatar">
+        <div class="author-info">
+          <span class="author-name">菊地未夏</span>
+          <span class="post-meta">2025年8月15日 ・ 読了時間: 8分</span>
+        </div>
+        <span class="three-dot-menu">⋮</span>
+      </div>
+
+      <!-- Title -->
+      <h1 class="article-title">既卒ANA最終面接で敗退を受け取った自分は来年CAになれるのか</h1>
+      <!-- <p class="article-update">更新日：2025年8月16日</p> -->
+
+      <!-- Hero Image -->
+      <div class="article-hero-image">
+        <img src="/blog/images/post1.jpg" alt="既卒ANA最終面接で敗退を受け取った自分は来年CAになれるのか">
+      </div>
+
+      <!-- Article Body -->
+      <div class="article-body">
+        <p>皆さん、こんにちは。<br>サクセスキャリアエアラインの菊地です。</p>
+
+        <p>2025年のANA既卒採用の結果が出始めていますね。</p>
+
+        <p>最終面接まで進んだものの、残念ながら不採用の結果を受け取った方もいらっしゃるかと思います。</p>
+
+        <p>ずっとずっと待っていた人からすると<br>最近届き始めた不採用通知に<br>「結局ご縁がなかった…」<br>と悔しさが出ながらも</p>
+
+        <p>「やっと結果が出たという<br><span class="highlight">開放感さえも感じる</span>」<br>と仰る方もいらっしゃいました。</p>
+
+        <p>それほど待ち侘びる時間は<br>苦しかったのだと思います。</p>
+
+        <p>正式に出てしまうと<br>もう受け止めざるおえない。</p>
+
+        <p>そんな中で</p>
+
+        <blockquote>
+          <p class="quote-text">『今年ANAになれなかった私は<br>何が足りなかったんだろうか。』</p>
+        </blockquote>
+
+        <blockquote>
+          <p class="quote-text">『私はいつになったら<br>CAになれるのだろうか。』</p>
+        </blockquote>
+
+        <p>と不安を感じている方も<br>少なくないと思います。</p>
+
+        <h2>今を楽しみたい。</h2>
+
+        <p>どれも間違いではないと思います。</p>
+
+        <p>苦しい気持ちも<br>辛い気持ちも<br>ちゃんと癒す必要があると思います。</p>
+
+        <p>でもそれだけでは<br><span class="highlight">客室乗務員を目指す上では<br>足りない</span>と思います。</p>
+
+        <p>仕事でも部活でも<br>なんでもそうですが</p>
+
+        <p>成果を生み出す上で<br><span class="highlight">『PDCA』は重要</span>だと思うからです。</p>
+
+        <p>自分の内定率を上げる上で<br>やっぱり<span class="blue-highlight">何が敗退に結びついてしまったのか？</span></p>
+
+        <p>その要因を見つけ出すことが<br><span class="highlight">何よりも重要</span>だと思っています。</p>
+
+        <h2>敗退分析の重要性</h2>
+
+        <p>実際に<br>不採用を受け取ると<br>落ち込むのは当たり前で</p>
+
+        <p>「もう考えたくない」<br>と思うかもしれません。</p>
+
+        <p>でも、そこから逃げずに<br>しっかりと向き合うことが<br>次のステップにつながります。</p>
+
+        <p>面接官の視点に立って<br>自分の面接を振り返ることが大切です。</p>
+
+        <ul>
+          <li>志望動機は具体的だったか</li>
+          <li>自己PRに一貫性があったか</li>
+          <li>質問に対して的確に答えられていたか</li>
+          <li>笑顔や姿勢、声のトーンは適切だったか</li>
+          <li>逆質問で意欲を示せたか</li>
+        </ul>
+
+        <p>これらを一つ一つ丁寧に振り返ることで<br>必ず改善点が見つかります。</p>
+
+        <h2>来年に向けて</h2>
+
+        <p><span class="highlight">自己否定ではなく<br>適切な対策の見直し</span>が重要です。</p>
+
+        <p>敗退を経験した方は<br>その経験自体が大きな財産になります。</p>
+
+        <p>面接の場の空気感を知っていること<br>最終面接まで進めた実力があること</p>
+
+        <p>これらは来年の面接で<br>必ず活きてきます。</p>
+
+        <p>サクセスキャリアエアラインでは<br>一人ひとりの面接を丁寧に分析し<br>次の面接に向けた具体的な改善策を<br>一緒に考えていきます。</p>
+
+        <p>一人で悩まずに<br>まずはお気軽にご相談ください。</p>
+      </div>
+
+      <!-- Tags -->
+      <div class="article-tags">
+        <a href="/blog/?cat=reject" class="tag">#不採用通知</a>
+        <a href="/blog/?cat=ana" class="tag">#ANA</a>
+        <a href="/blog/" class="tag">#面接対策</a>
+        <a href="/blog/" class="tag">#客室乗務員</a>
+        <a href="/blog/" class="tag">#敗退分析</a>
+      </div>
+
+      <!-- Article Footer -->
+      <div class="article-footer">
+        <div class="footer-left">
+          <span class="views">閲覧数：496回</span>
+          <div class="share-btns">
+            <a class="share-btn" href="#" aria-label="リンクをコピー">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#343434" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            </a>
+            <a class="share-btn" href="#" aria-label="LinkedInでシェア">
+              <svg viewBox="0 0 24 24" fill="#343434"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a class="share-btn" href="#" aria-label="Facebookでシェア">
+              <svg viewBox="0 0 24 24" fill="#343434"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a class="share-btn" href="#" aria-label="Xでシェア">
+              <svg viewBox="0 0 24 24" fill="#343434"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+          </div>
+        </div>
+        <span class="heart-btn" aria-label="いいね">
+          <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+        </span>
+      </div>
+
+    </article>
+
+    <!-- SIDEBAR -->
+    <aside class="article-sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-title-row">
+          <h3 class="sidebar-title">最新記事</h3>
+          <a href="/blog/" class="sidebar-show-all">全て表示</a>
+        </div>
+
+        <a href="/blog/post.html?id=1" class="sidebar-post">
+          <div class="sidebar-post-image"><img src="/blog/images/post1.jpg" alt=""></div>
+          <div class="sidebar-post-info">
+            <p class="sidebar-post-title">既卒ANA最終面接で敗退を受け取った自分は来年CAになれるのか</p>
+            <span class="sidebar-post-date">2025年8月15日</span>
+          </div>
+        </a>
+
+        <a href="/blog/post.html?id=2" class="sidebar-post">
+          <div class="sidebar-post-image"><img src="/blog/images/post2.jpg" alt=""></div>
+          <div class="sidebar-post-info">
+            <p class="sidebar-post-title">2025年既卒ANA2次面接を受ける人に伝えたい４つのこと</p>
+            <span class="sidebar-post-date">2025年7月22日</span>
+          </div>
+        </a>
+
+        <a href="/blog/post.html?id=3" class="sidebar-post">
+          <div class="sidebar-post-image"><img src="/blog/images/post3.jpg" alt=""></div>
+          <div class="sidebar-post-info">
+            <p class="sidebar-post-title">CA/GSに内定したいという想いが空回りしないために</p>
+            <span class="sidebar-post-date">2025年7月3日</span>
+          </div>
+        </a>
+
+        <a href="/blog/post.html?id=4" class="sidebar-post">
+          <div class="sidebar-post-image"><img src="/blog/images/post4.jpg" alt=""></div>
+          <div class="sidebar-post-info">
+            <p class="sidebar-post-title">J-AIR｜３次面接の過去問と対策</p>
+            <span class="sidebar-post-date">2024年10月13日</span>
+          </div>
+        </a>
+
+        <a href="/blog/post.html?id=5" class="sidebar-post">
+          <div class="sidebar-post-image"><img src="/blog/images/post5.jpg" alt=""></div>
+          <div class="sidebar-post-info">
+            <p class="sidebar-post-title">ZIPAIR｜２次面接に向けた過去問と対策</p>
+            <span class="sidebar-post-date">2024年9月5日</span>
+          </div>
+        </a>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- AUTHOR PROFILE -->
+  <section class="author-profile-section">
+    <div class="author-profile-inner">
+      <div class="author-profile-avatar">
+        <img src="/blog/images/author-avatar.jpg" alt="菊地未夏">
+      </div>
+      <p class="author-profile-desc">元CA&GSによるエアラインスクール。<br>一人ひとりに寄り添い、夢の実現をサポートします。</p>
+      <div class="author-profile-btns">
+        <a href="/contact/" class="author-profile-btn btn-primary">無料相談する</a>
+        <a href="/template/" class="author-profile-btn btn-outline">講座を見る</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 過去記事 / カテゴリ -->
+  <section class="bottom-nav-section">
+    <div class="bottom-nav-inner">
+      <div class="bottom-nav-block">
+        <h3 class="bottom-nav-title">過去記事</h3>
+        <ul class="bottom-nav-list">
+          <li><a href="/blog/?month=2025-08">2025年8月</a></li>
+          <li><a href="/blog/?month=2025-07">2025年7月</a></li>
+          <li><a href="/blog/?month=2024-10">2024年10月</a></li>
+          <li><a href="/blog/?month=2024-09">2024年9月</a></li>
+        </ul>
+      </div>
+      <div class="bottom-nav-block">
+        <h3 class="bottom-nav-title">カテゴリ</h3>
+        <ul class="bottom-nav-list">
+          <li><a href="/blog/?cat=ana">ANA</a></li>
+          <li><a href="/blog/?cat=jal">JAL</a></li>
+          <li><a href="/blog/?cat=reject">不採用通知</a></li>
+          <li><a href="/blog/?cat=airline">エアライン準備教材</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED POSTS -->
+  <section class="related-section">
+    <h2 class="related-title">関連記事</h2>
+    <div class="related-grid">
+      <a href="/blog/post.html?id=2" class="related-card">
+        <div class="related-card-image"><img src="/blog/images/post2.jpg" alt=""></div>
+        <div class="related-card-body">
+          <h3 class="related-card-title">2025年既卒ANA2次面接を受ける人に伝えたい４つのこと</h3>
+          <div class="related-card-meta">
+            <span class="related-card-date">2025年7月22日</span>
+            <span class="related-card-views">472回</span>
+          </div>
+        </div>
+      </a>
+      <a href="/blog/post.html?id=3" class="related-card">
+        <div class="related-card-image"><img src="/blog/images/post3.jpg" alt=""></div>
+        <div class="related-card-body">
+          <h3 class="related-card-title">CA/GSに内定したいという想いが空回りしないために</h3>
+          <div class="related-card-meta">
+            <span class="related-card-date">2025年7月3日</span>
+            <span class="related-card-views">275回</span>
+          </div>
+        </div>
+      </a>
+      <a href="/blog/post.html?id=4" class="related-card">
+        <div class="related-card-image"><img src="/blog/images/post4.jpg" alt=""></div>
+        <div class="related-card-body">
+          <h3 class="related-card-title">J-AIR｜３次面接の過去問と対策</h3>
+          <div class="related-card-meta">
+            <span class="related-card-date">2024年10月13日</span>
+            <span class="related-card-views">186回</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <div class="cta-banner">
+    <p class="cta-text">まずはお気軽にご相談ください</p>
+    <a href="/contact/" class="cta-btn">WEBで気軽に相談する</a>
+  </div>
+
+  <!-- ===== COMMON FOOTER (loaded dynamically) ===== -->
+  <div id="common-footer"></div>
+  <script src="/homepage/footer-loader.js"></script>
+
+</body>
+</html>
