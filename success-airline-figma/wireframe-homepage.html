@@ -2071,17 +2071,20 @@
   /* Cloud wave divider */
   .footer-cloud-wave {
     width: 100%;
-    height: 220px;
     position: relative;
+    height: 250px;
     overflow: hidden;
   }
-  .footer-cloud-wave svg {
+  .cloud-layer {
     position: absolute;
     width: 100%;
-    height: 100%;
-    bottom: 0;
     left: 0;
+    bottom: 0;
+    display: block;
   }
+  .cloud-white { z-index: 1; }
+  .cloud-lightpink { z-index: 2; }
+  .cloud-darkpink { z-index: 3; }
 
   .footer-content {
     background: #FFDFDF;
@@ -2216,7 +2219,7 @@
   /* ===== FOOTER MOBILE ===== */
   @media (max-width: 767px) {
     .footer-cloud-wave {
-      height: 140px;
+      height: 120px;
     }
     .footer-main {
       flex-direction: column;
@@ -2260,48 +2263,9 @@
 <footer class="footer">
   <!-- Cloud wave divider matching Figma wireframe -->
   <div class="footer-cloud-wave">
-    <svg viewBox="0 0 1440 220" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <!-- Back cloud layer (lightest) -->
-      <ellipse cx="120" cy="120" rx="180" ry="70" fill="#fdd" opacity="0.5"/>
-      <ellipse cx="350" cy="100" rx="200" ry="80" fill="#fcc" opacity="0.4"/>
-      <ellipse cx="600" cy="130" rx="170" ry="65" fill="#fdd" opacity="0.5"/>
-      <ellipse cx="850" cy="110" rx="190" ry="75" fill="#fcc" opacity="0.4"/>
-      <ellipse cx="1100" cy="125" rx="180" ry="70" fill="#fdd" opacity="0.5"/>
-      <ellipse cx="1350" cy="105" rx="170" ry="65" fill="#fcc" opacity="0.4"/>
-
-      <!-- Middle cloud layer -->
-      <ellipse cx="80" cy="150" rx="160" ry="60" fill="#f9c4c4" opacity="0.6"/>
-      <ellipse cx="250" cy="135" rx="180" ry="70" fill="#f9b8b8" opacity="0.55"/>
-      <ellipse cx="450" cy="155" rx="150" ry="55" fill="#f9c4c4" opacity="0.6"/>
-      <ellipse cx="650" cy="140" rx="170" ry="65" fill="#f9b8b8" opacity="0.55"/>
-      <ellipse cx="820" cy="160" rx="160" ry="60" fill="#f9c4c4" opacity="0.6"/>
-      <ellipse cx="1000" cy="145" rx="180" ry="70" fill="#f9b8b8" opacity="0.55"/>
-      <ellipse cx="1200" cy="155" rx="150" ry="60" fill="#f9c4c4" opacity="0.6"/>
-      <ellipse cx="1380" cy="140" rx="160" ry="65" fill="#f9b8b8" opacity="0.55"/>
-
-      <!-- Front cloud layer (most visible, darker pink) -->
-      <ellipse cx="60" cy="175" rx="140" ry="55" fill="#f49b9b" opacity="0.7"/>
-      <ellipse cx="200" cy="185" rx="160" ry="50" fill="#f7a8a8" opacity="0.65"/>
-      <ellipse cx="370" cy="170" rx="150" ry="55" fill="#f49b9b" opacity="0.7"/>
-      <ellipse cx="520" cy="185" rx="130" ry="48" fill="#f7a8a8" opacity="0.65"/>
-      <ellipse cx="680" cy="175" rx="160" ry="55" fill="#f49b9b" opacity="0.7"/>
-      <ellipse cx="840" cy="188" rx="140" ry="48" fill="#f7a8a8" opacity="0.65"/>
-      <ellipse cx="1000" cy="172" rx="155" ry="55" fill="#f49b9b" opacity="0.7"/>
-      <ellipse cx="1160" cy="185" rx="135" ry="50" fill="#f7a8a8" opacity="0.65"/>
-      <ellipse cx="1320" cy="175" rx="160" ry="55" fill="#f49b9b" opacity="0.7"/>
-
-      <!-- Nearest cloud layer (most opaque) -->
-      <ellipse cx="100" cy="200" rx="180" ry="45" fill="#f49b9b" opacity="0.8"/>
-      <ellipse cx="300" cy="205" rx="160" ry="40" fill="#f7a8a8" opacity="0.75"/>
-      <ellipse cx="500" cy="198" rx="170" ry="45" fill="#f49b9b" opacity="0.8"/>
-      <ellipse cx="700" cy="208" rx="155" ry="40" fill="#f7a8a8" opacity="0.75"/>
-      <ellipse cx="900" cy="200" rx="180" ry="45" fill="#f49b9b" opacity="0.8"/>
-      <ellipse cx="1100" cy="206" rx="160" ry="42" fill="#f7a8a8" opacity="0.75"/>
-      <ellipse cx="1300" cy="198" rx="175" ry="45" fill="#f49b9b" opacity="0.8"/>
-
-      <!-- Bottom fill to connect clouds to footer content -->
-      <rect x="0" y="195" width="1440" height="30" fill="#FFDFDF"/>
-    </svg>
+    <img class="cloud-layer cloud-white" src="images/whitecloud.svg" alt="">
+    <img class="cloud-layer cloud-lightpink" src="images/lightpinkcloud.svg" alt="">
+    <img class="cloud-layer cloud-darkpink" src="images/darkpinkcloud.svg" alt="">
   </div>
 
   <div class="footer-content">
