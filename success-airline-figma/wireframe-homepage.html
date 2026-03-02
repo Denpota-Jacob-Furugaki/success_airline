@@ -309,6 +309,9 @@
       height: auto;
     }
 
+    /* SP CTA Pair (mobile only) */
+    .sp-cta-pair { display: none; }
+
     /* SP Announcement Bar (below hero) */
     .sp-announcement-bar {
       display: none;
@@ -794,7 +797,7 @@
       background: #FFDFDF;
       border-radius: 30px;
       padding: 50px 60px;
-      max-width: 1100px;
+      max-width: 1200px;
       margin: 0 auto 40px;
     }
     .course-area-header {
@@ -814,61 +817,116 @@
       font-size: 14px;
       color: #555;
     }
-    .course-card {
+    #lesson .course-area .course-card {
       background: #fff;
-      border-radius: 16px;
-      padding: 40px;
+      border-radius: 30px;
+      padding: 30px;
       margin-bottom: 24px;
       display: flex;
-      gap: 30px;
+      gap: 20px;
+      width: 1080px;
+      max-width: 100%;
+      height: 315px;
+      overflow: visible;
+      align-items: flex-start;
+      box-shadow: 0 4px 4px 0 rgba(97, 58, 58, 0.25);
+      position: relative;
     }
-    .course-card-text { flex: 1; }
-    .course-card-text .course-sub {
+    #lesson .course-area .course-card-text {
+      flex: 1;
+      min-width: 0;
+    }
+    #lesson .course-area .course-sub {
       font-size: 14px;
       color: #555;
       margin-bottom: 8px;
     }
-    .course-card-text .course-name {
+    #lesson .course-area .course-name {
       font-family: 'Shippori Mincho', serif;
       font-size: 28px;
       font-weight: 700;
       color: #343434;
       margin-bottom: 4px;
     }
-    .course-card-text .course-name-deco {
+    #lesson .course-area .course-name-deco {
       display: flex;
       align-items: center;
       gap: 0;
-      margin-bottom: 16px;
+      margin-bottom: 8px;
+      height: 24px;
+      overflow: hidden;
     }
-    .course-card-text .course-name-deco .dashed-line { width: 120px; }
-    .course-card-text .course-name-deco .airplane-icon { width: 20px; }
-    .course-card-text .course-desc {
+    #lesson .course-area .course-name-deco .dashed-line { width: 120px; }
+    #lesson .course-area .course-name-deco .airplane-icon { width: 20px; }
+    #lesson .course-area .course-desc {
       font-size: 14px;
       line-height: 1.8;
       color: #555;
     }
-    .course-card-text .course-detail-btn {
-      display: inline-flex;
+    #lesson .course-area .course-detail-btn {
+      display: flex;
+      width: 276px;
+      height: 34px;
+      padding: 10px;
+      justify-content: center;
       align-items: center;
-      margin-top: 16px;
-      padding: 10px 30px;
-      background: #fde8e8;
+      gap: 10px;
+      border-radius: 20px;
+      background: #FFDFDF;
       color: #343434;
-      border-radius: 30px;
       font-size: 14px;
       font-weight: 500;
+      text-decoration: none;
       transition: background 0.3s;
+      margin-top: 8px;
+      margin-left: auto;
     }
-    .course-card-text .course-detail-btn:hover { background: #f9c8c8; }
-    .course-card-img {
-      flex: 0 0 280px;
-      border-radius: 12px;
+    #lesson .course-area .course-detail-btn:hover { background: #f9c8c8; }
+    /* Course card wrapper styles */
+    .course-block { margin-bottom: 24px; }
+    .course-card-wrapper {
+      background: #fff;
+      border-radius: 30px;
+      padding: 30px;
+      box-shadow: 0 4px 4px 0 rgba(97, 58, 58, 0.25);
+    }
+    .course-card-top {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+    .course-card-info { flex: 1; min-width: 0; }
+    .course-title-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+    .course-title-group { display: flex; flex-direction: column; }
+    .course-underline { width: 120px; margin-top: -4px; }
+    .course-airplane-icon { width: 30px; height: auto; }
+    .course-card-wrapper .course-desc {
+      font-size: 14px;
+      line-height: 1.8;
+      color: #555;
+      margin-top: 12px;
+    }
+    .course-btn-row { margin-top: 12px; }
+    .btn-arrow { margin-left: 4px; }
+    .btn-arrow-icon { width: 12px; height: auto; vertical-align: middle; }
+    #lesson .course-area .course-card-img {
+      flex: 0 0 380px;
+      width: 380px;
+      height: 98px;
+      border-radius: 30px;
+      background: #D9D9D9;
       overflow: hidden;
+      align-self: flex-start;
+      margin-top: -30px;
     }
-    .course-card-img img {
+    #lesson .course-area .course-card-img img {
       width: 100%;
-      height: 200px;
+      height: 98px;
       object-fit: cover;
     }
     /* 単発対策 */
@@ -889,12 +947,17 @@
     }
     .tanpatsu-silhouettes {
       position: absolute;
-      right: -20px;
+      right: 80px;
       bottom: 40px;
-      width: 220px;
-      height: 260px;
+      display: flex;
+      align-items: flex-end;
+      gap: 4px;
       opacity: 0.12;
       z-index: 0;
+    }
+    .tanpatsu-silhouettes img {
+      height: 200px;
+      width: auto;
     }
     .tanpatsu-cards {
       display: grid;
@@ -1382,68 +1445,608 @@
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 767px) {
+      /* --- Header --- */
       .announcement-bar { display: none; }
       .pc-header { display: none; }
+      .pc-ticker { display: none; }
       .sp-header { display: block; }
 
-      .hero { min-height: 400px; }
-      .hero-content { padding: 40px 28px 80px; }
-      .hero-headline { font-size: 28px; letter-spacing: 3px; }
-      .hero-headline .highlight { font-size: 36px; }
-      .hero-subtext { font-size: 14px; letter-spacing: 1px; }
-      .hero-airplane { right: -20px; bottom: 30px; width: 70%; }
-      .sp-announcement-bar { display: block; }
+      .sp-header-inner {
+        padding: 12px 20px 0;
+        height: 60px;
+      }
+      .sp-header-logo img { height: 44px; }
+      .sp-header .ticker-bar {
+        height: 28px;
+        background: #FFDFDF;
+      }
+      .sp-header .ticker-item {
+        font-size: 12px;
+        padding: 0 12px;
+      }
 
-      .info-section { padding: 50px 28px; }
-      .info-item { flex-direction: column; gap: 8px; }
+      /* --- Hero --- */
+      .hero {
+        min-height: 320px;
+        margin-top: 88px; /* account for fixed sp-header */
+      }
+      .hero-content {
+        padding: 40px 20px 80px;
+      }
+      .hero-headline {
+        font-size: 21px;
+        letter-spacing: 2px;
+        line-height: 1.5;
+        text-shadow: 0 0 4px #567596;
+      }
+      .hero-headline .highlight {
+        font-size: 26px;
+      }
+      .hero-subtext {
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        line-height: 1.5;
+      }
+      .hero-airplane {
+        right: -20px;
+        bottom: 20px;
+        width: 65%;
+        max-width: 280px;
+      }
 
-      .cloud-cta-buttons { flex-direction: column; align-items: center; gap: 12px; }
-      .cloud-cta-btn { max-width: 100%; }
+      /* --- SP Announcement Bar --- */
+      .sp-announcement-bar {
+        display: block;
+        background: #B51230;
+        padding: 10px 20px;
+        text-align: center;
+      }
+      .sp-announcement-bar .sp-ann-text {
+        font-size: 13px;
+        letter-spacing: 0.5px;
+      }
+      .sp-announcement-bar .sp-ann-btn {
+        margin-top: 6px;
+        padding: 5px 20px;
+        font-size: 12px;
+        border-width: 1px;
+      }
 
-      .results-section { padding: 50px 28px; }
-      .results-main-stat { flex-direction: column; gap: 16px; }
-      .results-main-stat .stat-big .stat-number { font-size: 64px; }
-      .results-sub-stats { grid-template-columns: 1fr; gap: 16px; }
-      .results-medals { flex-direction: column; align-items: center; gap: 24px; }
-      .medal-svg-img { width: 260px; }
+      /* --- SP CTA Pair (below hero) --- */
+      .sp-cta-pair {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        padding: 12px 20px;
+        background: #fff;
+      }
+      .sp-cta-pair .sp-cta-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px 16px;
+        border-radius: 30px;
+        font-family: 'Shippori Mincho', serif;
+        font-size: 15px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        line-height: 1.2;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+        transition: opacity 0.3s;
+      }
+      .sp-cta-pair .sp-cta-link:hover { opacity: 0.85; }
+      .sp-cta-pair .sp-cta-reserve {
+        background: #F8BBBB;
+        color: #343434;
+      }
+      .sp-cta-pair .sp-cta-contact {
+        background: #fff;
+        color: #F49B9B;
+        border: 1.5px solid #F49B9B;
+      }
 
-      .blog-section { padding: 50px 28px; }
-      .blog-cards { grid-template-columns: 1fr; }
+      /* --- Information / News --- */
+      .info-section {
+        padding: 30px 40px;
+      }
+      .section-header-left .section-en { font-size: 16px; }
+      .section-header-left .section-title { font-size: 18px; letter-spacing: 2px; }
+      .section-header-left .dashed-line { width: 100px; }
+      .info-item {
+        flex-direction: column;
+        gap: 4px;
+        padding: 12px 0;
+      }
+      .info-date {
+        font-size: 12px;
+        min-width: unset;
+      }
+      .info-text {
+        font-size: 14px;
+        line-height: 1.6;
+      }
 
-      .sns-follow-icons .ig-icon img { width: 100px; height: 100px; }
-      .sns-follow-icons .line-icon img { width: 70px; height: 70px; }
-      .sns-follow-icons .yt-icon img { width: 88px; height: 82px; }
-      .sns-follow-icons .note-icon img { width: 48px; height: 48px; }
+      /* --- Cloud CTA Section --- */
+      .cloud-cta-section {
+        padding: 30px 20px 40px;
+      }
+      .cloud-cta-section::before {
+        top: -30px;
+        height: 40px;
+      }
+      .cloud-cta-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+      .cloud-cta-btn {
+        width: 80%;
+        max-width: 280px;
+      }
+      .pink-cta-btn {
+        font-size: 14px;
+        padding: 8px 16px;
+        letter-spacing: 1px;
+      }
 
-      .welcome-overlay { margin: 20px; padding: 30px 20px; }
-      .welcome-icon-svg { max-width: 120px; }
+      /* --- Results / Congratulation --- */
+      .results-section {
+        padding: 30px 20px;
+      }
+      .section-header-center { margin-bottom: 20px; }
+      .section-header-center .section-en { font-size: 16px; }
+      .section-header-center .section-title {
+        font-size: 24px;
+        letter-spacing: 3px;
+      }
+      .section-header-center .dashed-line { width: 120px; }
+      .results-main-stat {
+        flex-direction: column;
+        gap: 12px;
+        margin: 20px 0;
+      }
+      .results-main-stat .stat-desc {
+        font-size: 14px;
+        text-align: center;
+        line-height: 1.6;
+      }
+      .results-main-stat .stat-big .stat-number {
+        font-size: 69px;
+      }
+      .results-main-stat .stat-big .stat-unit {
+        font-size: 28px;
+      }
+      .results-main-stat .stat-big .laurel { width: 40px; }
+      .results-sub-stats {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px 20px;
+        margin: 20px auto 24px;
+      }
+      .results-sub-stat .sub-label { font-size: 14px; }
+      .results-sub-stat .sub-number { font-size: 36px; }
+      .results-sub-stat .sub-unit { font-size: 16px; }
+      .results-medals {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        margin: 24px 0;
+      }
+      .medal-svg-img { width: 240px; }
+      .outline-btn {
+        padding: 10px 40px;
+        font-size: 14px;
+        margin-top: 20px;
+      }
 
-      .lesson-section { padding: 50px 28px; }
-      .course-area { padding: 30px 20px; }
-      .course-card { flex-direction: column; }
-      .course-card-img { flex: none; width: 100%; }
-      .tanpatsu-area { padding: 30px 20px; }
-      .tanpatsu-cards { grid-template-columns: 1fr; }
+      /* --- Blog Section --- */
+      .blog-section {
+        padding: 30px 20px;
+      }
+      .blog-cards {
+        display: flex;
+        gap: 16px;
+        overflow-x: auto;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        padding-bottom: 8px;
+      }
+      .blog-cards::-webkit-scrollbar { display: none; }
+      .blog-card {
+        flex: 0 0 215px;
+        border-radius: 20px;
+      }
+      .blog-card-img { height: 140px; }
+      .blog-card-meta { padding: 8px 14px 0; gap: 8px; }
+      .blog-card-meta .blog-date { font-size: 12px; }
+      .blog-card-meta .blog-tag { font-size: 11px; padding: 2px 8px; }
+      .blog-card-body {
+        padding: 8px 14px 14px;
+      }
+      .blog-card-title { font-size: 14px; margin-bottom: 6px; }
+      .blog-card-desc { font-size: 12px; }
+      .blog-more-btn {
+        display: flex;
+        margin: 18px auto 0;
+        padding: 8px 30px;
+        font-size: 14px;
+        border-radius: 15px;
+      }
 
-      .voice-bubbles { min-height: 240px; padding: 10px 10px; }
-      .voice-bubbles-bg { width: 360px; }
-      .voice-bubble:nth-of-type(1) { width: 120px; margin-right: -15px; }
-      .voice-bubble:nth-of-type(2) { width: 160px; margin-right: -10px; }
-      .voice-bubble:nth-of-type(3) { width: 150px; margin-right: -10px; }
-      .voice-bubble:nth-of-type(4) { width: 130px; }
-      .voice-bubble span { font-size: 13px; letter-spacing: 0; }
-      .voice-card { flex: 0 0 260px; }
+      /* --- SNS Follow --- */
+      .sns-follow-section {
+        padding: 30px 20px;
+      }
+      .sns-follow-label {
+        font-size: 14px;
+        margin-bottom: 16px;
+      }
+      .sns-follow-icons { gap: 16px; }
+      .sns-follow-icons .ig-icon img { width: 70px; height: 70px; }
+      .sns-follow-icons .line-icon img { width: 50px; height: 50px; }
+      .sns-follow-icons .yt-icon img { width: 62px; height: 58px; border-radius: 10px; }
+      .sns-follow-icons .note-icon img { width: 38px; height: 38px; }
 
-      .study-cards { grid-template-columns: 1fr; }
-      .youtube-thumbs { grid-template-columns: 1fr; }
+      /* --- Welcome to SCA --- */
+      .welcome-section { min-height: auto; }
+      .welcome-overlay {
+        margin: 20px;
+        padding: 24px 16px;
+        border-radius: 20px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+      }
+      .welcome-title-row {
+        margin-bottom: 16px;
+      }
+      .welcome-title-row .welcome-en { font-size: 20px; }
+      .welcome-title-row .airplane-icon { width: 22px; }
+      .welcome-headline {
+        font-size: 18px;
+        margin-bottom: 20px;
+        letter-spacing: 1px;
+        line-height: 1.6;
+      }
+      .welcome-body p {
+        font-size: 14px;
+        line-height: 2;
+        margin-bottom: 12px;
+      }
+      .welcome-features {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin-top: 24px;
+        justify-items: center;
+      }
+      .welcome-icon-svg {
+        max-width: 138px;
+        width: 100%;
+      }
+      /* Center the 5th badge */
+      .welcome-features .welcome-icon-svg:nth-child(5) {
+        grid-column: 1 / -1;
+      }
+      .welcome-more-btn {
+        margin: 20px auto 0;
+        padding: 8px 30px;
+        font-size: 14px;
+        border-radius: 15px;
+      }
 
-      .instagram-grid { flex-wrap: wrap; }
-      .instagram-grid img { width: calc(50% - 10px); height: 180px; }
+      /* --- Lesson / Course --- */
+      .lesson-section { padding: 30px 20px; }
+      .lesson-section .section-header-center .section-en {
+        font-size: 12px;
+        letter-spacing: 2px;
+      }
+      .lesson-section .section-header-center .section-title {
+        font-size: 24px;
+      }
+      .lesson-subtitle {
+        font-size: 13px;
+        margin-top: -10px;
+        margin-bottom: 20px;
+      }
+      .course-area {
+        padding: 18px 15px 21px;
+        border-radius: 20px;
+        margin-bottom: 24px;
+      }
+      .course-area-header {
+        flex-direction: column;
+        gap: 8px;
+        margin-bottom: 16px;
+      }
+      .course-area-header .area-label {
+        font-size: 20px;
+        letter-spacing: 2px;
+      }
+      .course-area-header .area-desc { font-size: 13px; }
 
-      .profile-content { flex-direction: column; gap: 30px; }
-      .profile-image { flex: none; width: 100%; }
+      /* Course card mobile layout */
+      #lesson .course-area .course-card {
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        padding: 14px 11px 12px;
+        border-radius: 15px;
+        margin-bottom: 12px;
+      }
+      #lesson .course-area .course-card-img {
+        flex: none;
+        width: 100%;
+        height: 160px;
+        border-radius: 15px;
+        margin-top: 0;
+      }
+      #lesson .course-area .course-card-img img {
+        height: 160px;
+      }
+      #lesson .course-area .course-sub {
+        font-size: 12px;
+        margin-bottom: 4px;
+      }
+      #lesson .course-area .course-name {
+        font-size: 18px;
+        margin-bottom: 2px;
+      }
+      #lesson .course-area .course-name-deco .dashed-line { width: 80px; }
+      #lesson .course-area .course-desc {
+        font-size: 13px;
+        line-height: 1.7;
+      }
+      #lesson .course-area .course-detail-btn {
+        width: 100%;
+        font-size: 13px;
+        margin-top: 10px;
+        border-radius: 15px;
+        padding: 8px;
+      }
+      .course-block { margin-bottom: 12px; }
+      .course-card-wrapper {
+        border-radius: 15px;
+        padding: 14px 11px 12px;
+      }
+      .course-card-top {
+        flex-direction: column;
+        gap: 12px;
+      }
+      .course-card-top .course-card-img {
+        flex: none;
+        width: 100%;
+        height: 160px;
+        border-radius: 15px;
+        margin-top: 0;
+      }
+      .course-card-top .course-card-img img {
+        height: 160px;
+      }
+      .course-title-row {
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .course-underline { width: 80px; }
+      .course-airplane-icon { width: 22px; }
+      .course-card-wrapper .course-desc {
+        font-size: 13px;
+        line-height: 1.7;
+        margin-top: 8px;
+      }
+      .course-btn-row {
+        margin-top: 10px;
+      }
 
-      /* Footer mobile styles loaded from common footer.html */
+      /* Tanpatsu cards mobile */
+      .tanpatsu-area {
+        padding: 14px 11px;
+        border-radius: 15px;
+      }
+      .tanpatsu-silhouettes {
+        right: 20px;
+        bottom: 20px;
+        gap: 2px;
+      }
+      .tanpatsu-silhouettes img { height: 100px; }
+      .tanpatsu-cards {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+      .tanpatsu-card {
+        border-radius: 15px;
+      }
+      .tanpatsu-card-img { height: 100px; }
+      .tanpatsu-card-body {
+        padding: 10px 8px;
+      }
+      .tanpatsu-card-body .tanpatsu-title {
+        font-size: 13px;
+        margin-bottom: 6px;
+      }
+      .tanpatsu-card-body .tanpatsu-desc {
+        font-size: 11px;
+        line-height: 1.5;
+        margin-bottom: 8px;
+      }
+      .tanpatsu-card-body .tanpatsu-btn {
+        font-size: 11px;
+        padding: 6px 14px;
+      }
+
+      /* Lesson CTA */
+      .lesson-cta-area { margin-top: 30px; }
+      .lesson-cta-bubble {
+        width: 200px;
+        height: 130px;
+        margin-bottom: 12px;
+      }
+      .lesson-cta-bubble span {
+        font-size: 14px;
+        padding: 0 20px;
+      }
+      .lesson-cta-btn {
+        width: 80%;
+        max-width: 280px;
+        padding: 10px 20px;
+        font-size: 14px;
+      }
+
+      /* --- Voice / Testimonials --- */
+      .voice-section {
+        padding: 30px 0;
+      }
+      .voice-section .section-header-center {
+        padding: 0 20px;
+      }
+      .voice-subtitle {
+        font-size: 13px;
+        margin-top: -10px;
+        margin-bottom: 16px;
+        padding: 0 20px;
+      }
+      .voice-bubbles {
+        min-height: 180px;
+        padding: 10px 8px;
+        margin-bottom: 16px;
+      }
+      .voice-bubbles-bg { width: 320px; }
+      .voice-bubble:nth-of-type(1) { width: 100px; margin-right: -12px; margin-bottom: -6px; }
+      .voice-bubble:nth-of-type(2) { width: 140px; margin-right: -8px; margin-top: -20px; }
+      .voice-bubble:nth-of-type(3) { width: 130px; margin-right: -8px; }
+      .voice-bubble:nth-of-type(4) { width: 110px; margin-bottom: -6px; }
+      .voice-bubble span {
+        font-size: 12px;
+        letter-spacing: 0;
+        line-height: 1.3;
+      }
+      .voice-cards-scroll {
+        gap: 16px;
+        padding: 12px 20px;
+      }
+      .voice-card {
+        flex: 0 0 260px;
+        border-radius: 20px;
+      }
+      .voice-card-header { padding: 12px 14px; gap: 8px; }
+      .voice-card-airline-badge {
+        font-size: 11px;
+        padding: 4px 8px;
+      }
+      .voice-card-quote {
+        font-size: 12px;
+        line-height: 1.3;
+      }
+      .voice-card-name {
+        padding: 0 14px;
+        font-size: 14px;
+      }
+      .voice-card-name-deco { padding: 0 14px; }
+      .voice-card-name-deco .dashed-line { width: 70px; }
+      .voice-card-name-deco .airplane-icon { width: 14px; }
+      .voice-card-text {
+        padding: 8px 14px 14px;
+        font-size: 12px;
+        line-height: 1.7;
+      }
+      .voice-cta-btn {
+        margin: 20px auto 0;
+        padding: 8px 28px;
+        font-size: 14px;
+        max-width: 280px;
+        border-radius: 15px;
+      }
+      .voice-photos {
+        grid-template-columns: repeat(3, 1fr);
+        margin-top: 24px;
+      }
+      .voice-photos img {
+        height: 140px;
+      }
+
+      /* --- Study / YouTube / Instagram --- */
+      .study-section { padding: 30px 20px; }
+      .study-cards {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .study-card { border-radius: 12px; }
+      .study-card-label {
+        font-size: 14px;
+        padding: 12px 14px 6px;
+      }
+      .study-card-img { padding: 0 14px 14px; }
+      .youtube-area { margin-top: 30px; }
+      .youtube-area h3 {
+        font-size: 18px;
+        letter-spacing: 2px;
+        margin-bottom: 16px;
+      }
+      .youtube-thumbs {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      .youtube-thumb img { height: 180px; }
+      .youtube-btn {
+        margin-top: 16px;
+        padding: 10px 40px;
+        font-size: 14px;
+      }
+
+      .instagram-section {
+        padding: 30px 20px 40px;
+      }
+      .instagram-section h3 {
+        font-size: 18px;
+        letter-spacing: 2px;
+        margin-bottom: 16px;
+      }
+      .instagram-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+      }
+      .instagram-grid img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1;
+        border-radius: 8px;
+      }
+      .instagram-btn {
+        margin-top: 16px;
+        padding: 10px 40px;
+        font-size: 14px;
+      }
+
+      /* --- Profile / Instructor --- */
+      .profile-section { padding: 30px 20px; }
+      .profile-content {
+        flex-direction: column;
+        gap: 20px;
+      }
+      .profile-image {
+        flex: none;
+        width: 100%;
+        border-radius: 12px;
+      }
+      .profile-name {
+        font-size: 22px;
+        margin-bottom: 16px;
+      }
+      .profile-bio {
+        font-size: 14px;
+        line-height: 2;
+      }
+      .profile-bio p { margin-bottom: 14px; }
+      .profile-points li {
+        font-size: 14px;
+        line-height: 1.8;
+      }
+
+      /* --- General SP adjustments --- */
+      .section-header-center .section-title {
+        font-size: 24px;
+        letter-spacing: 3px;
+      }
     }
   </style>
 </head>
@@ -1557,6 +2160,12 @@
   <div class="sp-announcement-bar">
     <p class="sp-ann-text">今すぐ相談！エアライン受験お悩み相談</p>
     <a href="/contact/" class="sp-ann-btn">お申し込みはコチラ</a>
+  </div>
+
+  <!-- ===== SP CTA PAIR (mobile only, below announcement) ===== -->
+  <div class="sp-cta-pair">
+    <a href="/template/" class="sp-cta-link sp-cta-reserve">講座予約</a>
+    <a href="/contact/" class="sp-cta-link sp-cta-contact">お問合せ</a>
   </div>
 
   <!-- ===== お知らせ (INFORMATION) ===== -->
@@ -1745,34 +2354,52 @@
         <span class="area-label">コース対策</span>
         <span class="area-desc">自己分析から最終面接までフルサポートで内定を目指す方におすすめ！</span>
       </div>
-      <div class="course-card">
-        <div class="course-card-text">
-          <p class="course-sub">貴重な新卒枠で絶対にCA＆GS内定を目指したい人のコース</p>
-          <h3 class="course-name">新卒コース</h3>
-          <div class="course-name-deco">
-            <span class="dashed-line"></span>
-            <span class="airplane-icon"><svg><use href="#airplane-icon"/></svg></span>
+      <!-- 新卒コース -->
+      <div class="course-block">
+        <div class="course-card-wrapper">
+          <div class="course-card-top">
+            <div class="course-card-info">
+              <p class="course-sub">貴重な新卒枠で絶対にCA＆GS内定を目指したい人のコース</p>
+              <div class="course-title-row">
+                <div class="course-title-group">
+                  <h2 class="course-name">新卒コース</h2>
+                  <img src="images/vector-underline.svg" alt="" class="course-underline">
+                </div>
+                <img src="images/airplane-deco.svg" alt="" class="course-airplane-icon">
+              </div>
+            </div>
+            <div class="course-card-img">
+              <img src="images/stock-photo1.svg" alt="新卒コース">
+            </div>
           </div>
           <p class="course-desc">自己分析から最終面接までの全てを網羅できるのが新卒コースの魅力。自分では気づけない現時点でのあなたの不足点を見つけ出し、希望の会社から内定をもらうために綿密な計画を立て、都度必要な対策を提案・一緒に授業を進め、内定までフルサポートします！</p>
-          <a href="/template/" class="course-detail-btn">コース内容の詳細へ ＞</a>
-        </div>
-        <div class="course-card-img">
-          <img src="images/stock-photo1.svg" alt="新卒コース">
+          <div class="course-btn-row">
+            <a href="/shinsotsu/" class="course-detail-btn">コース内容の詳細へ <span class="btn-arrow"><img src="images/arrow-chevron.svg" alt="" class="btn-arrow-icon"></span></a>
+          </div>
         </div>
       </div>
-      <div class="course-card">
-        <div class="course-card-text">
-          <p class="course-sub">働きながら自分に妥協せずCA＆GS内定を目指したい人のコース</p>
-          <h3 class="course-name">既卒コース</h3>
-          <div class="course-name-deco">
-            <span class="dashed-line"></span>
-            <span class="airplane-icon"><svg><use href="#airplane-icon"/></svg></span>
+      <!-- 既卒コース -->
+      <div class="course-block">
+        <div class="course-card-wrapper">
+          <div class="course-card-top">
+            <div class="course-card-info">
+              <p class="course-sub">働きながら自分に妥協せずCA＆GS内定を目指したい人のコース</p>
+              <div class="course-title-row">
+                <div class="course-title-group">
+                  <h2 class="course-name">既卒コース</h2>
+                  <img src="images/vector-underline.svg" alt="" class="course-underline">
+                </div>
+                <img src="images/airplane-deco.svg" alt="" class="course-airplane-icon">
+              </div>
+            </div>
+            <div class="course-card-img">
+              <img src="images/stock-photo2.svg" alt="既卒コース">
+            </div>
           </div>
           <p class="course-desc">今置かれた環境の中でいかにCA/GS転職を成功させるかを考え抜き対策するのが既卒コースの魅力。自分一人では心細い受験対策の中で、あなたが既卒で内定を掴むために足りていないものを見出し、限られた時間の中で効率よく対策を提案・フルサポートしていきます！</p>
-          <a href="/template/" class="course-detail-btn">コース内容の詳細へ ＞</a>
-        </div>
-        <div class="course-card-img">
-          <img src="images/stock-photo2.svg" alt="既卒コース">
+          <div class="course-btn-row">
+            <a href="/kisotsu/" class="course-detail-btn">コース内容の詳細へ <span class="btn-arrow"><img src="images/arrow-chevron.svg" alt="" class="btn-arrow-icon"></span></a>
+          </div>
         </div>
       </div>
     </div>
@@ -1780,38 +2407,18 @@
     <!-- 単発対策 -->
     <div class="tanpatsu-area">
       <!-- Silhouette decoration -->
-      <svg class="tanpatsu-silhouettes" viewBox="0 0 220 260" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <g fill="#f49b9b">
-          <!-- Woman 1 (left) -->
-          <circle cx="50" cy="18" r="14"/>
-          <path d="M35 38c0-8 7-14 15-14s15 6 15 14v4H35v-4z"/>
-          <path d="M38 42h24l6 90H32l6-90z"/>
-          <path d="M44 132l-6 120h8l10-80 10 80h8l-6-120H44z"/>
-          <rect x="42" y="42" width="16" height="20" rx="2"/>
-          <!-- Woman 2 (center) -->
-          <circle cx="115" cy="12" r="14"/>
-          <path d="M100 32c0-8 7-14 15-14s15 6 15 14v4h-30v-4z"/>
-          <path d="M103 36h24l6 96H97l6-96z"/>
-          <path d="M109 132l-6 120h8l10-80 10 80h8l-6-120h-24z"/>
-          <rect x="107" y="36" width="16" height="22" rx="2"/>
-          <!-- Woman 3 (right, with bag) -->
-          <circle cx="175" cy="20" r="13"/>
-          <path d="M162 40c0-7 6-13 13-13s13 6 13 13v3h-26v-3z"/>
-          <path d="M165 43h20l5 86h-30l5-86z"/>
-          <path d="M170 129l-5 123h7l8-82 8 82h7l-5-123h-20z"/>
-          <rect x="168" y="43" width="14" height="20" rx="2"/>
-          <!-- Bag -->
-          <rect x="190" y="80" width="18" height="24" rx="4" stroke="#f49b9b" stroke-width="2" fill="none"/>
-          <path d="M195 80v-6a4 4 0 0 1 8 0v6" stroke="#f49b9b" stroke-width="2" fill="none"/>
-        </g>
-      </svg>
+      <div class="tanpatsu-silhouettes">
+        <img src="images/cabinattendant1.jpg" alt="">
+        <img src="images/cabinattendant2.jpg" alt="">
+        <img src="images/cabinattendant3.jpg" alt="">
+      </div>
       <div class="course-area-header">
         <span class="area-label">単発対策</span>
         <span class="area-desc">単発で希望の予約をしたい方におすすめ！</span>
       </div>
       <div class="tanpatsu-cards">
         <div class="tanpatsu-card">
-          <div class="tanpatsu-card-img"><img src="images/course-img5.svg" alt="カウンセリング"></div>
+          <div class="tanpatsu-card-img"><img src="images/counseling.jpg" alt="カウンセリング"></div>
           <div class="tanpatsu-card-body">
             <h4 class="tanpatsu-title">カウンセリング</h4>
             <p class="tanpatsu-desc">あなたの悩みを45分で解決します。まずは気軽に相談してみてください。</p>
@@ -1819,7 +2426,7 @@
           </div>
         </div>
         <div class="tanpatsu-card">
-          <div class="tanpatsu-card-img"><img src="images/course-img6.svg" alt="ES添削対策"></div>
+          <div class="tanpatsu-card-img"><img src="images/es-tensaku.jpg" alt="ES添削対策"></div>
           <div class="tanpatsu-card-body">
             <h4 class="tanpatsu-title">ES添削対策</h4>
             <p class="tanpatsu-desc">希望する会社のESを納得するまで何度もメールを通して添削をします。</p>
@@ -1827,7 +2434,7 @@
           </div>
         </div>
         <div class="tanpatsu-card">
-          <div class="tanpatsu-card-img"><img src="images/course-img7.svg" alt="ESフルサポート対策"></div>
+          <div class="tanpatsu-card-img"><img src="images/es-full.jpg" alt="ESフルサポート対策"></div>
           <div class="tanpatsu-card-body">
             <h4 class="tanpatsu-title">ESフルサポート対策</h4>
             <p class="tanpatsu-desc">ESを仕上げる上で自己分析や企業研究も含めて一緒に作成していきます。</p>
@@ -1835,7 +2442,7 @@
           </div>
         </div>
         <div class="tanpatsu-card">
-          <div class="tanpatsu-card-img"><img src="images/course-img8.svg" alt="自己分析対策"></div>
+          <div class="tanpatsu-card-img"><img src="images/jiko-bunseki.jpg" alt="自己分析対策"></div>
           <div class="tanpatsu-card-body">
             <h4 class="tanpatsu-title">自己分析対策</h4>
             <p class="tanpatsu-desc">たった90分で面接に通用する自身のさまざまな魅力を言語化します。</p>
@@ -1843,7 +2450,7 @@
           </div>
         </div>
         <div class="tanpatsu-card">
-          <div class="tanpatsu-card-img"><img src="images/course-img9.svg" alt="個別面接対策"></div>
+          <div class="tanpatsu-card-img"><img src="images/mensetsu.jpg" alt="個別面接対策"></div>
           <div class="tanpatsu-card-body">
             <h4 class="tanpatsu-title">個別面接対策</h4>
             <p class="tanpatsu-desc">選考を控えている会社の面接対策を行います。あなたの悩みや弱点を全て解決！</p>
@@ -1851,7 +2458,7 @@
           </div>
         </div>
         <div class="tanpatsu-card">
-          <div class="tanpatsu-card-img"><img src="images/course-img10.svg" alt="動画添削対策"></div>
+          <div class="tanpatsu-card-img"><img src="images/douga.jpg" alt="動画添削対策"></div>
           <div class="tanpatsu-card-body">
             <h4 class="tanpatsu-title">動画添削対策</h4>
             <p class="tanpatsu-desc">動画提出に向けて文章だけでなく動画の映り方や魅せ方などを細かくアドバイス。</p>
@@ -1859,7 +2466,7 @@
           </div>
         </div>
         <div class="tanpatsu-card">
-          <div class="tanpatsu-card-img"><img src="images/course-img11.svg" alt="集団面接対策"></div>
+          <div class="tanpatsu-card-img"><img src="images/shudan.jpg" alt="集団面接対策"></div>
           <div class="tanpatsu-card-body">
             <h4 class="tanpatsu-title">集団面接対策</h4>
             <p class="tanpatsu-desc">あなたの希望に合わせて対策が可能。集団の中での自分の魅せ方明確にわかる！</p>
@@ -1867,7 +2474,7 @@
           </div>
         </div>
         <div class="tanpatsu-card">
-          <div class="tanpatsu-card-img"><img src="images/course-img12.svg" alt="一般企業対策"></div>
+          <div class="tanpatsu-card-img"><img src="images/ippan.jpg" alt="一般企業対策"></div>
           <div class="tanpatsu-card-body">
             <h4 class="tanpatsu-title">一般企業対策</h4>
             <p class="tanpatsu-desc">CA＆GSとして活躍後の一般企業への転職を目指す方へのサポートになります。</p>
@@ -1891,16 +2498,6 @@
 
   <!-- ===== 内定者の声 (VOICE) ===== -->
   <section class="voice-section" id="voice">
-    <div class="section-header-center">
-      <p class="section-en" style="font-family:'Dancing Script',cursive;font-size:18px;">VOICE</p>
-      <h2 class="section-title">内定者の声</h2>
-      <div class="section-deco">
-        <span class="dashed-line"></span>
-        <span class="airplane-icon"><svg><use href="#airplane-icon"/></svg></span>
-      </div>
-    </div>
-    <p class="voice-subtitle">ともに笑い、ともに泣き、ともに悔しがり、諦めずに夢を掴んだ生徒様の声</p>
-
     <div class="voice-bubbles">
       <!-- Blob 1: rotate(13deg) -->
       <div class="voice-bubble"><svg viewBox="0 0 216.6 191.89" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M185.73 39.88C181.2 21.98 164.96 8.75 145.58 8.75C137.43 8.75 129.82 11.11 123.41 15.17C114 5.8 101 0 86.64 0C61.65 0 40.76 17.53 35.71 40.93C15.47 44.06 0 61.5 0 82.52C0 95.65 6.01 107.35 15.45 115.08C15.39 116.07 15.33 117.06 15.33 118.06C15.33 143.11 35.71 163.42 60.85 163.42C64.07 163.42 67.23 163.08 70.25 162.46C75.89 170.01 84.93 174.9 95.1 174.9C100.66 174.9 105.88 173.42 110.41 170.87C113.89 180.61 115.4 191.89 115.4 191.89C122.98 183.31 126.26 174.59 127.68 168.25C131.61 169.73 135.89 170.53 140.33 170.53C157.03 170.53 171.09 159.25 175.25 143.94C199.1 137.43 216.6 115.7 216.6 89.91C216.6 68.07 204.03 49.11 185.73 39.88Z" fill="#FFDFDF"/></svg><span>新卒8社内定</span></div>

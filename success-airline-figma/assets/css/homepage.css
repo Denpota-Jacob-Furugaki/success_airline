@@ -670,6 +670,11 @@
       transition: transform 0.3s;
     }
     .sns-follow-icons a:hover img { transform: scale(1.1); }
+    .sns-follow-icons .note-icon,
+    .footer-social-icons .note-icon,
+    .note-icon {
+      border: none !important;
+    }
     .sns-follow-icons .note-icon img {
       width: 80px;
       height: 80px;
@@ -780,77 +785,168 @@
     }
     .course-area-header {
       display: flex;
-      align-items: baseline;
-      gap: 20px;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 822px;
+      gap: 32px;
       margin-bottom: 30px;
     }
     .course-area-header .area-label {
-      font-family: 'Shippori Mincho', serif;
-      font-size: 26px;
-      font-weight: 700;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 32px;
+      font-weight: 500;
       color: #b51230;
-      letter-spacing: 4px;
+      letter-spacing: 0.2em;
+      line-height: 150%;
+      white-space: nowrap;
     }
     .course-area-header .area-desc {
-      font-size: 14px;
-      color: #555;
-    }
-    .course-card {
-      background: #fff;
-      border-radius: 16px;
-      padding: 40px;
-      margin-bottom: 24px;
-      display: flex;
-      gap: 30px;
-    }
-    .course-card-text { flex: 1; }
-    .course-card-text .course-sub {
-      font-size: 14px;
-      color: #555;
-      margin-bottom: 8px;
-    }
-    .course-card-text .course-name {
-      font-family: 'Shippori Mincho', serif;
-      font-size: 28px;
-      font-weight: 700;
-      color: #343434;
-      margin-bottom: 4px;
-    }
-    .course-card-text .course-name-deco {
-      display: flex;
-      align-items: center;
-      gap: 0;
-      margin-bottom: 16px;
-    }
-    .course-card-text .course-name-deco .dashed-line { width: 120px; }
-    .course-card-text .course-name-deco .airplane-icon { width: 20px; }
-    .course-card-text .course-desc {
-      font-size: 14px;
-      line-height: 1.8;
-      color: #555;
-    }
-    .course-card-text .course-detail-btn {
-      display: inline-flex;
-      align-items: center;
-      margin-top: 16px;
-      padding: 10px 30px;
-      background: #fde8e8;
-      color: #343434;
-      border-radius: 30px;
-      font-size: 14px;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 16px;
       font-weight: 500;
-      transition: background 0.3s;
+      color: #343434;
+      letter-spacing: 0.1em;
+      line-height: 150%;
     }
-    .course-card-text .course-detail-btn:hover { background: #f9c8c8; }
+    .course-block {
+      max-width: 100%;
+    }
+    .course-block + .course-block {
+      margin-top: 70px;
+    }
+    /* White card wrapper around each course */
+    .course-card-wrapper {
+      background: #FFFFFF;
+      border-radius: 30px;
+      box-shadow: 0 4px 4px 0 rgba(97, 58, 58, 0.25);
+      width: 1080px;
+      max-width: 100%;
+      padding: 30px 30px 0 30px;
+      display: flex;
+      flex-direction: column;
+    }
+    /* Course card top: title info + image side by side */
+    .course-card-top {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 100%;
+      min-height: 106px;
+      gap: 32px;
+    }
+    .course-card-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      max-width: 468px;
+      min-height: 106px;
+      gap: 5px;
+    }
     .course-card-img {
-      flex: 0 0 280px;
-      border-radius: 12px;
+      flex: 0 0 380px;
+      width: 380px;
+      border-radius: 16px;
       overflow: hidden;
     }
     .course-card-img img {
       width: 100%;
-      height: 200px;
+      height: auto;
+      display: block;
       object-fit: cover;
+    }
+    .course-block .course-sub {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+      color: #343434;
+      text-align: left;
+      line-height: 150%;
+      letter-spacing: 0.1em;
+      margin-bottom: 0;
+    }
+    .course-title-row {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      width: 287px;
+      gap: 5px;
+    }
+    .course-title-group {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      min-height: 60px;
+    }
+    .course-block .course-name {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 40px;
+      font-weight: 700;
+      color: #343434;
+      line-height: 150%;
+      letter-spacing: 0.1em;
+      margin: 0;
+    }
+    .course-underline {
+      width: 246px;
+      display: block;
+    }
+    .course-airplane-icon {
+      width: 35px;
+      margin-top: 42px;
+    }
+    .course-block .course-desc {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+      color: #343434;
+      line-height: 150%;
+      letter-spacing: 0.1em;
+      margin-top: 19px;
+      margin-left: 0;
+      max-width: 100%;
+      padding: 0 30px;
+    }
+    /* Button row: align button to right with padding */
+    .course-btn-row {
+      display: flex;
+      justify-content: flex-end;
+      padding: 0 80px 34px 0;
+    }
+    .course-detail-btn {
+      display: flex;
+      width: 276px;
+      height: 34px;
+      padding: 10px;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      border-radius: 20px;
+      background: #FFDFDF;
+      color: #343434;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 16px;
+      font-weight: 350;
+      letter-spacing: 0.1em;
+      line-height: 150%;
+      text-decoration: none;
+      transition: background 0.3s;
+      margin-top: 16px;
+    }
+    .course-detail-btn:hover { background: #f9c8c8; }
+    .course-detail-btn .btn-arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .btn-arrow-icon {
+      width: 8px;
+      height: 11px;
+      display: block;
     }
     /* 単発対策 */
     .tanpatsu-area {
@@ -869,12 +965,14 @@
       margin-bottom: 24px;
     }
     .tanpatsu-silhouettes {
+      display: flex;
+      align-items: flex-end;
       position: absolute;
-      right: -20px;
+      right: 80px;
       bottom: 40px;
       width: 220px;
       height: 260px;
-      opacity: 0.12;
+      opacity: 0.15;
       z-index: 0;
     }
     .tanpatsu-cards {
@@ -981,11 +1079,12 @@
     /* ===== VOICE / TESTIMONIALS ===== */
     .voice-section {
       background: #fff;
-      padding: 80px 0;
+      padding: 16px 0 80px;
       overflow: hidden;
     }
     .voice-section .section-header-center {
       padding: 0 40px;
+      box-shadow: none;
     }
     .voice-subtitle {
       text-align: center;
@@ -1000,6 +1099,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      gap: 128px;
       margin-bottom: 30px;
       padding: 20px 80px;
       position: relative;
@@ -1043,7 +1143,6 @@
       align-self: flex-end;
       transform: rotate(13deg);
       z-index: 1;
-      margin-right: -30px;
       margin-bottom: -10px;
     }
     .voice-bubble:nth-of-type(1) span {
@@ -1054,7 +1153,6 @@
       width: 280px;
       transform: rotate(13deg);
       z-index: 3;
-      margin-right: -20px;
       margin-top: -40px;
     }
     .voice-bubble:nth-of-type(2) span {
@@ -1064,7 +1162,6 @@
     .voice-bubble:nth-of-type(3) {
       width: 260px;
       z-index: 2;
-      margin-right: -20px;
     }
     /* Blob 4: 留学しながら CA内定 — bottom-right, rotated 154deg */
     .voice-bubble:nth-of-type(4) {
@@ -1082,16 +1179,34 @@
       gap: 24px;
       overflow-x: auto;
       padding: 20px 40px 20px;
+      position: relative;
+      background: url('../images/hero-sky.svg') lightgray center top / cover no-repeat;
       -ms-overflow-style: none;
       scrollbar-width: none;
     }
     .voice-cards-scroll::-webkit-scrollbar { display: none; }
+    .voice-cards-scroll::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120%;
+      height: 384px;
+      background: url("data:image/svg+xml,%3Csvg width='1737' height='384' viewBox='0 0 1737 384' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 384V180C0 180 80 100 200 80C320 60 400 120 500 100C600 80 680 20 868 10C1056 0 1100 80 1200 100C1300 120 1400 60 1500 80C1600 100 1700 140 1737 180V384H0Z' fill='white'/%3E%3C/svg%3E") center bottom / 100% auto no-repeat;
+      z-index: 0;
+      pointer-events: none;
+    }
     .voice-card {
       flex: 0 0 302px;
-      background: #fff;
+      background:
+        linear-gradient(180deg, #CDEAFA 3.88%, #FFF 103.88%) center bottom / 100% 142px no-repeat,
+        #fff;
       border-radius: 30px;
       overflow: hidden;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 0px 4px rgba(0, 0, 0, 0.25);
+      position: relative;
+      z-index: 1;
     }
     .voice-card-header {
       padding: 16px 20px;
@@ -1350,6 +1465,12 @@
       .pc-nav { gap: 14px; }
       .pc-nav a { font-size: 14px; letter-spacing: 1px; }
       .pc-header-cta .header-cta-btn { padding: 8px 18px; font-size: 13px; }
+      .course-area-header .area-label { font-size: 27px; }
+      .course-card-wrapper { width: 100%; padding: 24px 24px 0 24px; }
+      .course-card-top { gap: 20px; }
+      .course-block .course-name { font-size: 34px; }
+      .course-btn-row { padding: 0 24px 17px 0; }
+      .course-block .course-desc { padding: 0 20px; }
     }
 
     /* ===== RESPONSIVE ===== */
@@ -1432,8 +1553,21 @@
       .welcome-icons-svg { max-width: 100%; }
 
       .course-area { padding: 30px 20px; }
-      .course-card { flex-direction: column; }
+      .course-area-header { flex-direction: column; gap: 8px; }
+      .course-area-header .area-label { font-size: 24px; }
+      .course-area-header .area-desc { font-size: 14px; }
+      .course-card-wrapper { width: 100%; padding: 16px 16px 0 16px; }
+      .course-card-top {
+        flex-direction: column;
+        margin-left: 10px;
+        gap: 16px;
+      }
       .course-card-img { flex: none; width: 100%; }
+      .course-block .course-sub { font-size: 14px; }
+      .course-block .course-name { font-size: 30px; }
+      .course-block .course-desc { font-size: 14px; padding: 0 10px; }
+      .course-btn-row { padding: 0 16px 12px 0; }
+      .course-detail-btn { font-size: 14px; }
       .tanpatsu-area { padding: 30px 20px; }
       .tanpatsu-cards { grid-template-columns: 1fr; }
 

@@ -1,0 +1,257 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --text: #343434;
+  --pink: #f8bbbb;
+  --deep-pink: #b51230;
+  --soft-bg: #fff7f8;
+  --line: #eadede;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  color: var(--text);
+  background: #fff;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  width: min(1160px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.top-ribbon {
+  background: var(--pink);
+  padding: 10px 0;
+  font-size: 13px;
+  text-align: center;
+  letter-spacing: 0.06em;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid #f2f2f2;
+  backdrop-filter: blur(6px);
+}
+
+.site-header .container {
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Shippori Mincho", serif;
+  font-size: 18px;
+  color: #f49b9b;
+}
+
+.brand img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-size: 14px;
+}
+
+.cta-row {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 9px 18px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.btn-pink {
+  background: var(--pink);
+}
+
+.hero {
+  position: relative;
+  min-height: 460px;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("./images/sky_hero.svg") center / cover no-repeat;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 1;
+  padding: 84px 0 96px;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: 52px;
+  font-family: "Shippori Mincho", serif;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  text-shadow: 0 4px 12px rgba(255, 255, 255, 0.6);
+}
+
+.hero h1 .highlight {
+  color: var(--deep-pink);
+}
+
+.hero p {
+  margin-top: 18px;
+  max-width: 560px;
+  line-height: 1.9;
+  font-size: 15px;
+}
+
+.hero-plane {
+  position: absolute;
+  right: 40px;
+  bottom: 18px;
+  width: 460px;
+}
+
+.quick-banner {
+  background: var(--deep-pink);
+  color: #fff;
+  text-align: center;
+  padding: 14px;
+  letter-spacing: 0.08em;
+}
+
+.section {
+  padding: 72px 0;
+}
+
+.section-title {
+  text-align: center;
+  margin: 0 0 30px;
+  font-family: "Shippori Mincho", serif;
+  font-size: 36px;
+  color: var(--deep-pink);
+  letter-spacing: 0.18em;
+}
+
+.news {
+  border-top: 1px solid var(--line);
+}
+
+.news-item {
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  gap: 24px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.news-item time {
+  color: #8c8c8c;
+}
+
+.stats {
+  background: var(--soft-bg);
+}
+
+.stat-main {
+  text-align: center;
+  font-size: 22px;
+  margin-bottom: 28px;
+}
+
+.stat-main b {
+  display: inline-block;
+  font-family: "Shippori Mincho", serif;
+  font-size: 88px;
+  color: var(--deep-pink);
+  line-height: 1;
+  margin: 0 8px;
+}
+
+.awards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.card {
+  border-radius: 16px;
+  border: 1px solid #f0e7e7;
+  overflow: hidden;
+  background: #fff;
+}
+
+.card-body {
+  padding: 12px 14px 16px;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.pink-panel {
+  background: #fde8e8;
+  border-radius: 22px;
+  padding: 30px;
+}
+
+.study-bg {
+  background: linear-gradient(rgba(255, 255, 255, 0.86), rgba(255, 255, 255, 0.86)), url("./images/haikei 2.svg") center/cover no-repeat;
+}
+
+.profile {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.profile img {
+  border-radius: 16px;
+}
+
+footer {
+  margin-top: 70px;
+  background: #fde1e1;
+  padding: 36px 0 22px;
+  text-align: center;
+  font-size: 12px;
+}
