@@ -656,31 +656,23 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 30px;
+      gap: 24px;
+    }
+    .sns-follow-icons a {
+      display: block;
+      line-height: 0;
     }
     .sns-follow-icons a img {
-      border-radius: 50%;
+      display: block;
+      width: 100px;
+      height: 100px;
       object-fit: contain;
       transition: transform 0.3s;
     }
     .sns-follow-icons a:hover img { transform: scale(1.1); }
-    .sns-follow-icons .ig-icon img {
-      width: 145px;
-      height: 145px;
-    }
-    .sns-follow-icons .line-icon img {
-      width: 100px;
-      height: 100px;
-    }
-    .sns-follow-icons .yt-icon img {
-      width: 126px;
-      height: 118px;
-      border-radius: 14px;
-    }
     .sns-follow-icons .note-icon img {
-      border-radius: 0;
-      width: 69px;
-      height: 69px;
+      width: 80px;
+      height: 80px;
     }
 
     /* ===== WELCOME TO SCA ===== */
@@ -1432,10 +1424,8 @@
 
       .blog-cards { grid-template-columns: 1fr; }
 
-      .sns-follow-icons .ig-icon img { width: 100px; height: 100px; }
-      .sns-follow-icons .line-icon img { width: 70px; height: 70px; }
-      .sns-follow-icons .yt-icon img { width: 88px; height: 82px; }
-      .sns-follow-icons .note-icon img { width: 48px; height: 48px; }
+      .sns-follow-icons a img { width: 70px; height: 70px; }
+      .sns-follow-icons .note-icon img { width: 56px; height: 56px; }
 
       .welcome-overlay { margin: 20px; padding: 30px 20px; }
       .welcome-icon-svg,

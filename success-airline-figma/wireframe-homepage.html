@@ -2144,29 +2144,22 @@
   /* Social icons below nav */
   .footer-social-icons {
     display: flex;
-    gap: 16px;
+    align-items: center;
+    gap: 12px;
     margin-top: 24px;
     padding-top: 8px;
   }
   .footer-social-icons a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 48px;
-    height: 48px;
-    background: #fff;
-    border-radius: 50%;
-    box-shadow: 0 2px 4px rgba(97, 58, 58, 0.15);
-    transition: opacity 0.3s;
+    display: block;
+    line-height: 0;
+    transition: transform 0.3s;
   }
-  .footer-social-icons a:hover { opacity: 0.8; }
+  .footer-social-icons a:hover { transform: translateY(-2px); }
   .footer-social-icons a img {
-    width: 28px;
-    height: 28px;
+    display: block;
+    width: 40px;
+    height: 40px;
     object-fit: contain;
-  }
-  .footer-social-icons .note-icon {
-    border-radius: 8px;
   }
   .footer-social-icons .note-icon img {
     width: 32px;
